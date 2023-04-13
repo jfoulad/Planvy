@@ -65,78 +65,10 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
 
         // Do any additional setup after loading the view.
         
-        //set up tableView
-        
-        tableView.frame = CGRect(x: 0, y: 0, width: locationTF.frame.width, height: 0)
-        firstHolderView.addSubview(tableView)
-        firstHolderView.bringSubviewToFront(tableView)
-        
-        
-        
-        //dummy info
-        
-        guestsArray.append("Jimmy Neutron")
-        guestsArray.append("Test Test")
-        
-        //UI color and Design Set up
-        createAPlanLabel.textColor = designManager.black
-        createAPlanLabel.font = designManager.font(weight: .Bold, size: 25)
-        
-        eventDetailsLabel.textColor = designManager.black
-        eventDetailsLabel.font = designManager.font(weight: .Bold, size: 13)
-        
-        
-        planNameTF.textColor = designManager.black
-        planNameTF.font = designManager.font(weight: .Bold, size: 17)
-        planNameTF.borderStyle = .roundedRect
-        planNameTF.layer.borderColor = UIColor.white.cgColor
-        planNameTF.backgroundColor = designManager.white
-        
-        
-        
-        locationTF.textColor = designManager.black
-        locationTF.font = designManager.font(weight: .Bold, size: 17)
-        locationTF.borderStyle = .roundedRect
-        locationTF.layer.borderColor = UIColor.white.cgColor
-        locationTF.backgroundColor = designManager.white
-        
-        dateTimeLabel.textColor = designManager.black
-        dateTimeLabel.font = designManager.font(weight: .Bold, size: 13)
-        
-        dateTimePicker.minimumDate = .now
-        dateTimePicker.date = .now
-        dateTimePicker.preferredDatePickerStyle = .compact
-//        dateTimePicker.backgroundColor = designManager.black15
-        
-        guestsLabel.textColor = designManager.black
-        guestsLabel.font = designManager.font(weight: .Bold, size: 13)
-        
-        addGuestTF.textColor = designManager.black
-        addGuestTF.font = designManager.font(weight: .Bold, size: 17)
-        addGuestTF.borderStyle = .roundedRect
-        addGuestTF.layer.borderColor = UIColor.white.cgColor
-        addGuestTF.backgroundColor = designManager.white
-        
-        addGuestButton.layer.cornerRadius = 10
-        addGuestButton.layer.borderWidth = 1
-        addGuestButton.layer.borderColor = designManager.black15.cgColor
-        
-        
-        submitButton.titleLabel?.font = designManager.font(weight: .Bold, size: 20)
-        submitButton.layer.cornerRadius = 20
-        
+        setUpUI()
+
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
         
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -307,6 +239,69 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
                 
             })
         }
+    }
+    
+    
+    func setUpUI() {
+        //set up tableView
+        
+        tableView.frame = CGRect(x: 0, y: 0, width: locationTF.frame.width, height: 0)
+        firstHolderView.addSubview(tableView)
+        firstHolderView.bringSubviewToFront(tableView)
+        
+        
+        
+        //dummy info
+        
+        guestsArray.append("Jimmy Neutron")
+        guestsArray.append("Test Test")
+        
+        //UI color and Design Set up
+        createAPlanLabel.textColor = designManager.black
+        createAPlanLabel.font = designManager.font(weight: .Bold, size: 25)
+        
+        eventDetailsLabel.textColor = designManager.black
+        eventDetailsLabel.font = designManager.font(weight: .Bold, size: 13)
+        
+        
+        planNameTF.textColor = designManager.black
+        planNameTF.font = designManager.font(weight: .Bold, size: 17)
+        planNameTF.borderStyle = .roundedRect
+        planNameTF.layer.borderColor = UIColor.white.cgColor
+        planNameTF.backgroundColor = designManager.white
+        
+        
+        
+        locationTF.textColor = designManager.black
+        locationTF.font = designManager.font(weight: .Bold, size: 17)
+        locationTF.borderStyle = .roundedRect
+        locationTF.layer.borderColor = UIColor.white.cgColor
+        locationTF.backgroundColor = designManager.white
+        
+        dateTimeLabel.textColor = designManager.black
+        dateTimeLabel.font = designManager.font(weight: .Bold, size: 13)
+        
+        dateTimePicker.minimumDate = .now
+        dateTimePicker.date = .now
+        dateTimePicker.preferredDatePickerStyle = .compact
+//        dateTimePicker.backgroundColor = designManager.black15
+        
+        guestsLabel.textColor = designManager.black
+        guestsLabel.font = designManager.font(weight: .Bold, size: 13)
+        
+        addGuestTF.textColor = designManager.black
+        addGuestTF.font = designManager.font(weight: .Bold, size: 17)
+        addGuestTF.borderStyle = .roundedRect
+        addGuestTF.layer.borderColor = UIColor.white.cgColor
+        addGuestTF.backgroundColor = designManager.white
+        
+        addGuestButton.layer.cornerRadius = 10
+        addGuestButton.layer.borderWidth = 1
+        addGuestButton.layer.borderColor = designManager.black15.cgColor
+        
+        
+        submitButton.titleLabel?.font = designManager.font(weight: .Bold, size: 20)
+        submitButton.layer.cornerRadius = 20
     }
     
     
