@@ -282,6 +282,8 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
             let business = sortedAutoCompleteArray[indexPath.row] as! Business
             let id = business.id
             
+            
+            
             //do segue
             
             let businessInfoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "businessInfo") as! BusinessInformationViewController
