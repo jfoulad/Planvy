@@ -172,7 +172,7 @@ class BusinessInformationViewController: UIViewController {
         
         
         //button
-        inviteFriendButton.titleLabel?.text = "Invite a friend to \(business.name)"
+        inviteFriendButton.setTitle("Invite a friend to \(business.name!)", for: .normal)
         
         
         //-- Todays hours
