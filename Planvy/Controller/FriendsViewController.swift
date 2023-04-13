@@ -35,57 +35,9 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         // Do any additional setup after loading the view.
         
+        //Set Up UI
+        setUpUI()
         
-        //--------Change font of tab bar-----------------------------------------
-        
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: designManager.font(weight: .Regular, size: 10)], for: .normal)
-
-        //------NAVIGATION BAR SET UP------------------------------------
-
-        // Set navigation bar height
-        let navBarHeight: CGFloat = 60
-        let navBar = navigationController?.navigationBar
-        navBar?.frame.size.height = navBarHeight
-        
-        // create right button
-        let addButton = UIButton(type: .custom)
-
-        addButton.setImage(UIImage(named: "add user"), for: .normal)
-        addButton.frame = CGRect(x: 0, y: 0, width: 55, height: 55)
-        addButton.layer.backgroundColor = designManager.orange.cgColor
-        addButton.layer.cornerRadius =  addButton.frame.height/2
-
-
-        // Set image as title on left side
-        let title = UIImage(named: "FriendsTitleView")
-        let imageView = UIImageView(image: title)
-        imageView.contentMode = .scaleAspectFit
-        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: navBarHeight))
-        imageView.frame = titleView.bounds
-        titleView.addSubview(imageView)
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleView)
-    
-
-        // Add button on right side
-        let buttonView = UIView(frame: CGRect(x: 0, y: 0, width: addButton.frame.width, height: addButton.frame.height))
-        addButton.frame = buttonView.bounds
-
-        buttonView.addSubview(addButton)
-
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: buttonView)
-        
-        
-        
-        //---Color/ Design UI
-        groupsLabel.textColor = designManager.white
-        groupsLabel.font = designManager.font(weight: .Bold, size: 12)
-        
-        addGroupButton.layer.cornerRadius = 10
-        addBlur(object: addGroupButton)
-
-        
-        //-------
     }
     
     
@@ -145,6 +97,57 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         
     
+    }
+    
+    func setUpUI() {
+        //--------Change font of tab bar-----------------------------------------
+        
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: designManager.font(weight: .Regular, size: 10)], for: .normal)
+
+        //------NAVIGATION BAR SET UP------------------------------------
+
+        // Set navigation bar height
+        let navBarHeight: CGFloat = 60
+        let navBar = navigationController?.navigationBar
+        navBar?.frame.size.height = navBarHeight
+        
+        // create right button
+        let addButton = UIButton(type: .custom)
+
+        addButton.setImage(UIImage(named: "add user"), for: .normal)
+        addButton.frame = CGRect(x: 0, y: 0, width: 55, height: 55)
+        addButton.layer.backgroundColor = designManager.orange.cgColor
+        addButton.layer.cornerRadius =  addButton.frame.height/2
+
+
+        // Set image as title on left side
+        let title = UIImage(named: "FriendsTitleView")
+        let imageView = UIImageView(image: title)
+        imageView.contentMode = .scaleAspectFit
+        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: navBarHeight))
+        imageView.frame = titleView.bounds
+        titleView.addSubview(imageView)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleView)
+    
+
+        // Add button on right side
+        let buttonView = UIView(frame: CGRect(x: 0, y: 0, width: addButton.frame.width, height: addButton.frame.height))
+        addButton.frame = buttonView.bounds
+
+        buttonView.addSubview(addButton)
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: buttonView)
+        
+        
+        
+        //---Color/ Design UI
+        groupsLabel.textColor = designManager.white
+        groupsLabel.font = designManager.font(weight: .Bold, size: 12)
+        
+        addGroupButton.layer.cornerRadius = 10
+        addBlur(object: addGroupButton)
+
     }
     
 
