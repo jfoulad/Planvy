@@ -56,50 +56,9 @@ class BusinessInformationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        // Do any additional setup after loading the view.
-        
-        //----set skeltonable equal to font
-        businessNameLabel.skeletonTextLineHeight = .relativeToFont
-        ratingLabel.skeletonTextLineHeight = .relativeToFont
-        priceAndCategoriesLabel.skeletonTextLineHeight = .relativeToFont
-        closedOpenLabel.skeletonTextLineHeight = .relativeToFont
-        deliveryLabel.skeletonTextLineHeight = .relativeToFont
-        pickupLabel.skeletonTextLineHeight = .relativeToFont
-        reservationsLabel.skeletonTextLineHeight = .relativeToFont
-        inviteFriendButton.titleLabel?.skeletonTextLineHeight = .relativeToFont
-        
-        //----Font Coloring/ UI Positioning set up
-        let firstViewFont = designManager.font(weight: .Bold, size: 16)
-        
-        seeHoursButton.contentVerticalAlignment = .bottom
-        seeHoursButton.contentHorizontalAlignment = .left
-        businessNameLabel.font = designManager.font(weight: .Bold, size: 25)
-        businessNameLabel.textColor = designManager.white
-        closedOpenLabel.font = firstViewFont
-        closedOpenLabel.textColor = designManager.black
-        priceAndCategoriesLabel.font = firstViewFont
-        priceAndCategoriesLabel.textColor = designManager.black
-        todayClosingTimeLabel.font = firstViewFont
-        todayClosingTimeLabel.textColor = designManager.black
-        deliveryLabel.textColor = designManager.black
-        deliveryLabel.font = firstViewFont
-        deliveryLabel.textColor = designManager.black
-        pickupLabel.font = firstViewFont
-        pickupLabel.textColor = designManager.black
-        reservationsLabel.font = firstViewFont
-        reservationsLabel.textColor = designManager.black
-        ratingLabel.font = firstViewFont
-        ratingLabel.textColor = designManager.white
-        
-        
-        seeHoursButton.titleLabel?.font = firstViewFont
-        seeHoursButton.titleLabel?.textColor = designManager.blue
-        
-        
-        inviteFriendButton.titleLabel?.font = designManager.font(weight: .Bold, size: 20)
-        inviteFriendButton.layer.cornerRadius = 20
-        
+//        Set up UI
+        setUpUI()
+
 
     }
     
@@ -141,7 +100,7 @@ class BusinessInformationViewController: UIViewController {
                 if self.business != nil {
                     DispatchQueue.main.async {
                         self.toggleSkeloton(onOrOff: false)
-                        self.setUI()
+                        self.setUIText()
                     }
                 }
             }, onFail: { error in
@@ -154,7 +113,7 @@ class BusinessInformationViewController: UIViewController {
     
     
 
-    func setUI() {
+    func setUIText() {
         
         //---title image
         if let urlString = business.image_url {
@@ -239,6 +198,49 @@ class BusinessInformationViewController: UIViewController {
         }
         
         
+    }
+    
+    func setUpUI() {
+        //----set skeltonable equal to font
+        businessNameLabel.skeletonTextLineHeight = .relativeToFont
+        ratingLabel.skeletonTextLineHeight = .relativeToFont
+        priceAndCategoriesLabel.skeletonTextLineHeight = .relativeToFont
+        closedOpenLabel.skeletonTextLineHeight = .relativeToFont
+        deliveryLabel.skeletonTextLineHeight = .relativeToFont
+        pickupLabel.skeletonTextLineHeight = .relativeToFont
+        reservationsLabel.skeletonTextLineHeight = .relativeToFont
+        inviteFriendButton.titleLabel?.skeletonTextLineHeight = .relativeToFont
+        
+        //----Font Coloring/ UI Positioning set up
+        let firstViewFont = designManager.font(weight: .Bold, size: 16)
+        
+        seeHoursButton.contentVerticalAlignment = .bottom
+        seeHoursButton.contentHorizontalAlignment = .left
+        businessNameLabel.font = designManager.font(weight: .Bold, size: 25)
+        businessNameLabel.textColor = designManager.white
+        closedOpenLabel.font = firstViewFont
+        closedOpenLabel.textColor = designManager.black
+        priceAndCategoriesLabel.font = firstViewFont
+        priceAndCategoriesLabel.textColor = designManager.black
+        todayClosingTimeLabel.font = firstViewFont
+        todayClosingTimeLabel.textColor = designManager.black
+        deliveryLabel.textColor = designManager.black
+        deliveryLabel.font = firstViewFont
+        deliveryLabel.textColor = designManager.black
+        pickupLabel.font = firstViewFont
+        pickupLabel.textColor = designManager.black
+        reservationsLabel.font = firstViewFont
+        reservationsLabel.textColor = designManager.black
+        ratingLabel.font = firstViewFont
+        ratingLabel.textColor = designManager.white
+        
+        
+        seeHoursButton.titleLabel?.font = firstViewFont
+        seeHoursButton.titleLabel?.textColor = designManager.blue
+        
+        
+        inviteFriendButton.titleLabel?.font = designManager.font(weight: .Bold, size: 20)
+        inviteFriendButton.layer.cornerRadius = 20
     }
 
 }
