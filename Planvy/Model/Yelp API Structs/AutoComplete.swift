@@ -11,7 +11,7 @@ import Foundation
 struct Autocomplete: Decodable {
     
     //YELP GOES TERMS BUSINESSES CATEGORIES
-    let categories: Array<CategoriesAutocomplete>
-    let businesses: Array<BusinessesAutoComplete>
+    let categories: Array<Category>
+    let businesses: Array<Business>
     let terms: Array<Term>
 }

@@ -264,8 +264,8 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
         } else if sortedAutoCompleteArray[indexPath.row] is Term {
             let term = sortedAutoCompleteArray[indexPath.row] as! Term
             cell.textLabel?.text = term.text
-        } else if sortedAutoCompleteArray[indexPath.row] is CategoriesAutocomplete {
-            let category = sortedAutoCompleteArray[indexPath.row] as! CategoriesAutocomplete
+        } else if sortedAutoCompleteArray[indexPath.row] is Category {
+            let category = sortedAutoCompleteArray[indexPath.row] as! Category
             cell.textLabel?.text = category.title
         }
 
@@ -281,6 +281,7 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
         if sortedAutoCompleteArray[indexPath.row] is Business {
             let business = sortedAutoCompleteArray[indexPath.row] as! Business
             let id = business.id
+            
             //do segue
             
             let businessInfoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "businessInfo") as! BusinessInformationViewController
