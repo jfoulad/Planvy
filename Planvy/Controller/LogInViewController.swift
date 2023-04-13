@@ -27,6 +27,13 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+
+        setUpUI()
+    }
+    
+
+    
+    func setUpUI() {
         let designManager = ColorAndFontManager.shared
         
         let labelFont = designManager.font(weight: .Medium, size: 15)
@@ -46,7 +53,7 @@ class LogInViewController: UIViewController {
         passwordTF.layer.borderColor = UIColor.white.cgColor
         passwordTF.layer.borderWidth = 1.0
         passwordTF.layer.cornerRadius = 5
-    
+        
         
         emailTF.leftViewMode = .always
         passwordTF.leftViewMode = .always
@@ -56,27 +63,14 @@ class LogInViewController: UIViewController {
         
         let passwordIconImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         passwordIconImageView.image = UIImage(named: "email")
-
+        
         emailTF.leftView = emailIconImageView
         passwordTF.leftView = passwordIconImageView
-
+        
         logInButton.backgroundColor = designManager.orange
         logInButton.titleLabel?.font = designManager.font(weight: .Bold, size: 20)
         logInButton.layer.cornerRadius = 10
         
         forgotPasswordButton.titleLabel?.font = designManager.font(weight: .Bold, size: 13)
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
