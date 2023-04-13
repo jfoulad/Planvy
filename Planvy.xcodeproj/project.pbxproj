@@ -1,0 +1,862 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3906D3DC29D9639000198F90 /* YelpCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3906D3DB29D9639000198F90 /* YelpCategories.swift */; };
+		3906D3DE29D96DAD00198F90 /* YelpApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3906D3DD29D96DAD00198F90 /* YelpApiModel.swift */; };
+		3906D3E129D96DC700198F90 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3906D3E029D96DC700198F90 /* Kingfisher */; };
+		3906D3E329D9742C00198F90 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3906D3E229D9742C00198F90 /* Business.swift */; };
+		3906D3E529D9751100198F90 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3906D3E429D9751100198F90 /* Location.swift */; };
+		3906D3E729D976EA00198F90 /* Businesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3906D3E629D976EA00198F90 /* Businesses.swift */; };
+		3907DDF929E13686008353B5 /* GuestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907DDF829E13686008353B5 /* GuestCell.swift */; };
+		393468C629DAC82D00284D09 /* BusinessInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393468C529DAC82D00284D09 /* BusinessInformationViewController.swift */; };
+		393468CA29DAD05700284D09 /* BusinessSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393468C929DAD05700284D09 /* BusinessSchedule.swift */; };
+		394ED25D29DD00750070BF81 /* HoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394ED25C29DD00750070BF81 /* HoursViewController.swift */; };
+		394ED25F29DD1FE00070BF81 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394ED25E29DD1FE00070BF81 /* FriendsViewController.swift */; };
+		3950950929E2059B00CF4A04 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950950829E2059B00CF4A04 /* CurrentUser.swift */; };
+		3952512629D7A690008F665F /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952512529D7A690008F665F /* CustomTabBar.swift */; };
+		395AB11029E0D7F600125E05 /* CreateAPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395AB10F29E0D7F600125E05 /* CreateAPlanViewController.swift */; };
+		396723E229DA546600AB10A0 /* BusinessCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396723E129DA546600AB10A0 /* BusinessCell.swift */; };
+		3980B26129DADADC0079409E /* SpecificBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3980B26029DADADC0079409E /* SpecificBusiness.swift */; };
+		39ABDD0929D6B408009881ED /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ABDD0829D6B408009881ED /* HomeViewController.swift */; };
+		39BD514129DC8AD900E0D181 /* Open.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BD514029DC8AD900E0D181 /* Open.swift */; };
+		39C74CFE29D677B700271CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C74CFD29D677B700271CAD /* AppDelegate.swift */; };
+		39C74D0029D677B700271CAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C74CFF29D677B700271CAD /* SceneDelegate.swift */; };
+		39C74D0229D677B700271CAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C74D0129D677B700271CAD /* ViewController.swift */; };
+		39C74D0529D677B700271CAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39C74D0329D677B700271CAD /* Main.storyboard */; };
+		39C74D0729D677B700271CAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39C74D0629D677B700271CAD /* Assets.xcassets */; };
+		39C74D0A29D677B700271CAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39C74D0829D677B700271CAD /* LaunchScreen.storyboard */; };
+		39C74D1529D677B800271CAD /* PlanvyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C74D1429D677B800271CAD /* PlanvyTests.swift */; };
+		39C74D1F29D677B800271CAD /* PlanvyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C74D1E29D677B800271CAD /* PlanvyUITests.swift */; };
+		39C74D2129D677B800271CAD /* PlanvyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C74D2029D677B800271CAD /* PlanvyUITestsLaunchTests.swift */; };
+		39C74D3229D6792A00271CAD /* animationViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C74D3129D6792A00271CAD /* animationViewScreen.swift */; };
+		39C74D3529D6798100271CAD /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 39C74D3429D6798100271CAD /* Lottie */; };
+		39C74D3929D683CE00271CAD /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C74D3829D683CE00271CAD /* LogInViewController.swift */; };
+		39C74D5629D6870600271CAD /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39C74D5229D6870600271CAD /* Quicksand-Bold.ttf */; };
+		39C74D5729D6870600271CAD /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39C74D5329D6870600271CAD /* Quicksand-Medium.ttf */; };
+		39C74D5829D6870600271CAD /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39C74D5429D6870600271CAD /* Quicksand-Regular.ttf */; };
+		39C74D5929D6870600271CAD /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39C74D5529D6870600271CAD /* Quicksand-Light.ttf */; };
+		39C74D5D29D69DD300271CAD /* ColorAndFontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C74D5C29D69DD300271CAD /* ColorAndFontManager.swift */; };
+		39C74D5F29D6A62D00271CAD /* FontWeightEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C74D5E29D6A62D00271CAD /* FontWeightEnum.swift */; };
+		39D607AF29E23A4500422E90 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D607AE29E23A4500422E90 /* Group.swift */; };
+		39D607B329E2531B00422E90 /* AutoComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D607B229E2531B00422E90 /* AutoComplete.swift */; };
+		39D607B529E255AB00422E90 /* BusinessesAutoComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D607B429E255AB00422E90 /* BusinessesAutoComplete.swift */; };
+		39D607B729E2560700422E90 /* CategoriesAutoComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D607B629E2560700422E90 /* CategoriesAutoComplete.swift */; };
+		39E71C3929DF4B6C0072C3EF /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 39E71C3829DF4B6C0072C3EF /* SkeletonView */; };
+		39E71C3B29DF6A3E0072C3EF /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E71C3A29DF6A3E0072C3EF /* GroupCell.swift */; };
+		39E71C3D29DF77BB0072C3EF /* FriendContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E71C3C29DF77BB0072C3EF /* FriendContactCell.swift */; };
+		39E7882529DA5937003BEF06 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E7882429DA5937003BEF06 /* Category.swift */; };
+		39F771E329D7E79D00515FD9 /* PlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F771E229D7E79D00515FD9 /* PlanCell.swift */; };
+		39F771E529D801C500515FD9 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F771E429D801C500515FD9 /* Plan.swift */; };
+		39F771E729D8020800515FD9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F771E629D8020800515FD9 /* User.swift */; };
+		39F7813729DB9A0C00C94B3B /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F7813629DB9A0C00C94B3B /* Term.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		39C74D1129D677B800271CAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 39C74CF229D677B700271CAD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 39C74CF929D677B700271CAD;
+			remoteInfo = Planvy;
+		};
+		39C74D1B29D677B800271CAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 39C74CF229D677B700271CAD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 39C74CF929D677B700271CAD;
+			remoteInfo = Planvy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3906D3DB29D9639000198F90 /* YelpCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpCategories.swift; sourceTree = "<group>"; };
+		3906D3DD29D96DAD00198F90 /* YelpApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpApiModel.swift; sourceTree = "<group>"; };
+		3906D3E229D9742C00198F90 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		3906D3E429D9751100198F90 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		3906D3E629D976EA00198F90 /* Businesses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Businesses.swift; sourceTree = "<group>"; };
+		3907DDF829E13686008353B5 /* GuestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCell.swift; sourceTree = "<group>"; };
+		393468C529DAC82D00284D09 /* BusinessInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessInformationViewController.swift; sourceTree = "<group>"; };
+		393468C929DAD05700284D09 /* BusinessSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSchedule.swift; sourceTree = "<group>"; };
+		394ED25C29DD00750070BF81 /* HoursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursViewController.swift; sourceTree = "<group>"; };
+		394ED25E29DD1FE00070BF81 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		3950950829E2059B00CF4A04 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		3952512529D7A690008F665F /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		395AB10F29E0D7F600125E05 /* CreateAPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAPlanViewController.swift; sourceTree = "<group>"; };
+		396723E129DA546600AB10A0 /* BusinessCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCell.swift; sourceTree = "<group>"; };
+		3980B26029DADADC0079409E /* SpecificBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificBusiness.swift; sourceTree = "<group>"; };
+		39ABDD0829D6B408009881ED /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		39BD514029DC8AD900E0D181 /* Open.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Open.swift; sourceTree = "<group>"; };
+		39C74CFA29D677B700271CAD /* Planvy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planvy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		39C74CFD29D677B700271CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		39C74CFF29D677B700271CAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		39C74D0129D677B700271CAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		39C74D0429D677B700271CAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		39C74D0629D677B700271CAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		39C74D0929D677B700271CAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		39C74D0B29D677B700271CAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39C74D1029D677B800271CAD /* PlanvyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanvyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		39C74D1429D677B800271CAD /* PlanvyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanvyTests.swift; sourceTree = "<group>"; };
+		39C74D1A29D677B800271CAD /* PlanvyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanvyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		39C74D1E29D677B800271CAD /* PlanvyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanvyUITests.swift; sourceTree = "<group>"; };
+		39C74D2029D677B800271CAD /* PlanvyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanvyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		39C74D3129D6792A00271CAD /* animationViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animationViewScreen.swift; sourceTree = "<group>"; };
+		39C74D3829D683CE00271CAD /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		39C74D5229D6870600271CAD /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
+		39C74D5329D6870600271CAD /* Quicksand-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Medium.ttf"; sourceTree = "<group>"; };
+		39C74D5429D6870600271CAD /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
+		39C74D5529D6870600271CAD /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
+		39C74D5C29D69DD300271CAD /* ColorAndFontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAndFontManager.swift; sourceTree = "<group>"; };
+		39C74D5E29D6A62D00271CAD /* FontWeightEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWeightEnum.swift; sourceTree = "<group>"; };
+		39D607AE29E23A4500422E90 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		39D607B229E2531B00422E90 /* AutoComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoComplete.swift; sourceTree = "<group>"; };
+		39D607B429E255AB00422E90 /* BusinessesAutoComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessesAutoComplete.swift; sourceTree = "<group>"; };
+		39D607B629E2560700422E90 /* CategoriesAutoComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesAutoComplete.swift; sourceTree = "<group>"; };
+		39E71C3A29DF6A3E0072C3EF /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		39E71C3C29DF77BB0072C3EF /* FriendContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendContactCell.swift; sourceTree = "<group>"; };
+		39E7882429DA5937003BEF06 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		39F771E229D7E79D00515FD9 /* PlanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCell.swift; sourceTree = "<group>"; };
+		39F771E429D801C500515FD9 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
+		39F771E629D8020800515FD9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		39F7813629DB9A0C00C94B3B /* Term.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		39C74CF729D677B700271CAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3906D3E129D96DC700198F90 /* Kingfisher in Frameworks */,
+				39E71C3929DF4B6C0072C3EF /* SkeletonView in Frameworks */,
+				39C74D3529D6798100271CAD /* Lottie in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39C74D0D29D677B800271CAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39C74D1729D677B800271CAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		393468C429DAC6E300284D09 /* Yelp API Structs */ = {
+			isa = PBXGroup;
+			children = (
+				3906D3E429D9751100198F90 /* Location.swift */,
+				3906D3E229D9742C00198F90 /* Business.swift */,
+				3906D3E629D976EA00198F90 /* Businesses.swift */,
+				393468C929DAD05700284D09 /* BusinessSchedule.swift */,
+				3980B26029DADADC0079409E /* SpecificBusiness.swift */,
+				3906D3DB29D9639000198F90 /* YelpCategories.swift */,
+				39F7813629DB9A0C00C94B3B /* Term.swift */,
+				39BD514029DC8AD900E0D181 /* Open.swift */,
+				39D607B229E2531B00422E90 /* AutoComplete.swift */,
+				39D607B429E255AB00422E90 /* BusinessesAutoComplete.swift */,
+				39D607B629E2560700422E90 /* CategoriesAutoComplete.swift */,
+			);
+			path = "Yelp API Structs";
+			sourceTree = "<group>";
+		};
+		39C74CF129D677B700271CAD = {
+			isa = PBXGroup;
+			children = (
+				39C74CFC29D677B700271CAD /* Planvy */,
+				39C74D1329D677B800271CAD /* PlanvyTests */,
+				39C74D1D29D677B800271CAD /* PlanvyUITests */,
+				39C74CFB29D677B700271CAD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		39C74CFB29D677B700271CAD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				39C74CFA29D677B700271CAD /* Planvy.app */,
+				39C74D1029D677B800271CAD /* PlanvyTests.xctest */,
+				39C74D1A29D677B800271CAD /* PlanvyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		39C74CFC29D677B700271CAD /* Planvy */ = {
+			isa = PBXGroup;
+			children = (
+				39C74D3029D677D400271CAD /* Model */,
+				39C74D2F29D677CD00271CAD /* View */,
+				39C74D2E29D677C700271CAD /* Controller */,
+				39C74D2D29D677BE00271CAD /* Supporting Files */,
+				39C74D0B29D677B700271CAD /* Info.plist */,
+			);
+			path = Planvy;
+			sourceTree = "<group>";
+		};
+		39C74D1329D677B800271CAD /* PlanvyTests */ = {
+			isa = PBXGroup;
+			children = (
+				39C74D1429D677B800271CAD /* PlanvyTests.swift */,
+			);
+			path = PlanvyTests;
+			sourceTree = "<group>";
+		};
+		39C74D1D29D677B800271CAD /* PlanvyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				39C74D1E29D677B800271CAD /* PlanvyUITests.swift */,
+				39C74D2029D677B800271CAD /* PlanvyUITestsLaunchTests.swift */,
+			);
+			path = PlanvyUITests;
+			sourceTree = "<group>";
+		};
+		39C74D2D29D677BE00271CAD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				39C74D5129D6870600271CAD /* 05_Font */,
+				39C74CFF29D677B700271CAD /* SceneDelegate.swift */,
+				39C74D0629D677B700271CAD /* Assets.xcassets */,
+				39C74CFD29D677B700271CAD /* AppDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		39C74D2E29D677C700271CAD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				39C74D0129D677B700271CAD /* ViewController.swift */,
+				39C74D3129D6792A00271CAD /* animationViewScreen.swift */,
+				39C74D3829D683CE00271CAD /* LogInViewController.swift */,
+				39ABDD0829D6B408009881ED /* HomeViewController.swift */,
+				393468C529DAC82D00284D09 /* BusinessInformationViewController.swift */,
+				394ED25C29DD00750070BF81 /* HoursViewController.swift */,
+				394ED25E29DD1FE00070BF81 /* FriendsViewController.swift */,
+				395AB10F29E0D7F600125E05 /* CreateAPlanViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		39C74D2F29D677CD00271CAD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				39C74D0829D677B700271CAD /* LaunchScreen.storyboard */,
+				39C74D0329D677B700271CAD /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		39C74D3029D677D400271CAD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				393468C429DAC6E300284D09 /* Yelp API Structs */,
+				39C74D5C29D69DD300271CAD /* ColorAndFontManager.swift */,
+				39C74D5E29D6A62D00271CAD /* FontWeightEnum.swift */,
+				3952512529D7A690008F665F /* CustomTabBar.swift */,
+				39F771E229D7E79D00515FD9 /* PlanCell.swift */,
+				39F771E429D801C500515FD9 /* Plan.swift */,
+				39F771E629D8020800515FD9 /* User.swift */,
+				3906D3DD29D96DAD00198F90 /* YelpApiModel.swift */,
+				396723E129DA546600AB10A0 /* BusinessCell.swift */,
+				39E7882429DA5937003BEF06 /* Category.swift */,
+				39E71C3A29DF6A3E0072C3EF /* GroupCell.swift */,
+				39E71C3C29DF77BB0072C3EF /* FriendContactCell.swift */,
+				3907DDF829E13686008353B5 /* GuestCell.swift */,
+				3950950829E2059B00CF4A04 /* CurrentUser.swift */,
+				39D607AE29E23A4500422E90 /* Group.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		39C74D5129D6870600271CAD /* 05_Font */ = {
+			isa = PBXGroup;
+			children = (
+				39C74D5229D6870600271CAD /* Quicksand-Bold.ttf */,
+				39C74D5329D6870600271CAD /* Quicksand-Medium.ttf */,
+				39C74D5429D6870600271CAD /* Quicksand-Regular.ttf */,
+				39C74D5529D6870600271CAD /* Quicksand-Light.ttf */,
+			);
+			path = 05_Font;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		39C74CF929D677B700271CAD /* Planvy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39C74D2429D677B800271CAD /* Build configuration list for PBXNativeTarget "Planvy" */;
+			buildPhases = (
+				39C74CF629D677B700271CAD /* Sources */,
+				39C74CF729D677B700271CAD /* Frameworks */,
+				39C74CF829D677B700271CAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Planvy;
+			packageProductDependencies = (
+				39C74D3429D6798100271CAD /* Lottie */,
+				3906D3E029D96DC700198F90 /* Kingfisher */,
+				39E71C3829DF4B6C0072C3EF /* SkeletonView */,
+			);
+			productName = Planvy;
+			productReference = 39C74CFA29D677B700271CAD /* Planvy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		39C74D0F29D677B800271CAD /* PlanvyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39C74D2729D677B800271CAD /* Build configuration list for PBXNativeTarget "PlanvyTests" */;
+			buildPhases = (
+				39C74D0C29D677B800271CAD /* Sources */,
+				39C74D0D29D677B800271CAD /* Frameworks */,
+				39C74D0E29D677B800271CAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				39C74D1229D677B800271CAD /* PBXTargetDependency */,
+			);
+			name = PlanvyTests;
+			productName = PlanvyTests;
+			productReference = 39C74D1029D677B800271CAD /* PlanvyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		39C74D1929D677B800271CAD /* PlanvyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39C74D2A29D677B800271CAD /* Build configuration list for PBXNativeTarget "PlanvyUITests" */;
+			buildPhases = (
+				39C74D1629D677B800271CAD /* Sources */,
+				39C74D1729D677B800271CAD /* Frameworks */,
+				39C74D1829D677B800271CAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				39C74D1C29D677B800271CAD /* PBXTargetDependency */,
+			);
+			name = PlanvyUITests;
+			productName = PlanvyUITests;
+			productReference = 39C74D1A29D677B800271CAD /* PlanvyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		39C74CF229D677B700271CAD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					39C74CF929D677B700271CAD = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					39C74D0F29D677B800271CAD = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 39C74CF929D677B700271CAD;
+					};
+					39C74D1929D677B800271CAD = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 39C74CF929D677B700271CAD;
+					};
+				};
+			};
+			buildConfigurationList = 39C74CF529D677B700271CAD /* Build configuration list for PBXProject "Planvy" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 39C74CF129D677B700271CAD;
+			packageReferences = (
+				39C74D3329D6798100271CAD /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				3906D3DF29D96DC700198F90 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				39E71C3729DF4B6C0072C3EF /* XCRemoteSwiftPackageReference "SkeletonView" */,
+			);
+			productRefGroup = 39C74CFB29D677B700271CAD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				39C74CF929D677B700271CAD /* Planvy */,
+				39C74D0F29D677B800271CAD /* PlanvyTests */,
+				39C74D1929D677B800271CAD /* PlanvyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		39C74CF829D677B700271CAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39C74D0A29D677B700271CAD /* LaunchScreen.storyboard in Resources */,
+				39C74D5829D6870600271CAD /* Quicksand-Regular.ttf in Resources */,
+				39C74D0729D677B700271CAD /* Assets.xcassets in Resources */,
+				39C74D5929D6870600271CAD /* Quicksand-Light.ttf in Resources */,
+				39C74D0529D677B700271CAD /* Main.storyboard in Resources */,
+				39C74D5629D6870600271CAD /* Quicksand-Bold.ttf in Resources */,
+				39C74D5729D6870600271CAD /* Quicksand-Medium.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39C74D0E29D677B800271CAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39C74D1829D677B800271CAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		39C74CF629D677B700271CAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39F771E329D7E79D00515FD9 /* PlanCell.swift in Sources */,
+				39E71C3D29DF77BB0072C3EF /* FriendContactCell.swift in Sources */,
+				39C74D0229D677B700271CAD /* ViewController.swift in Sources */,
+				3950950929E2059B00CF4A04 /* CurrentUser.swift in Sources */,
+				39E7882529DA5937003BEF06 /* Category.swift in Sources */,
+				3906D3E529D9751100198F90 /* Location.swift in Sources */,
+				395AB11029E0D7F600125E05 /* CreateAPlanViewController.swift in Sources */,
+				393468CA29DAD05700284D09 /* BusinessSchedule.swift in Sources */,
+				39F7813729DB9A0C00C94B3B /* Term.swift in Sources */,
+				3906D3E729D976EA00198F90 /* Businesses.swift in Sources */,
+				39E71C3B29DF6A3E0072C3EF /* GroupCell.swift in Sources */,
+				39C74CFE29D677B700271CAD /* AppDelegate.swift in Sources */,
+				3906D3E329D9742C00198F90 /* Business.swift in Sources */,
+				39C74D5D29D69DD300271CAD /* ColorAndFontManager.swift in Sources */,
+				394ED25F29DD1FE00070BF81 /* FriendsViewController.swift in Sources */,
+				3980B26129DADADC0079409E /* SpecificBusiness.swift in Sources */,
+				3906D3DC29D9639000198F90 /* YelpCategories.swift in Sources */,
+				39F771E529D801C500515FD9 /* Plan.swift in Sources */,
+				394ED25D29DD00750070BF81 /* HoursViewController.swift in Sources */,
+				39D607AF29E23A4500422E90 /* Group.swift in Sources */,
+				39ABDD0929D6B408009881ED /* HomeViewController.swift in Sources */,
+				3952512629D7A690008F665F /* CustomTabBar.swift in Sources */,
+				39D607B329E2531B00422E90 /* AutoComplete.swift in Sources */,
+				39D607B529E255AB00422E90 /* BusinessesAutoComplete.swift in Sources */,
+				3907DDF929E13686008353B5 /* GuestCell.swift in Sources */,
+				396723E229DA546600AB10A0 /* BusinessCell.swift in Sources */,
+				39C74D0029D677B700271CAD /* SceneDelegate.swift in Sources */,
+				39F771E729D8020800515FD9 /* User.swift in Sources */,
+				393468C629DAC82D00284D09 /* BusinessInformationViewController.swift in Sources */,
+				39C74D3929D683CE00271CAD /* LogInViewController.swift in Sources */,
+				39C74D3229D6792A00271CAD /* animationViewScreen.swift in Sources */,
+				39C74D5F29D6A62D00271CAD /* FontWeightEnum.swift in Sources */,
+				39D607B729E2560700422E90 /* CategoriesAutoComplete.swift in Sources */,
+				3906D3DE29D96DAD00198F90 /* YelpApiModel.swift in Sources */,
+				39BD514129DC8AD900E0D181 /* Open.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39C74D0C29D677B800271CAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39C74D1529D677B800271CAD /* PlanvyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39C74D1629D677B800271CAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39C74D2129D677B800271CAD /* PlanvyUITestsLaunchTests.swift in Sources */,
+				39C74D1F29D677B800271CAD /* PlanvyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		39C74D1229D677B800271CAD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 39C74CF929D677B700271CAD /* Planvy */;
+			targetProxy = 39C74D1129D677B800271CAD /* PBXContainerItemProxy */;
+		};
+		39C74D1C29D677B800271CAD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 39C74CF929D677B700271CAD /* Planvy */;
+			targetProxy = 39C74D1B29D677B800271CAD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		39C74D0329D677B700271CAD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				39C74D0429D677B700271CAD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		39C74D0829D677B700271CAD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				39C74D0929D677B700271CAD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		39C74D2229D677B800271CAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		39C74D2329D677B800271CAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		39C74D2529D677B800271CAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B549568D58;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Planvy/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need location for Hotspots";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jfouladi.Planvy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		39C74D2629D677B800271CAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B549568D58;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Planvy/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need location for Hotspots";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jfouladi.Planvy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		39C74D2829D677B800271CAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B549568D58;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jfouladi.PlanvyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Planvy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Planvy";
+			};
+			name = Debug;
+		};
+		39C74D2929D677B800271CAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B549568D58;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jfouladi.PlanvyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Planvy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Planvy";
+			};
+			name = Release;
+		};
+		39C74D2B29D677B800271CAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B549568D58;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jfouladi.PlanvyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Planvy;
+			};
+			name = Debug;
+		};
+		39C74D2C29D677B800271CAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B549568D58;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jfouladi.PlanvyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Planvy;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		39C74CF529D677B700271CAD /* Build configuration list for PBXProject "Planvy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39C74D2229D677B800271CAD /* Debug */,
+				39C74D2329D677B800271CAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39C74D2429D677B800271CAD /* Build configuration list for PBXNativeTarget "Planvy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39C74D2529D677B800271CAD /* Debug */,
+				39C74D2629D677B800271CAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39C74D2729D677B800271CAD /* Build configuration list for PBXNativeTarget "PlanvyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39C74D2829D677B800271CAD /* Debug */,
+				39C74D2929D677B800271CAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39C74D2A29D677B800271CAD /* Build configuration list for PBXNativeTarget "PlanvyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39C74D2B29D677B800271CAD /* Debug */,
+				39C74D2C29D677B800271CAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3906D3DF29D96DC700198F90 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		39C74D3329D6798100271CAD /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		39E71C3729DF4B6C0072C3EF /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3906D3E029D96DC700198F90 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3906D3DF29D96DC700198F90 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		39C74D3429D6798100271CAD /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 39C74D3329D6798100271CAD /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+		39E71C3829DF4B6C0072C3EF /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 39E71C3729DF4B6C0072C3EF /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 39C74CF229D677B700271CAD /* Project object */;
+}
