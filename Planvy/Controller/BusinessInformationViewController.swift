@@ -186,7 +186,7 @@ class BusinessInformationViewController: UIViewController {
                     closedOpenLabel.text = "Open"
                     closedOpenLabel.textColor = designManager.green
                     todayClosingTimeLabel.text = "until \(businessSchedule.getTodaysCloseTime())"
-                    print(todayClosingTimeLabel.text)
+
                 } else if !businessSchedule.is_open_now && businessSchedule.getIsAlreadyClosed() {
                     closedOpenLabel.text = "Closed now"
                     closedOpenLabel.textColor = designManager.red
@@ -195,7 +195,7 @@ class BusinessInformationViewController: UIViewController {
                     closedOpenLabel.text = "Closed"
                     closedOpenLabel.textColor = designManager.red
                     todayClosingTimeLabel.text = "• \(businessSchedule.getTodaysHours())"
-                    print(businessSchedule.getFormattedSchedule()[businessSchedule.getTodaysDay()])
+                    
                 }
             }
         }
