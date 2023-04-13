@@ -66,115 +66,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         hotspotsButton.setTitle(currentHotspotCategory?.stringValue, for: .normal)
         
         
-        //--------Change font of tab bar-----------------------------------------
-        
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: designManager.font(weight: .Regular, size: 10)], for: .normal)
-        
-        
-        //------NAVIGATION BAR SET UP------------------------------------
-        
-        // create right button
-        let addButton = UIButton(type: .custom)
-
-        addButton.setImage(UIImage(named: "add white"), for: .normal)
-        addButton.frame = CGRect(x: 0, y: 0, width: 55, height: 55)
-        addButton.layer.backgroundColor = designManager.orange.cgColor
-        addButton.layer.cornerRadius =  addButton.frame.height/2
-        
-        
-        
-        // Set navigation bar height
-        let navBarHeight: CGFloat = 60
-        let navBar = navigationController?.navigationBar
-        navBar?.frame.size.height = navBarHeight
-
-        // Set image as title on left side
-        let logo = UIImage(named: "logo small")
-        let imageView = UIImageView(image: logo)
-        imageView.contentMode = .scaleAspectFit
-        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: navBarHeight))
-        imageView.frame = titleView.bounds
-        titleView.addSubview(imageView)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleView)
-        
-
-        // Add button on right side
-        
-//        let rightBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "add white"), style: .plain, target: self, action: #selector(addButtonDidTapped))
-//        rightBarButtonItem.customView?.frame = CGRect(x: 0, y: 0, width: 55, height: 55)
-//        rightBarButtonItem.customView?.layer.cornerRadius = (rightBarButtonItem.customView?.frame.height)!/2
-//        rightBarButtonItem.customView?.backgroundColor = designManager.orange
-//
-//
-//        self.navigationItem.rightBarButtonItem = rightBarButtonItem
-        
-        
-        let buttonView = UIView(frame: CGRect(x: 0, y: 0, width: addButton.frame.width, height: addButton.frame.height))
-        addButton.frame = buttonView.bounds
-
-        buttonView.addSubview(addButton)
-
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: buttonView)
-        
-        
-        //----------FUNCTION NOT LINKING
-//        navigationItem.rightBarButtonItem?.target = self
-//        navigationItem.rightBarButtonItem?.action = #selector(addButtonDidTapped)
-//        print(navigationItem.rightBarButtonItem?.action)
-//        print(navigationItem.rightBarButtonItem?.target)
-        
-        
-//        let gestureTap = UIGestureRecognizer(target: self, action: #selector(self.addButtonDidTapped(_:)))
-//
-//
-//        navigationItem.rightBarButtonItem?.customView?.addGestureRecognizer(gestureTap)
-
-        
-
-        // CENTER ALIGN
-        
-        //--------Collection View Holder UI------------------------------
-        
-        // add blurring
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = collectionViewHolderView1.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        collectionViewHolderView1.addSubview(blurEffectView)
-        collectionViewHolderView1.layer.cornerRadius = 20
-        blurEffectView.layer.cornerRadius = 20
-        blurEffectView.clipsToBounds = true
-
-        let blurEffect2 = UIBlurEffect(style: UIBlurEffect.Style.light)
-        let blurEffectView2 = UIVisualEffectView(effect: blurEffect2)
-        blurEffectView2.frame = collectionViewHolderView2.bounds
-        blurEffectView2.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        collectionViewHolderView2.addSubview(blurEffectView2)
-        collectionViewHolderView2.layer.cornerRadius = 20
-        blurEffectView2.layer.cornerRadius = 20
-        blurEffectView2.clipsToBounds = true
-        
-        //bring labels to front
-        collectionViewHolderView1.bringSubviewToFront(upcomingEventsLabel)
-        upcomingEventsLabel.font = designManager.font(weight: .Bold, size: 15)
-        upcomingEventsLabel.textColor = designManager.white
-        
-        collectionViewHolderView2.bringSubviewToFront(localHotspotsLabel)
-        localHotspotsLabel.font = designManager.font(weight: .Bold, size: 15)
-        localHotspotsLabel.textColor = designManager.white
-        
-        
-        //bring actual collection views to front
-        collectionViewHolderView1.bringSubviewToFront(plansCollectionView)
-        
-        collectionViewHolderView2.bringSubviewToFront(hotspotsCollectionView)
-        
-        //bring hotspot button to front
-        collectionViewHolderView2.bringSubviewToFront(hotspotsButton)
-        
-        hotspotsButton.contentHorizontalAlignment = .left
-        hotspotsButton.titleLabel?.font = designManager.font(weight: .Bold, size: 15)
-        hotspotsButton.tintColor = designManager.orange
+        //----- Set Up UI
+        setUpUI()
         
     
     }
@@ -315,6 +208,118 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
             }
         }
+    }
+    
+    func setUpUI() {
+        //--------Change font of tab bar-----------------------------------------
+        
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: designManager.font(weight: .Regular, size: 10)], for: .normal)
+        
+        
+        //------NAVIGATION BAR SET UP------------------------------------
+        
+        // create right button
+        let addButton = UIButton(type: .custom)
+
+        addButton.setImage(UIImage(named: "add white"), for: .normal)
+        addButton.frame = CGRect(x: 0, y: 0, width: 55, height: 55)
+        addButton.layer.backgroundColor = designManager.orange.cgColor
+        addButton.layer.cornerRadius =  addButton.frame.height/2
+        
+        
+        
+        // Set navigation bar height
+        let navBarHeight: CGFloat = 60
+        let navBar = navigationController?.navigationBar
+        navBar?.frame.size.height = navBarHeight
+
+        // Set image as title on left side
+        let logo = UIImage(named: "logo small")
+        let imageView = UIImageView(image: logo)
+        imageView.contentMode = .scaleAspectFit
+        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: navBarHeight))
+        imageView.frame = titleView.bounds
+        titleView.addSubview(imageView)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleView)
+        
+
+        // Add button on right side
+        
+//        let rightBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "add white"), style: .plain, target: self, action: #selector(addButtonDidTapped))
+//        rightBarButtonItem.customView?.frame = CGRect(x: 0, y: 0, width: 55, height: 55)
+//        rightBarButtonItem.customView?.layer.cornerRadius = (rightBarButtonItem.customView?.frame.height)!/2
+//        rightBarButtonItem.customView?.backgroundColor = designManager.orange
+//
+//
+//        self.navigationItem.rightBarButtonItem = rightBarButtonItem
+        
+        
+        let buttonView = UIView(frame: CGRect(x: 0, y: 0, width: addButton.frame.width, height: addButton.frame.height))
+        addButton.frame = buttonView.bounds
+
+        buttonView.addSubview(addButton)
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: buttonView)
+        
+        
+        //----------FUNCTION NOT LINKING
+//        navigationItem.rightBarButtonItem?.target = self
+//        navigationItem.rightBarButtonItem?.action = #selector(addButtonDidTapped)
+//        print(navigationItem.rightBarButtonItem?.action)
+//        print(navigationItem.rightBarButtonItem?.target)
+        
+        
+//        let gestureTap = UIGestureRecognizer(target: self, action: #selector(self.addButtonDidTapped(_:)))
+//
+//
+//        navigationItem.rightBarButtonItem?.customView?.addGestureRecognizer(gestureTap)
+
+        
+
+        // CENTER ALIGN
+        
+        //--------Collection View Holder UI------------------------------
+        
+        // add blurring
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = collectionViewHolderView1.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionViewHolderView1.addSubview(blurEffectView)
+        collectionViewHolderView1.layer.cornerRadius = 20
+        blurEffectView.layer.cornerRadius = 20
+        blurEffectView.clipsToBounds = true
+
+        let blurEffect2 = UIBlurEffect(style: UIBlurEffect.Style.light)
+        let blurEffectView2 = UIVisualEffectView(effect: blurEffect2)
+        blurEffectView2.frame = collectionViewHolderView2.bounds
+        blurEffectView2.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionViewHolderView2.addSubview(blurEffectView2)
+        collectionViewHolderView2.layer.cornerRadius = 20
+        blurEffectView2.layer.cornerRadius = 20
+        blurEffectView2.clipsToBounds = true
+        
+        //bring labels to front
+        collectionViewHolderView1.bringSubviewToFront(upcomingEventsLabel)
+        upcomingEventsLabel.font = designManager.font(weight: .Bold, size: 15)
+        upcomingEventsLabel.textColor = designManager.white
+        
+        collectionViewHolderView2.bringSubviewToFront(localHotspotsLabel)
+        localHotspotsLabel.font = designManager.font(weight: .Bold, size: 15)
+        localHotspotsLabel.textColor = designManager.white
+        
+        
+        //bring actual collection views to front
+        collectionViewHolderView1.bringSubviewToFront(plansCollectionView)
+        
+        collectionViewHolderView2.bringSubviewToFront(hotspotsCollectionView)
+        
+        //bring hotspot button to front
+        collectionViewHolderView2.bringSubviewToFront(hotspotsButton)
+        
+        hotspotsButton.contentHorizontalAlignment = .left
+        hotspotsButton.titleLabel?.font = designManager.font(weight: .Bold, size: 15)
+        hotspotsButton.tintColor = designManager.orange
     }
     
     
