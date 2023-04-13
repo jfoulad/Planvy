@@ -10,7 +10,6 @@ import UIKit
 class HoursViewController: UIViewController {
 
     
-    @IBOutlet weak var testLabel: UILabel!
     
     var formattedSchedule: Dictionary<String,String> = [:]
     
