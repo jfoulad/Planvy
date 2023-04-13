@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class LogInViewController: UIViewController {
 
@@ -22,13 +23,63 @@ class LogInViewController: UIViewController {
 
     @IBOutlet weak var forgotPasswordButton: UIButton!
     
+    let currentUserModel = CurrentUser.shared
+    let animationView = LottieAnimationView(name: "logoAnimation")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-
+        
+        //Added this user to firestore
+//        let user = User(email: "jf@gmail.com", firstName: "Jeremy", lastName: "Fouladian", password: "test123", profilePicURL: nil)
+//
+//        currentUserModel.addUserToDatabase(user: user)
+        
+        //check if log in credientials match
+        
+        
         setUpUI()
+    }
+    
+    
+    @IBAction func logInDidTapped(_ sender: UIButton) {
+        let email = emailTF.text
+        let password = passwordTF.text
+        
+        
+        if let email, let password {
+            currentUserModel.logIn(email: email, password: password, onSuccess: {user in
+                self.currentUserModel.setCurrentUser(user: user)
+                print(self.currentUserModel.isCurrentUserNil())
+                self.animationView.stop()
+                self.animationView.isHidden = true
+            })
+            
+            print(currentUserModel.isCurrentUserNil())
+            startAnimation()
+        }
+    }
+    
+    
+    
+    func startAnimation() {
+        
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(animationView)
+
+        // Add constraints to center the subview horizontally and vertically
+        animationView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        animationView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+
+        // Add constraints to set the width and height of the subview
+        animationView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        animationView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+
+        animationView.loopMode = .autoReverse
+        animationView.play()
+        
     }
     
 

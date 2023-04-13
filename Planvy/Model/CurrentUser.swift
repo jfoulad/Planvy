@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 
 class CurrentUser {
     
     private var currentUser: User?
     
+    let userCollectionRef = Firestore.firestore().collection("users")
     
     private var sortedPlansArray: Array<Plan> {
         let plansSet = currentUser!.getPlans()
@@ -27,6 +29,13 @@ class CurrentUser {
     static let shared = CurrentUser()
     
 
+    func isCurrentUserNil() -> Bool {
+        if currentUser == nil {
+            return true
+        } else {
+            return false
+        }
+    }
     
     func setCurrentUser(user: User) {
         currentUser = user
@@ -45,7 +54,44 @@ class CurrentUser {
         currentUser!.addPlans(plan: plan)
     }
     
+    func addUserToDatabase(user:User) {
+        do {
+            let documentID = userCollectionRef.document().documentID
+            try userCollectionRef.document(documentID).setData(from: user)
+            try userCollectionRef.document(documentID).updateData([
+                "id": "\(documentID)"
+            ])
+        } catch {
+            print(error)
+        }
+    }
     
+    func logIn(email: String, password: String, onSuccess: @escaping (User) -> Void) {
+        userCollectionRef.getDocuments(completion: { snapshot, error in
+            
+            let id = ""
+            for doc in snapshot!.documents {
+                let docEmail = doc.data()["email"] as? String
+                let docPassword = doc.data()["password"] as? String
+                
+                if let docEmail, let docPassword {
+                    if email == docEmail && password == docPassword {
+                        
+                        do {
+                            let user = try doc.data(as: User.self)
+                            onSuccess(user)
+                        } catch {
+                            print(error)
+                        }
+                        
+                    } else {
+                        print("wrong info")
+                    }
+                }
+            }
+
+        })
+    }
     
     
     

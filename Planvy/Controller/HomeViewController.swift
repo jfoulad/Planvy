@@ -37,10 +37,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         super.viewDidLoad()
         
         
-        //Current User Setup
-        let user = User(email: "jf@gmail.com", firstName: "Jeremy", lastName: "Fouladian", password: "test123", profilePicURL: nil)
-        
-        currentUserModel.setCurrentUser(user: user)
+//        //Current User Setup
+//        let user = User(email: "jf@gmail.com", firstName: "Jeremy", lastName: "Fouladian", password: "test123", profilePicURL: nil)
+//        
+//        currentUserModel.setCurrentUser(user: user)
         
                 
         // Do any additional setup after loading the view.
