@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
 
-struct Businesses: Decodable {
+struct Businesses: Codable {
     let businesses: Array<Business>
 }

@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
 
-class Group: Hashable {
+class Group: Hashable, Codable {
 
     
     private var members: Set<User>

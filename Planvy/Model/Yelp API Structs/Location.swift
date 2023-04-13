@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
-struct Location: Decodable {
+struct Location: Codable {
     let address1: String?
     let address2: String?
     let address3: String?
@@ -16,16 +17,6 @@ struct Location: Decodable {
     let state: String?
     let display_address: Array<String>
     
-    var formattedAddress: String {
-        var formattedAddress = ""
-        for address in self.display_address {
-            formattedAddress.append("\(address), ")
-        }
-        formattedAddress.remove(at: formattedAddress.index(before: formattedAddress.endIndex))
-        formattedAddress.remove(at: formattedAddress.index(before: formattedAddress.endIndex))
-        
-        return formattedAddress
-    }
     
     
     func getFormattedAddress() -> String {

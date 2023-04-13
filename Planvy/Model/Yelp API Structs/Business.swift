@@ -6,11 +6,11 @@
 //
 
 import Foundation
-import UIKit
 import Kingfisher
+import FirebaseFirestoreSwift
 
 
-struct Business: Decodable {
+struct Business: Codable {
     let id: String
     let name: String?
     let image_url: String?
@@ -19,7 +19,8 @@ struct Business: Decodable {
     let location: Location
     let categories: Array<Category>
 
-    var formattedCategories: String {
+    
+    func getFormattedCategories() -> String {
         var categoriesText = ""
         for category in self.categories {
             categoriesText.append("\(category.title), ")
@@ -28,18 +29,7 @@ struct Business: Decodable {
         categoriesText.remove(at: categoriesText.index(before: categoriesText.endIndex))
         
         return categoriesText
-        
     }
     
-    var imageURLObject : UIImageView {
-        let image = UIImageView()
-        if let urlString = image_url {
-            let url = URL(string: urlString)
-
-            image.kf.setImage(with: url)
-
-        }
-        return image
-    }
     
 }

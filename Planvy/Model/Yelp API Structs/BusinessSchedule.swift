@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
 
-struct BusinessSchedule: Decodable {
+struct BusinessSchedule: Codable {
 
 //    let start: String
 //    let end: String

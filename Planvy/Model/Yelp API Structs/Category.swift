@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
-struct Category: Decodable {
+
+struct Category: Codable {
     let title: String
 }

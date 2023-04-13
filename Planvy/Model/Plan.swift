@@ -6,9 +6,10 @@
 //
 
 import Foundation
-import UIKit
+import FirebaseFirestoreSwift
 
-class Plan: Hashable {
+
+class Plan: Hashable, Codable {
     
 
     private var planName: String
@@ -28,7 +29,7 @@ class Plan: Hashable {
         self.acceptedInvite = acceptedInvite
     }
 
-    //testtestt
+    
     
     static func == (lhs: Plan, rhs: Plan) -> Bool {
         return lhs.specificBusiness == rhs.specificBusiness &&

@@ -6,9 +6,10 @@
 //
 
 import Foundation
-import UIKit
+import FirebaseFirestoreSwift
 
-struct SpecificBusiness: Decodable, Equatable, Hashable {
+
+struct SpecificBusiness: Codable, Equatable, Hashable {
     
     let id: String
     let name: String?
@@ -35,16 +36,6 @@ struct SpecificBusiness: Decodable, Equatable, Hashable {
         return categoriesText
     }
     
-    func getMainImage() -> UIImageView {
-        let image = UIImageView()
-        if let urlString = image_url {
-            let url = URL(string: urlString)
-
-            image.kf.setImage(with: url)
-
-        }
-        return image
-    }
     
     
     func getPriceAndCategoryFormatted() -> String {

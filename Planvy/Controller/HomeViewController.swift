@@ -38,7 +38,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         
         //Current User Setup
-        let user = User(email: "jf@gmail.com", firstName: "Jeremy", lastName: "Fouladian", password: "test123", profilePic: nil)
+        let user = User(email: "jf@gmail.com", firstName: "Jeremy", lastName: "Fouladian", password: "test123", profilePicURL: nil)
         
         currentUserModel.setCurrentUser(user: user)
         
@@ -121,9 +121,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             let business = currentHotspotBusinesses[indexPath.row]
 //            let business = yelpManager.businessesArray[indexPath.row]
             cell.nameLabel.text = business.name
-            cell.locationLabel.text = business.location.formattedAddress
+            cell.locationLabel.text = business.location.getFormattedAddress()
             cell.ratingLabel.text = "\(String(describing: business.rating!))"
-            cell.categoryLabel.text = business.formattedCategories
+            cell.categoryLabel.text = business.getFormattedCategories()
 
             if let urlString = business.image_url {
                 let url = URL(string: urlString)

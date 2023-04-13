@@ -6,26 +6,27 @@
 //
 
 import Foundation
-import UIKit
+import FirebaseFirestoreSwift
 
-class User: Hashable {
+
+class User: Hashable, Codable {
     
     private var email: String
     private var firstName: String
     private var lastName: String
     private var password: String
     private var friendsSet: Set<User> = Set()
-    private var profilePic: UIImage?
+    private var profilePicURL: String?
     private var plansSet: Set<Plan> = Set()
     private var groupSet: Set<Group> = Set()
     
     
-    init(email: String, firstName: String, lastName: String, password: String, profilePic: UIImage?) {
+    init(email: String, firstName: String, lastName: String, password: String, profilePicURL: String?) {
         self.email = email
         self.firstName = firstName
         self.lastName = lastName
         self.password = password
-        self.profilePic = profilePic
+        self.profilePicURL = profilePicURL
     }
     
     

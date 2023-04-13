@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
 
-struct Term: Decodable {
+struct Term: Codable {
     let text: String
 }
