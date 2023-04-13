@@ -37,9 +37,12 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         super.viewDidLoad()
         
         
-//        //Current User Setup
+        //----- Set Up UI
+        setUpUI()
+        
+        //Current User Setup
 //        let user = User(email: "jf@gmail.com", firstName: "Jeremy", lastName: "Fouladian", password: "test123", profilePicURL: nil)
-//        
+//
 //        currentUserModel.setCurrentUser(user: user)
         
                 
@@ -60,14 +63,12 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         
         //-----------Start Hotspot Loading--------------------------------------
-//        currentHotspotCategory = YelpCategories.randomize()
-        currentHotspotCategory = YelpCategories.Arts
+        currentHotspotCategory = YelpCategories.randomize()
+//        currentHotspotCategory = YelpCategories.Arts
         loadHotspots()
         hotspotsButton.setTitle(currentHotspotCategory?.stringValue, for: .normal)
         
         
-        //----- Set Up UI
-        setUpUI()
         
     
     }

@@ -55,6 +55,8 @@ class LogInViewController: UIViewController {
                 print(self.currentUserModel.isCurrentUserNil())
                 self.animationView.stop()
                 self.animationView.isHidden = true
+                
+                self.performSegue(withIdentifier: "logInToHome", sender: self)
             })
             
             print(currentUserModel.isCurrentUserNil())

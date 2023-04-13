@@ -27,7 +27,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </backgroundConfiguration>
                                 </buttonConfiguration>
                                 <connections>
@@ -166,6 +166,19 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RiF-yp-npA">
+                                <rect key="frame" x="182" y="768" width="67" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="5X0-0R-GFS" kind="presentation" identifier="logInToHome" modalPresentationStyle="fullScreen" id="BO5-PH-iHz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oNR-wV-Dag"/>
@@ -1200,7 +1213,7 @@
                     <tabBarItem key="tabBarItem" title="Dashboard" image="list.bullet.rectangle.portrait" catalog="system" id="6mX-op-cdT"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NQl-hZ-7Bo">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1215,7 +1228,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="c3g-7W-nJv">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="5X0-0R-GFS" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabVC" automaticallyAdjustsScrollViewInsets="NO" id="5X0-0R-GFS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="c8i-Gb-DJF"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Glr-Sg-wph" customClass="CustomTabBar" customModule="Planvy" customModuleProvider="target">
@@ -1244,7 +1257,7 @@
                     <tabBarItem key="tabBarItem" title="Friends" image="people" id="ASe-by-zir"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JMM-kS-Kjf">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
