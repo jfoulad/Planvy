@@ -21,6 +21,7 @@ class PlanCell: UICollectionViewCell {
     @IBOutlet weak var dateTimeLabel: UILabel!
     
     
+    @IBOutlet weak var nameHolderView: UIView!
     
     
 }

@@ -40,15 +40,16 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         //----- Set Up UI
         setUpUI()
         
-        //Current User Info
-//        let user = User(email: "jf@gmail.com", firstName: "Jeremy", lastName: "Fouladian", password: "test123", profilePicURL: nil)
+//        Current User Info
+        let user = User(email: "jf@gmail.com", firstName: "Jeremy", lastName: "Fouladian", password: "test123", profilePicURL: nil)
+
+        currentUserModel.setCurrentUser(user: user)
+        
+        //test add friend/ not asynch
+//        let friendUser = User(email: "mtuli@gmail.com", firstName: "Maani", lastName: "Tuli", password: "test123", profilePicURL: nil)
 //
-//        currentUserModel.setCurrentUser(user: user)
-        
-        let friendUser = User(email: "mtuli@gmail.com", firstName: "Maani", lastName: "Tuli", password: "test123", profilePicURL: nil)
-        
-        
-        currentUserModel.addFriend(friend: friendUser)
+//
+//        currentUserModel.addFriend(friend: friendUser)
         
         
                 
@@ -93,7 +94,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     // number of items
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 1 {
-            return currentUserModel.getPlans().count
+            let currentPlanCount = currentUserModel.getPlans().count
+            
+            if currentPlanCount == 0 {
+                return 1
+            } else {
+                return currentPlanCount
+            }
+            
         } else {
             return currentHotspotBusinesses.count
         }
@@ -105,6 +113,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         
         if collectionView.tag == 1 {
+            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "planCell", for: indexPath) as! PlanCell
 
                     cell.planNameLabel.font = designManager.font(weight: .Bold, size: 16)
@@ -114,12 +123,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                     cell.backgroundColor = designManager.black
                     cell.layer.cornerRadius = 10
             
-            let plan = currentUserModel.getSortedPlansArray()[indexPath.row]
+            if currentUserModel.getPlans().count == 0 {
+                cell.nameHolderView.isHidden = true
+            } else {
+                let plan = currentUserModel.getSortedPlansArray()[indexPath.row]
+                
+                cell.planNameLabel.text = plan.getPlanName()
+                cell.numberOfAttendeesLabel.text = "\(plan.getAcceptedGuestsSet().count + 1)"
+                cell.locationLabel.text = plan.getSpecificBusinessLocation()
+                cell.dateTimeLabel.text = plan.getFormattedDate()
+            }
             
-            cell.planNameLabel.text = plan.getPlanName()
-            cell.numberOfAttendeesLabel.text = "\(plan.getAcceptedGuestsSet().count + 1)"
-            cell.locationLabel.text = plan.getSpecificBusinessLocation()
-            cell.dateTimeLabel.text = plan.getFormattedDate()
 
             return cell
         } else {
