@@ -68,7 +68,7 @@ struct BusinessSchedule: Codable {
         return schedule
     }
     
-    func getTodaysDay() -> String {
+    static func getTodaysDay() -> String {
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
@@ -88,7 +88,7 @@ struct BusinessSchedule: Codable {
     }
     
     func getTodaysCloseTime() -> String {
-        let todaysHours = getFormattedSchedule()[getTodaysDay()]!
+        let todaysHours = getFormattedSchedule()[BusinessSchedule.getTodaysDay()]!
         
         let array = todaysHours.split(separator: "-")
         let end = array[1].trimmingCharacters(in: .whitespaces)
@@ -96,7 +96,7 @@ struct BusinessSchedule: Codable {
     }
     
     func getTodaysOpenTime() -> String {
-        let todaysHours = getFormattedSchedule()[getTodaysDay()]!
+        let todaysHours = getFormattedSchedule()[BusinessSchedule.getTodaysDay()]!
         
         let array = todaysHours.split(separator: "-")
         let open = array[0].trimmingCharacters(in: .whitespaces)
@@ -105,14 +105,14 @@ struct BusinessSchedule: Codable {
 
     func getIsOpenToday() -> Bool {
         var isOpenToday = false
-        if getFormattedSchedule().keys.contains(getTodaysDay()) {
+        if getFormattedSchedule().keys.contains(BusinessSchedule.getTodaysDay()) {
             isOpenToday = true
         }
         return isOpenToday
     }
     
     func getTodaysHours() -> String {
-        return getFormattedSchedule()[getTodaysDay()]!
+        return getFormattedSchedule()[BusinessSchedule.getTodaysDay()]!
 
     }
 
