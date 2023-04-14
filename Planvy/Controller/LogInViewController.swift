@@ -24,7 +24,7 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var forgotPasswordButton: UIButton!
     
     let currentUserModel = CurrentUser.shared
-    let animationView = LottieAnimationView(name: "logoAnimation")
+    let animationView = LottieAnimationView(name: "fourdots")
     
     
     override func viewDidLoad() {
@@ -52,14 +52,14 @@ class LogInViewController: UIViewController {
         if let email, let password {
             currentUserModel.logIn(email: email, password: password, onSuccess: {user in
                 self.currentUserModel.setCurrentUser(user: user)
-                print(self.currentUserModel.isCurrentUserNil())
+               
                 self.animationView.stop()
                 self.animationView.isHidden = true
                 
                 self.performSegue(withIdentifier: "logInToHome", sender: self)
             })
             
-            print(currentUserModel.isCurrentUserNil())
+            
             startAnimation()
         }
     }

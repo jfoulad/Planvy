@@ -11,6 +11,7 @@ import FirebaseFirestoreSwift
 
 class User: Hashable, Codable {
     
+    @DocumentID var id: String?
     private var email: String
     private var firstName: String
     private var lastName: String
@@ -62,4 +63,5 @@ class User: Hashable, Codable {
     func addGroup(group: Group) {
         groupSet.insert(group)
     }
+    
 }

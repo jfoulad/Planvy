@@ -42,7 +42,7 @@ class CurrentUser {
     }
     
     func getPlans() -> Set<Plan> {
-        return (currentUser!.getPlans())
+        return (currentUser?.getPlans())!
     }
     
     func getSortedPlansArray() -> Array<Plan> {
@@ -50,8 +50,21 @@ class CurrentUser {
     }
     
     
+    func addFriend(friend: User) {
+        currentUser?.addFriend(user: friend)
+        
+        updateUserToDataBase()
+
+    }
+    
+    func getFriends() -> Set<User> {
+        return currentUser!.getFriends()
+    }
+    
+    
     func addPlan(plan: Plan) {
         currentUser!.addPlans(plan: plan)
+
     }
     
     func addUserToDatabase(user:User) {
@@ -69,7 +82,6 @@ class CurrentUser {
     func logIn(email: String, password: String, onSuccess: @escaping (User) -> Void) {
         userCollectionRef.getDocuments(completion: { snapshot, error in
             
-            let id = ""
             for doc in snapshot!.documents {
                 let docEmail = doc.data()["email"] as? String
                 let docPassword = doc.data()["password"] as? String
@@ -91,6 +103,18 @@ class CurrentUser {
             }
 
         })
+    }
+    
+    func updateUserToDataBase() {
+        if let id = currentUser!.id {
+            let docRef = userCollectionRef.document(id)
+            do {
+              try docRef.setData(from: currentUser)
+            }
+            catch {
+              print(error)
+            }
+          }
     }
     
     

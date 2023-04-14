@@ -40,10 +40,16 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         //----- Set Up UI
         setUpUI()
         
-        //Current User Setup
+        //Current User Info
 //        let user = User(email: "jf@gmail.com", firstName: "Jeremy", lastName: "Fouladian", password: "test123", profilePicURL: nil)
 //
 //        currentUserModel.setCurrentUser(user: user)
+        
+        let friendUser = User(email: "mtuli@gmail.com", firstName: "Maani", lastName: "Tuli", password: "test123", profilePicURL: nil)
+        
+        
+        currentUserModel.addFriend(friend: friendUser)
+        
         
                 
         // Do any additional setup after loading the view.
