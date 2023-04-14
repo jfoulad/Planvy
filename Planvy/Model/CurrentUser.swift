@@ -53,7 +53,7 @@ class CurrentUser {
     func addFriend(friend: User) {
         currentUser?.addFriend(user: friend)
         
-        updateUserToDataBase()
+        updateCurrentUserToDataBase()
 
     }
     
@@ -105,7 +105,7 @@ class CurrentUser {
         })
     }
     
-    func updateUserToDataBase() {
+    func updateCurrentUserToDataBase() {
         if let id = currentUser!.id {
             let docRef = userCollectionRef.document(id)
             do {
@@ -115,6 +115,36 @@ class CurrentUser {
               print(error)
             }
           }
+    }
+    
+    func updateUserToDataBase(user: User) {
+        if let id = user.id {
+            let docRef = userCollectionRef.document(id)
+            do {
+              try docRef.setData(from: currentUser)
+            }
+            catch {
+              print(error)
+            }
+          }
+    }
+    
+    func makeDummyUsers() {
+//        let user1 = User(email: "jf@gmail.com", firstName: "Jeremy", lastName: "Fouladian", password: "test123", profilePicURL: nil)
+//
+//        addUserToDatabase(user: user1)
+        
+        let user1 = User(email: "mtuli@gmail.com", firstName: "Maani", lastName: "Tuli", password: "maani123", profilePicURL: nil)
+
+        addUserToDatabase(user: user1)
+        
+        let user2 = User(email: "bnoor@gmail.com", firstName: "Brandon", lastName: "Noorvash", password: "brandon123", profilePicURL: nil)
+
+        addUserToDatabase(user: user2)
+        
+        let user3 = User(email: "mikeshmule@gmail.com", firstName: "Mike", lastName: "Shmule", password: "mike123", profilePicURL: nil)
+
+        addUserToDatabase(user: user3)
     }
     
     

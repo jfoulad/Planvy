@@ -10,8 +10,6 @@ import UIKit
 class FriendsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     
-    
-    
     let designManager = ColorAndFontManager.shared
     
     @IBOutlet weak var groupsLabel: UILabel!
@@ -23,6 +21,13 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var groupCollectionView: UICollectionView!
     
     @IBOutlet weak var friendCollectionView: UICollectionView!
+    
+    @IBOutlet weak var friendListLabel: UILabel!
+    
+    @IBOutlet weak var searchHolderView: UIView!
+    
+    @IBOutlet weak var friendSearchBar: UISearchBar!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -148,6 +153,12 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
         addGroupButton.layer.cornerRadius = 10
         addBlur(object: addGroupButton)
 
+        friendListLabel.textColor = designManager.white
+        
+        friendListLabel.font = designManager.font(weight: .Bold, size: 21)
+        
+        searchHolderView.layer.cornerRadius = 10
+                
     }
     
 

@@ -32,15 +32,18 @@ class LogInViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        //Added this user to firestore
-//        let user = User(email: "jf@gmail.com", firstName: "Jeremy", lastName: "Fouladian", password: "test123", profilePicURL: nil)
-//
-//        currentUserModel.addUserToDatabase(user: user)
+//        Set up UI
+        setUpUI()
+        
+//        Added these users to firestore
+//        currentUserModel.makeDummyUsers()
+
+        
         
         //check if log in credientials match
         
         
-        setUpUI()
+        
     }
     
     
