@@ -110,6 +110,8 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
             return cell
         }
         
+        
+        
     
     }
     
@@ -221,6 +223,14 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
         animationView.loopMode = .loop
         animationView.play()
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "createPlan" {
+            if let createPlanVC = segue.destination as? CreateAPlanViewController{
+                
+            }
+        }
     }
 
 

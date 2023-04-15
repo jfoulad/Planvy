@@ -15,6 +15,7 @@ class GuestCell: UICollectionViewCell {
     
     @IBOutlet weak var trashButton: UIButton!
     
+    var guest: User? = nil
     
     
 }

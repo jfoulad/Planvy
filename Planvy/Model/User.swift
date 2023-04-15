@@ -75,4 +75,8 @@ class User: Hashable, Codable {
         return fullName
     }
     
+    func getFirstName() -> String {
+        return self.firstName
+    }
+    
 }

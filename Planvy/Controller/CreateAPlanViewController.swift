@@ -9,11 +9,11 @@ import UIKit
 
 class CreateAPlanViewController: UIViewController, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, UITableViewDelegate  {
     
-    
+    let currentUser = CurrentUser.shared
     let designManager = ColorAndFontManager.shared
     let yelpAPIModel = YelpApiModel.shared
     
-    var guestsArray = Array<String>()
+    var guestsArray = Array<User>()
     
     var selectedGuestIndexPath: IndexPath?
     
@@ -87,8 +87,10 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
         cell.trashButton.layer.borderWidth = 1
         cell.trashButton.layer.borderColor = designManager.black15.cgColor
         
+        let guest = guestsArray[indexPath.row]
         
-        cell.nameLabel.text = guestsArray[indexPath.row]
+        cell.guest = guest
+        cell.nameLabel.text = guest.getFullName()
         
         return cell
         
@@ -100,7 +102,7 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
         let cell = sender.superview?.superview as! GuestCell
         let name = cell.nameLabel.text!
         
-        let index = guestsArray.firstIndex(of: name)!
+        let index = guestsArray.firstIndex(of: cell.guest!)!
         
         guestsArray.remove(at: index)
         
@@ -115,20 +117,25 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
     
 
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        print("test again \(indexPath.row)")
-        selectedGuestIndexPath = indexPath
-        
-    }
-    
     
     @IBAction func didAddGuest(_ sender: UIButton) {
+        let firstName = addGuestTF.text?.lowercased()
+        let friendsSet = currentUser.getFriends()
         
-        guestsArray.append(addGuestTF.text!)
+        var added = false
+        for friend in friendsSet {
+            if friend.getFirstName().lowercased() == firstName && !guestsArray.contains(friend) {
+                guestsArray.append(friend)
+                added = true
+                addGuestTF.text = ""
+            }
+        }
         
+        if added == false {
+            print("No friend by that first name/ already added")
+        }
         collectionView.reloadData()
-        print(guestsArray)
+        
     }
     
     
@@ -253,8 +260,6 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
         
         //dummy info
         
-        guestsArray.append("Jimmy Neutron")
-        guestsArray.append("Test Test")
         
         //UI color and Design Set up
         createAPlanLabel.textColor = designManager.black
