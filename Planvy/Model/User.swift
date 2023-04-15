@@ -40,6 +40,8 @@ class User: Hashable, Codable {
         hasher.combine(email)
     }
     
+    
+    
     func getFriends() -> Set<User> {
         return self.friendsSet
     }

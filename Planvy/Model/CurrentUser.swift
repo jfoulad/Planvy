@@ -148,8 +148,10 @@ class CurrentUser {
     }
     
     
-    func searchForUsers(email: String, onSuccess: @escaping (User) -> Void) {
+    func searchForUsers(email: String, onFound: @escaping (User) -> Void, onNotFound: @escaping (Bool) -> Void) {
         userCollectionRef.getDocuments(completion: { snapshot, error in
+            
+            var found = false
             
             for doc in snapshot!.documents {
                 let docEmail = doc.data()["email"] as? String
@@ -159,7 +161,8 @@ class CurrentUser {
                         
                         do {
                             let user = try doc.data(as: User.self)
-                            onSuccess(user)
+                            onFound(user)
+                            found = true
                         } catch {
                             print(error)
                         }
@@ -169,7 +172,7 @@ class CurrentUser {
                     }
                 }
             }
-
+            onNotFound(found)
         })
     }
     

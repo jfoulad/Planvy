@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import Lottie
 
 class FriendsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
     
-    
+    let animationView = LottieAnimationView(name: "fourdots")
     let designManager = ColorAndFontManager.shared
+    let currentUser = CurrentUser.shared
     
     @IBOutlet weak var groupsLabel: UILabel!
     
@@ -164,10 +166,51 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print(1)
+        
+        let lowercaseEmail = searchBar.text!.lowercased()
+        
+        currentUser.searchForUsers(email: lowercaseEmail, onFound: { user in
+            
+            if self.currentUser.getFriends().contains(user) {
+                //user exists, already in friendslist
+                print("friend already in friendlist")
+            } else {
+                //user exists, add to list
+                print("adding friend to list")
+            }
+            self.animationView.stop()
+            self.animationView.isHidden = true
+        }, onNotFound: {found in
+            //user doesnt exist
+            if found == false {
+                print("this user doesnt exist")
+            }
+            
+            self.animationView.stop()
+            self.animationView.isHidden = true
+        })
+        
+        startAnimation()
+        
     }
     
-    
+    func startAnimation() {
+        
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(animationView)
+
+        // Add constraints to center the subview horizontally and vertically
+        animationView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        animationView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+
+        // Add constraints to set the width and height of the subview
+        animationView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        animationView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+
+        animationView.loopMode = .loop
+        animationView.play()
+        
+    }
 
 
 }

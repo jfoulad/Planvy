@@ -82,7 +82,7 @@ class LogInViewController: UIViewController {
         animationView.widthAnchor.constraint(equalToConstant: 200).isActive = true
         animationView.heightAnchor.constraint(equalToConstant: 200).isActive = true
 
-        animationView.loopMode = .autoReverse
+        animationView.loopMode = .loop
         animationView.play()
         
     }
