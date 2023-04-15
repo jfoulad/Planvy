@@ -1276,7 +1276,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="4" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VwP-qB-Hc5">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VwP-qB-Hc5">
                                 <rect key="frame" x="16" y="432" width="361" height="350"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -68,7 +68,11 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     // number of items
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        if collectionView.tag == 1 {
+            return 10
+        } else {
+            return currentUser.getFriends().count
+        }
     }
     
     
@@ -96,6 +100,9 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
             
             cell.nameLabel.font = designManager.font(weight: .Bold, size: 17)
             cell.emailLabel.font = designManager.font(weight: .Bold, size: 14)
+            
+            cell.nameLabel.text = currentUser.getSortedFriends()[indexPath.row].getFullName()
+            cell.emailLabel.text = currentUser.getSortedFriends()[indexPath.row].getEmail()
             
             cell.layer.cornerRadius = 10
             cell.addPlanButton.layer.cornerRadius = 5
@@ -178,6 +185,9 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
                 //user exists, add to list
                 print("adding friend to list")
                 self.currentUser.addFriend(friend: user)
+                DispatchQueue.main.async {
+                    self.friendCollectionView.reloadData()
+                }
             }
             self.animationView.stop()
             self.animationView.isHidden = true

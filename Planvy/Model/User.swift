@@ -66,4 +66,13 @@ class User: Hashable, Codable {
         groupSet.insert(group)
     }
     
+    func getLastName() -> String {
+        return self.lastName
+    }
+    
+    func getFullName() -> String {
+        let fullName = "\(self.firstName) \(self.lastName)"
+        return fullName
+    }
+    
 }

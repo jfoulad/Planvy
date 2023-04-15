@@ -68,6 +68,17 @@ class CurrentUser {
         return currentUser!.getFriends()
     }
     
+    func getSortedFriends() ->Array<User> {
+        let friendSet = currentUser!.getFriends()
+        
+        let friendsArray = Array(friendSet)
+        
+        let sortedArray = friendsArray.sorted(by: { $0.getLastName() < $1.getLastName() })
+
+        
+        return sortedArray
+    }
+    
     
     func addPlan(plan: Plan) {
         currentUser!.addPlans(plan: plan)
