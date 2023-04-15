@@ -62,7 +62,7 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
         
         tableView.delegate = self
         tableView.dataSource = self
-
+        
         // Do any additional setup after loading the view.
         
         setUpUI()
@@ -174,12 +174,21 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        tableView.isHidden = false
-        tableView.frame = CGRect(x: locationTF.frame.minX, y: locationTF.frame.maxY, width: locationTF.frame.width, height: 100)
         
-        view.bringSubviewToFront(tableView)
+        if textField.tag == 1 {
+            tableView.isHidden = false
+            tableView.frame = CGRect(x: locationTF.frame.minX, y: locationTF.frame.maxY, width: locationTF.frame.width, height: 100)
+            
+            view.bringSubviewToFront(tableView)
+        }
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        tableView.isHidden = true
+        tableView.frame = CGRect(x: locationTF.frame.minX, y: locationTF.frame.maxY, width: locationTF.frame.width, height: 0)
+        
+        
+    }
     
     
     
@@ -252,7 +261,7 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
     func setUpUI() {
         //set up tableView
         
-        tableView.frame = CGRect(x: 0, y: 0, width: locationTF.frame.width, height: 0)
+        tableView.frame = CGRect(x: locationTF.frame.minX, y: locationTF.frame.maxY, width: locationTF.frame.width, height: 0)
         firstHolderView.addSubview(tableView)
         firstHolderView.bringSubviewToFront(tableView)
         
@@ -310,6 +319,17 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
     }
     
     
+//    @IBAction func backgroundDidTapped(_ sender: UITapGestureRecognizer) {
+//        planNameTF.resignFirstResponder()
+//        locationTF.resignFirstResponder()
+//        addGuestTF.resignFirstResponder()
+//        print(1)
+//    }
     
+    @IBAction func bgTapButton(_ sender: UIButton) {
+                planNameTF.resignFirstResponder()
+                locationTF.resignFirstResponder()
+                addGuestTF.resignFirstResponder()
+    }
     
 }
