@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FriendsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class FriendsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
     
     
     let designManager = ColorAndFontManager.shared
@@ -26,7 +26,7 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBOutlet weak var searchHolderView: UIView!
     
-    @IBOutlet weak var friendSearchBar: UISearchBar!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     
     override func viewDidLoad() {
@@ -37,7 +37,7 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
         groupCollectionView.delegate = self
         friendCollectionView.dataSource = self
         friendCollectionView.delegate = self
-        
+        searchBar.delegate = self
         // Do any additional setup after loading the view.
         
         //Set Up UI
@@ -104,6 +104,8 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     }
     
+    
+    
     func setUpUI() {
         //--------Change font of tab bar-----------------------------------------
         
@@ -160,6 +162,11 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
         searchHolderView.layer.cornerRadius = 10
                 
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print(1)
+    }
+    
     
 
 

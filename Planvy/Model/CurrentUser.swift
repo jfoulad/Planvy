@@ -97,7 +97,7 @@ class CurrentUser {
                         }
                         
                     } else {
-                        print("wrong info")
+                        print("wrong info per doc")
                     }
                 }
             }
@@ -147,6 +147,31 @@ class CurrentUser {
         addUserToDatabase(user: user3)
     }
     
+    
+    func searchForUsers(email: String, onSuccess: @escaping (User) -> Void) {
+        userCollectionRef.getDocuments(completion: { snapshot, error in
+            
+            for doc in snapshot!.documents {
+                let docEmail = doc.data()["email"] as? String
+                
+                if let docEmail {
+                    if email == docEmail {
+                        
+                        do {
+                            let user = try doc.data(as: User.self)
+                            onSuccess(user)
+                        } catch {
+                            print(error)
+                        }
+                        
+                    } else {
+                        
+                    }
+                }
+            }
+
+        })
+    }
     
     
     

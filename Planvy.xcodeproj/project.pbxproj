@@ -50,6 +50,7 @@
 		39C74D5929D6870600271CAD /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39C74D5529D6870600271CAD /* Quicksand-Light.ttf */; };
 		39C74D5D29D69DD300271CAD /* ColorAndFontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C74D5C29D69DD300271CAD /* ColorAndFontManager.swift */; };
 		39C74D5F29D6A62D00271CAD /* FontWeightEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C74D5E29D6A62D00271CAD /* FontWeightEnum.swift */; };
+		39CD14DF29EB240E00D03DB0 /* AnimationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CD14DE29EB240E00D03DB0 /* AnimationModel.swift */; };
 		39D607AF29E23A4500422E90 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D607AE29E23A4500422E90 /* Group.swift */; };
 		39D607B329E2531B00422E90 /* AutoComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D607B229E2531B00422E90 /* AutoComplete.swift */; };
 		39D607B529E255AB00422E90 /* BusinessesAutoComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D607B429E255AB00422E90 /* BusinessesAutoComplete.swift */; };
@@ -121,6 +122,7 @@
 		39C74D5529D6870600271CAD /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
 		39C74D5C29D69DD300271CAD /* ColorAndFontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAndFontManager.swift; sourceTree = "<group>"; };
 		39C74D5E29D6A62D00271CAD /* FontWeightEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWeightEnum.swift; sourceTree = "<group>"; };
+		39CD14DE29EB240E00D03DB0 /* AnimationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationModel.swift; sourceTree = "<group>"; };
 		39D607AE29E23A4500422E90 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		39D607B229E2531B00422E90 /* AutoComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoComplete.swift; sourceTree = "<group>"; };
 		39D607B429E255AB00422E90 /* BusinessesAutoComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessesAutoComplete.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				3907DDF829E13686008353B5 /* GuestCell.swift */,
 				3950950829E2059B00CF4A04 /* CurrentUser.swift */,
 				39D607AE29E23A4500422E90 /* Group.swift */,
+				39CD14DE29EB240E00D03DB0 /* AnimationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				396723E229DA546600AB10A0 /* BusinessCell.swift in Sources */,
 				39C74D0029D677B700271CAD /* SceneDelegate.swift in Sources */,
 				39F771E729D8020800515FD9 /* User.swift in Sources */,
+				39CD14DF29EB240E00D03DB0 /* AnimationModel.swift in Sources */,
 				393468C629DAC82D00284D09 /* BusinessInformationViewController.swift in Sources */,
 				39C74D3929D683CE00271CAD /* LogInViewController.swift in Sources */,
 				39C74D3229D6792A00271CAD /* animationViewScreen.swift in Sources */,
