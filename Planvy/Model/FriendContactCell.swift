@@ -16,6 +16,7 @@ class FriendContactCell: UICollectionViewCell {
     
     @IBOutlet weak var addPlanButton: UIButton!
     
+    var friend: User? = nil
     
 //    override func awakeFromNib() {
 //        super.awakeFromNib()

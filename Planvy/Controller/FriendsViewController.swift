@@ -101,8 +101,11 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
             cell.nameLabel.font = designManager.font(weight: .Bold, size: 17)
             cell.emailLabel.font = designManager.font(weight: .Bold, size: 14)
             
-            cell.nameLabel.text = currentUser.getSortedFriends()[indexPath.row].getFullName()
-            cell.emailLabel.text = currentUser.getSortedFriends()[indexPath.row].getEmail()
+            let friend = currentUser.getSortedFriends()[indexPath.row]
+            
+            cell.friend = friend
+            cell.nameLabel.text = friend.getFullName()
+            cell.emailLabel.text = friend.getEmail()
             
             cell.layer.cornerRadius = 10
             cell.addPlanButton.layer.cornerRadius = 5
@@ -228,6 +231,11 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "createPlan" {
             if let createPlanVC = segue.destination as? CreateAPlanViewController{
+                
+                let button = sender as? UIButton
+                let cell = button?.superview?.superview?.superview?.superview as! FriendContactCell
+                
+                createPlanVC.guestsArray.append(cell.friend!)
                 
             }
         }
