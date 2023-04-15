@@ -177,6 +177,7 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
             } else {
                 //user exists, add to list
                 print("adding friend to list")
+                self.currentUser.addFriend(friend: user)
             }
             self.animationView.stop()
             self.animationView.isHidden = true

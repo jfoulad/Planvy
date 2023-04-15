@@ -53,7 +53,14 @@ class CurrentUser {
     func addFriend(friend: User) {
         currentUser?.addFriend(user: friend)
         
-        updateCurrentUserToDataBase()
+        friend.addFriend(user: currentUser!)
+        
+//        print(type(of: currentUser))
+//        print(type(of: friend))
+//        crashing for some reason
+//        updateUserToDataBase(user: friend)
+//
+//        updateCurrentUserToDataBase()
 
     }
     
