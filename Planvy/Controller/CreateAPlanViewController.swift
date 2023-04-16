@@ -69,6 +69,11 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     
         
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -230,8 +235,6 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
             let business = sortedAutoCompleteArray[indexPath.row] as! Business
             let id = business.id
             
-            
-            
             //do segue
             
             let businessInfoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "businessInfo") as! BusinessInformationViewController
@@ -330,6 +333,8 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
                 planNameTF.resignFirstResponder()
                 locationTF.resignFirstResponder()
                 addGuestTF.resignFirstResponder()
+        
+        print(selectedBusiness)
     }
     
 }

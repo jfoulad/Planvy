@@ -687,6 +687,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="businessSelectedDidtapped:" destination="qS6-XW-Hel" eventType="touchUpInside" id="GY8-JE-xrZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Q1h-wr-Iwm"/>
@@ -920,12 +923,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bo7-s8-pnB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7212.9770992366412" y="-4.2253521126760569"/>
+            <point key="canvasLocation" x="6262" y="723"/>
         </scene>
         <!--CreateA Plan View Controller-->
         <scene sceneID="scq-oh-0sR">
             <objects>
-                <viewController id="uyC-u4-0Gc" customClass="CreateAPlanViewController" customModule="Planvy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="createPlanVC" id="uyC-u4-0Gc" customClass="CreateAPlanViewController" customModule="Planvy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3rG-Gr-aWr">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1120,6 +1123,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                     </view>
+                    <navigationItem key="navigationItem" id="GFw-rt-qS9"/>
                     <connections>
                         <outlet property="addGuestButton" destination="HdD-9c-Pkq" id="7GB-AW-rQg"/>
                         <outlet property="addGuestTF" destination="u3O-ey-cvr" id="zSY-fE-Hle"/>
@@ -1137,7 +1141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IKQ-Ho-hzC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6262" y="-657"/>
+            <point key="canvasLocation" x="7372" y="-657"/>
         </scene>
         <!--Friends View Controller-->
         <scene sceneID="i8o-1f-fTW">
@@ -1489,7 +1493,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Qkw-7O-E7o"/>
+        <segue reference="cDE-53-izJ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="add" width="20" height="20"/>

@@ -242,5 +242,28 @@ class BusinessInformationViewController: UIViewController {
         inviteFriendButton.titleLabel?.font = designManager.font(weight: .Bold, size: 20)
         inviteFriendButton.layer.cornerRadius = 20
     }
-
+    
+    
+    
+    @IBAction func businessSelectedDidtapped(_ sender: UIButton) {
+        
+        if let tabBar = self.presentingViewController as? UITabBarController {
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            var createVC = storyboard.instantiateViewController(withIdentifier: "createPlanVC")
+            
+            //cant pass
+            
+            self.present(createVC, animated: true)
+            
+        }
+        
+        if let createVC = self.presentingViewController as? CreateAPlanViewController {
+            createVC.selectedBusiness = self.business
+            self.dismiss(animated: true)
+        }
+        
+    }
+    
+    
 }
