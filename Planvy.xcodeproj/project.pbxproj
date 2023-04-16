@@ -16,6 +16,12 @@
 		3907DDF929E13686008353B5 /* GuestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907DDF829E13686008353B5 /* GuestCell.swift */; };
 		393468C629DAC82D00284D09 /* BusinessInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393468C529DAC82D00284D09 /* BusinessInformationViewController.swift */; };
 		393468CA29DAD05700284D09 /* BusinessSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393468C929DAD05700284D09 /* BusinessSchedule.swift */; };
+		393E7EE629EC8CDA001E4C81 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393E7EE529EC8CDA001E4C81 /* ProfileViewController.swift */; };
+		393E7EE729EC8CDA001E4C81 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393E7EE529EC8CDA001E4C81 /* ProfileViewController.swift */; };
+		393E7EE829EC8CDA001E4C81 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393E7EE529EC8CDA001E4C81 /* ProfileViewController.swift */; };
+		393E7EEA29EC93A8001E4C81 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393E7EE929EC93A8001E4C81 /* NotificationCell.swift */; };
+		393E7EEB29EC93A8001E4C81 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393E7EE929EC93A8001E4C81 /* NotificationCell.swift */; };
+		393E7EEC29EC93A8001E4C81 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393E7EE929EC93A8001E4C81 /* NotificationCell.swift */; };
 		394ED25D29DD00750070BF81 /* HoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394ED25C29DD00750070BF81 /* HoursViewController.swift */; };
 		394ED25F29DD1FE00070BF81 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394ED25E29DD1FE00070BF81 /* FriendsViewController.swift */; };
 		3950950929E2059B00CF4A04 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950950829E2059B00CF4A04 /* CurrentUser.swift */; };
@@ -90,6 +96,8 @@
 		3907DDF829E13686008353B5 /* GuestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCell.swift; sourceTree = "<group>"; };
 		393468C529DAC82D00284D09 /* BusinessInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessInformationViewController.swift; sourceTree = "<group>"; };
 		393468C929DAD05700284D09 /* BusinessSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSchedule.swift; sourceTree = "<group>"; };
+		393E7EE529EC8CDA001E4C81 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		393E7EE929EC93A8001E4C81 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		394ED25C29DD00750070BF81 /* HoursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursViewController.swift; sourceTree = "<group>"; };
 		394ED25E29DD1FE00070BF81 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		3950950829E2059B00CF4A04 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
@@ -257,6 +265,7 @@
 				394ED25C29DD00750070BF81 /* HoursViewController.swift */,
 				394ED25E29DD1FE00070BF81 /* FriendsViewController.swift */,
 				395AB10F29E0D7F600125E05 /* CreateAPlanViewController.swift */,
+				393E7EE529EC8CDA001E4C81 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -287,6 +296,7 @@
 				3907DDF829E13686008353B5 /* GuestCell.swift */,
 				3950950829E2059B00CF4A04 /* CurrentUser.swift */,
 				39D607AE29E23A4500422E90 /* Group.swift */,
+				393E7EE929EC93A8001E4C81 /* NotificationCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -461,6 +471,7 @@
 				3950950929E2059B00CF4A04 /* CurrentUser.swift in Sources */,
 				39E7882529DA5937003BEF06 /* Category.swift in Sources */,
 				3906D3E529D9751100198F90 /* Location.swift in Sources */,
+				393E7EE629EC8CDA001E4C81 /* ProfileViewController.swift in Sources */,
 				395AB11029E0D7F600125E05 /* CreateAPlanViewController.swift in Sources */,
 				393468CA29DAD05700284D09 /* BusinessSchedule.swift in Sources */,
 				39F7813729DB9A0C00C94B3B /* Term.swift in Sources */,
@@ -488,6 +499,7 @@
 				39C74D3229D6792A00271CAD /* animationViewScreen.swift in Sources */,
 				39C74D5F29D6A62D00271CAD /* FontWeightEnum.swift in Sources */,
 				39D607B729E2560700422E90 /* CategoriesAutoComplete.swift in Sources */,
+				393E7EEA29EC93A8001E4C81 /* NotificationCell.swift in Sources */,
 				3906D3DE29D96DAD00198F90 /* YelpApiModel.swift in Sources */,
 				39BD514129DC8AD900E0D181 /* Open.swift in Sources */,
 			);
@@ -497,6 +509,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				393E7EE729EC8CDA001E4C81 /* ProfileViewController.swift in Sources */,
+				393E7EEB29EC93A8001E4C81 /* NotificationCell.swift in Sources */,
 				39C74D1529D677B800271CAD /* PlanvyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +519,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				393E7EEC29EC93A8001E4C81 /* NotificationCell.swift in Sources */,
+				393E7EE829EC8CDA001E4C81 /* ProfileViewController.swift in Sources */,
 				39C74D2129D677B800271CAD /* PlanvyUITestsLaunchTests.swift in Sources */,
 				39C74D1F29D677B800271CAD /* PlanvyUITests.swift in Sources */,
 			);
