@@ -118,6 +118,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             } else {
                 let plan = currentUserModel.getSortedPlansArray()[indexPath.row]
                 
+                cell.nameHolderView.isHidden = false
                 cell.planNameLabel.text = plan.getPlanName()
                 cell.numberOfAttendeesLabel.text = "\(plan.getAcceptedGuestsSet().count + 1)"
                 cell.locationLabel.text = plan.getSpecificBusinessLocation()

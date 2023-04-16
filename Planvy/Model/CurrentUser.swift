@@ -41,6 +41,10 @@ class CurrentUser {
         currentUser = user
     }
     
+    func getCurrentUser() -> User {
+        return currentUser!
+    }
+    
     func getPlans() -> Set<Plan> {
         return (currentUser?.getPlans())!
     }
@@ -80,9 +84,15 @@ class CurrentUser {
     }
     
     
-    func addPlan(plan: Plan) {
+    func addPlan(plan: Plan, guests: Set<User>) {
         currentUser!.addPlans(plan: plan)
 
+//        updateCurrentUserToDataBase()
+        
+        for guest in guests {
+            guest.addPlans(plan: plan)
+//            updateUserToDataBase(user: guest)
+        }
     }
     
     func addUserToDatabase(user:User) {

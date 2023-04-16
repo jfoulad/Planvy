@@ -22,10 +22,10 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
     var sortedAutoCompleteArray = Array<Any>()
     
     var selectedBusiness: SpecificBusiness?
-
-
     
-
+    
+    
+    
     @IBOutlet weak var createAPlanLabel: UILabel!
     
     @IBOutlet weak var eventDetailsLabel: UILabel!
@@ -66,7 +66,7 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
         // Do any additional setup after loading the view.
         
         setUpUI()
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,7 +75,7 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
     }
     
     
-        
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return guestsArray.count
     }
@@ -115,12 +115,12 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
         
         let model = CurrentUser.shared
         
-
+        
     }
     
     
     
-
+    
     
     
     @IBAction func didAddGuest(_ sender: UIButton) {
@@ -152,7 +152,7 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
             yelpAPIModel.autocomplete(term: sender.text!, location: "Los Angeles", onSuccess: { [self] autocomplete in
                 
                 sortedAutoCompleteArray.removeAll()
-        
+                
                 
                 
                 for index in 0..<min(2, autocomplete.terms.count) {
@@ -221,7 +221,7 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
             let category = sortedAutoCompleteArray[indexPath.row] as! Category
             cell.textLabel?.text = category.title
         }
-
+        
         
         return cell
     }
@@ -301,7 +301,7 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
         dateTimePicker.minimumDate = .now
         dateTimePicker.date = .now
         dateTimePicker.preferredDatePickerStyle = .compact
-//        dateTimePicker.backgroundColor = designManager.black15
+        //        dateTimePicker.backgroundColor = designManager.black15
         
         guestsLabel.textColor = designManager.black
         guestsLabel.font = designManager.font(weight: .Bold, size: 13)
@@ -322,19 +322,63 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
     }
     
     
-//    @IBAction func backgroundDidTapped(_ sender: UITapGestureRecognizer) {
-//        planNameTF.resignFirstResponder()
-//        locationTF.resignFirstResponder()
-//        addGuestTF.resignFirstResponder()
-//        print(1)
-//    }
+    //    @IBAction func backgroundDidTapped(_ sender: UITapGestureRecognizer) {
+    //        planNameTF.resignFirstResponder()
+    //        locationTF.resignFirstResponder()
+    //        addGuestTF.resignFirstResponder()
+    //        print(1)
+    //    }
     
     @IBAction func bgTapButton(_ sender: UIButton) {
-                planNameTF.resignFirstResponder()
-                locationTF.resignFirstResponder()
-                addGuestTF.resignFirstResponder()
+        planNameTF.resignFirstResponder()
+        locationTF.resignFirstResponder()
+        addGuestTF.resignFirstResponder()
         
         print(selectedBusiness)
     }
     
+    
+    @IBAction func submitButtonDidTapped(_ sender: UIButton) {
+        
+        if planNameTF.text?.isEmpty == true ||
+            selectedBusiness == nil ||
+            guestsArray.isEmpty == true {
+            
+            if planNameTF.text?.isEmpty == true {
+                print("need plan name")
+            }
+            if selectedBusiness == nil {
+                print("No Location selected")
+            }
+            if guestsArray.isEmpty == true {
+                print("No Guests selected")
+            }
+            if dateTimePicker.date < Date() {
+                print("time must be after current time")
+            }
+        } else {
+            
+            if let planName = planNameTF.text, let business = selectedBusiness {
+                
+                let plan = Plan(planName: planName, specificBusiness: business, dateAndTime: dateTimePicker.date, creator: currentUser.getCurrentUser(), invitees: Set(guestsArray), acceptedInvite: Set())
+                
+                currentUser.addPlan(plan: plan, guests: Set(guestsArray))
+                
+                print("Successfully added plan")
+                self.dismiss(animated: true)
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        if let tabBar = self.presentingViewController as? UITabBarController {
+            let homeNav = tabBar.viewControllers![0] as? UINavigationController
+            let homeVC = homeNav?.topViewController as! HomeViewController
+            
+            homeVC.plansCollectionView.reloadData()
+        }
+        
+        
+    }
 }

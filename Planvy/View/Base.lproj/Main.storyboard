@@ -678,7 +678,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZy-7v-sk9">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZy-7v-sk9">
                                 <rect key="frame" x="16" y="378" width="368" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.6588235294" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1096,6 +1096,9 @@
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Submit &amp; Send Invitation"/>
+                                        <connections>
+                                            <action selector="submitButtonDidTapped:" destination="uyC-u4-0Gc" eventType="touchUpInside" id="tfK-VY-hPX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HdD-9c-Pkq">
                                         <rect key="frame" x="263" y="32" width="50" height="50"/>
@@ -1431,7 +1434,7 @@
         <!--Dashboard-->
         <scene sceneID="HVT-9A-r1h">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d70-vH-Cd6" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="homeNav" automaticallyAdjustsScrollViewInsets="NO" id="d70-vH-Cd6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Dashboard" image="list.bullet.rectangle.portrait" catalog="system" id="6mX-op-cdT"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NQl-hZ-7Bo">

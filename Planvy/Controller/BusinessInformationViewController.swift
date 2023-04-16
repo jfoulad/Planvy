@@ -252,18 +252,32 @@ class BusinessInformationViewController: UIViewController {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             var createVC = storyboard.instantiateViewController(withIdentifier: "createPlanVC")
             
-            //cant pass
+            //cant pass, also doesnt work
             
-            self.present(createVC, animated: true)
+//            self.present(createVC, animated: true)
             
         }
         
         if let createVC = self.presentingViewController as? CreateAPlanViewController {
             createVC.selectedBusiness = self.business
+            createVC.locationTF.text = business.name
+            createVC.locationTF.resignFirstResponder()
             self.dismiss(animated: true)
         }
         
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+                if let createVC = self.presentingViewController as? CreateAPlanViewController {
+                    if createVC.selectedBusiness == self.business {
+                        createVC.locationTF.resignFirstResponder()
+                    }
+                }
+                
+
+    }
+
     
     
 }
