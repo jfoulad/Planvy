@@ -37,7 +37,12 @@ class animationViewScreen: UIViewController {
         animationView.play()
         
         animationView.play(completion: { finished in
-            self.performSegue(withIdentifier: "fade", sender: self)
+//            self.performSegue(withIdentifier: "fade", sender: self)
+            let logInVC = self.storyboard?.instantiateViewController(withIdentifier: "logInVC") as! LogInViewController
+            logInVC.modalPresentationStyle = .fullScreen
+            logInVC.modalTransitionStyle = .crossDissolve
+
+            self.present(logInVC, animated: true)
             
         })
         

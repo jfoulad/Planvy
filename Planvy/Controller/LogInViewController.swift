@@ -59,7 +59,13 @@ class LogInViewController: UIViewController {
                 self.animationView.stop()
                 self.animationView.isHidden = true
                 
-                self.performSegue(withIdentifier: "logInToHome", sender: self)
+//                self.performSegue(withIdentifier: "logInToHome", sender: self)
+                
+                let tabVC = self.storyboard?.instantiateViewController(withIdentifier: "tabVC") as! UITabBarController
+                tabVC.modalPresentationStyle = .fullScreen
+                tabVC.modalTransitionStyle = .crossDissolve
+
+                self.present(tabVC, animated: true)
             })
             
             
