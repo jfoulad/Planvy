@@ -41,7 +41,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         setUpUI()
         
         
-        
+        currentUserModel.uploadImage(image: UIImage(named: "logo color big")!)
                 
         // Do any additional setup after loading the view.
         // setting up nav bar took me 2 hours and didnt even center align button or connect addbutton function correctly

@@ -17,17 +17,17 @@ class User: Hashable, Codable {
     private var lastName: String
     private var password: String
     private var friendsSet: Set<User> = Set()
-    private var profilePicURL: String?
+    private var profilePicRef: String?
     private var plansSet: Set<Plan> = Set()
     private var groupSet: Set<Group> = Set()
     
     
-    init(email: String, firstName: String, lastName: String, password: String, profilePicURL: String?) {
+    init(email: String, firstName: String, lastName: String, password: String) {
         self.email = email
         self.firstName = firstName
         self.lastName = lastName
         self.password = password
-        self.profilePicURL = profilePicURL
+        self.profilePicRef = nil
     }
     
     
@@ -77,6 +77,18 @@ class User: Hashable, Codable {
     
     func getFirstName() -> String {
         return self.firstName
+    }
+    
+    func getID() -> String {
+        return id!
+    }
+    
+    func getProfilePicRef() -> String? {
+        return profilePicRef
+    }
+    
+    func setProfilePicRef(ref: String) {
+       profilePicRef = ref
     }
     
 }

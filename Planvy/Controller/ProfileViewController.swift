@@ -15,6 +15,14 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBOutlet weak var notifCollectionView: UICollectionView!
     
+    @IBOutlet weak var profilePicture: UIImageView!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var emailLabel: UILabel!
+    
+    @IBOutlet weak var firstHolderView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,6 +35,18 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func setUpUI() {
+        
+        profilePicture.showAnimatedGradientSkeleton()
+        
+        //Load Image
+        currentUser.getImage(onSuccess: {image in
+            self.profilePicture.hideSkeleton()
+            self.profilePicture.image = image
+            self.profilePicture.contentMode = .scaleAspectFill
+            self.profilePicture.layer.cornerRadius = self.profilePicture.bounds.height/2
+            
+        })
+        
         //--------Change font of tab bar-----------------------------------------
         
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: designManager.font(weight: .Regular, size: 10)], for: .normal)
@@ -41,7 +61,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         // create right button
         let addButton = UIButton(type: .custom)
 
-        addButton.setImage(UIImage(named: "add user"), for: .normal)
+        addButton.setImage(UIImage(named: "settings"), for: .normal)
         addButton.frame = CGRect(x: 0, y: 0, width: 55, height: 55)
         addButton.layer.backgroundColor = designManager.orange.cgColor
         addButton.layer.cornerRadius =  addButton.frame.height/2
@@ -68,10 +88,26 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         
         
-        //---Color/ Design UI
-
         
-                
+        //---Color/ Design UI/Skeleton
+        profilePicture.layer.cornerRadius = profilePicture.bounds.height/2
+        
+        
+        
+        let labels = [nameLabel, emailLabel]
+        
+        for label in labels {
+            label?.textColor = designManager.white
+        }
+        
+        nameLabel.font = designManager.font(weight: .Bold, size: 22)
+        emailLabel.font = designManager.font(weight: .Medium, size: 17)
+        
+        firstHolderView.layer.cornerRadius = 10
+        
+        //---Setting Labels
+        nameLabel.text = currentUser.getFullName()
+        emailLabel.text = currentUser.getEmail()
     }
     
     

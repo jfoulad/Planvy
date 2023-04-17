@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseStorage
 
 
 class CurrentUser {
@@ -14,6 +15,9 @@ class CurrentUser {
     private var currentUser: User?
     
     let userCollectionRef = Firestore.firestore().collection("users")
+    
+    let storageRef = Storage.storage().reference()
+    
     
     private var sortedPlansArray: Array<Plan> {
         let plansSet = currentUser!.getPlans()
@@ -45,12 +49,32 @@ class CurrentUser {
         return currentUser!
     }
     
+    func getFullName() -> String {
+        return currentUser!.getFullName()
+    }
+    
+    func getEmail() -> String {
+        return currentUser!.getEmail()
+    }
+    
     func getPlans() -> Set<Plan> {
         return (currentUser?.getPlans())!
     }
     
     func getSortedPlansArray() -> Array<Plan> {
         return sortedPlansArray
+    }
+    
+    func getID() -> String {
+        return currentUser!.getID()
+    }
+    
+    func getProfilePicRef() -> String? {
+        return currentUser?.getProfilePicRef()
+    }
+    
+    func setProfilePicRef(ref: String) {
+        currentUser?.setProfilePicRef(ref: ref)
     }
     
     
@@ -162,17 +186,17 @@ class CurrentUser {
 //
 //        addUserToDatabase(user: user1)
         
-        let user1 = User(email: "mtuli@gmail.com", firstName: "Maani", lastName: "Tuli", password: "maani123", profilePicURL: nil)
-
-        addUserToDatabase(user: user1)
-        
-        let user2 = User(email: "bnoor@gmail.com", firstName: "Brandon", lastName: "Noorvash", password: "brandon123", profilePicURL: nil)
-
-        addUserToDatabase(user: user2)
-        
-        let user3 = User(email: "mikeshmule@gmail.com", firstName: "Mike", lastName: "Shmule", password: "mike123", profilePicURL: nil)
-
-        addUserToDatabase(user: user3)
+//        let user1 = User(email: "mtuli@gmail.com", firstName: "Maani", lastName: "Tuli", password: "maani123")
+//
+//        addUserToDatabase(user: user1)
+//
+//        let user2 = User(email: "bnoor@gmail.com", firstName: "Brandon", lastName: "Noorvash", password: "brandon123")
+//
+//        addUserToDatabase(user: user2)
+//
+//        let user3 = User(email: "mikeshmule@gmail.com", firstName: "Mike", lastName: "Shmule", password: "mike123")
+//
+//        addUserToDatabase(user: user3)
     }
     
     
@@ -202,6 +226,49 @@ class CurrentUser {
             }
             onNotFound(found)
         })
+    }
+    
+    func uploadImage(image: UIImage) {
+        
+        let imageData = image.jpegData(compressionQuality: 0.8)
+        
+        let imageName = currentUser!.getID()
+        let imageRef = storageRef.child("profilePictures/\(imageName)")
+        
+        if let imageData {
+            let uploadTask = imageRef.putData(imageData, metadata: nil) { (metadata, error) in
+                if let error = error {
+                    print("Error uploading image: \(error.localizedDescription)")
+                } else {
+                    print("Image uploaded successfully!")
+                    
+                }
+            }
+        }
+        
+        if currentUser?.getProfilePicRef() == nil {
+            currentUser?.setProfilePicRef(ref: "profilePictures/\(imageName)")
+        }
+    }
+    
+    func getImage(onSuccess: @escaping (UIImage) -> Void) {
+        
+        let imageRef = storageRef.child((currentUser?.getProfilePicRef())!)
+        
+        imageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) in
+            if let error = error {
+                print("Error downloading image: \(error.localizedDescription)")
+            } else {
+                
+                if let imageData = data, let image = UIImage(data: imageData) {
+                    
+                    onSuccess(image)
+                    
+                } else {
+                    print("Error creating UIImage from downloaded image data")
+                }
+            }
+        }
     }
     
     
