@@ -50,6 +50,14 @@ class User: Hashable, Codable {
         return self.email
     }
     
+    func getPassword() -> String {
+        return password
+    }
+    
+    func setPassword(password: String) {
+        self.password = password
+    }
+    
     func getPlans() -> Set<Plan> {
         return self.plansSet
     }

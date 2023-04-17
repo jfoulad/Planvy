@@ -129,6 +129,71 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         return cell
     }
     
+    
+    @IBAction func buttonDidTap(_ sender: UIButton) {
+        
+        let actionSheet = UIAlertController(title: "Choose an option", message: nil, preferredStyle: .actionSheet)
 
+        let changePassword = UIAlertAction(title: "Change Password", style: .default) { (_) in
+            
+            let alert = UIAlertController(title: "Change your password", message: nil, preferredStyle: .alert)
+            
+            var textFields = Array<UITextField>()
+            
+            alert.addTextField( configurationHandler: { tf in
+                tf.placeholder = "Old Password"
+                textFields.append(tf)
+                
+            })
+            
+            alert.addTextField( configurationHandler: { tf in
+                tf.placeholder = "New Password"
+                textFields.append(tf)
+            })
+            
+            
+            let updateAction = UIAlertAction(title: "Update", style: .default, handler: { alert in
+                if let old = textFields.first?.text, let new = textFields.last?.text {
+                    
+                    let resultString = self.currentUser.changePassword(old: old, new: new)
+                    
+                    let result = UIAlertController(title: resultString, message: nil, preferredStyle: .alert)
+                    
+                    let okAction = UIAlertAction(title: "OK", style: .cancel)
+                    
+                    result.addAction(okAction)
+                    self.present(result, animated: true)
+                }
 
+                
+            })
+            
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+            
+            
+            alert.addAction(updateAction)
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true)
+            
+        }
+//        let button2 = UIAlertAction(title: "Button 2", style: .default) { (_) in
+//            print("Button 2 tapped")
+//            // Perform action for Button 2
+//        }
+//        let button3 = UIAlertAction(title: "Button 3", style: .default) { (_) in
+//            print("Button 3 tapped")
+//            // Perform action for Button 3
+//        }
+        
+        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        
+        actionSheet.addAction(changePassword)
+        actionSheet.addAction(cancelButton)
+
+        present(actionSheet, animated: true, completion: nil)
+    
+    }
+        
 }

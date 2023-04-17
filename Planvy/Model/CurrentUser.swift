@@ -53,6 +53,15 @@ class CurrentUser {
         return currentUser!.getFullName()
     }
     
+    func getFirstName() -> String {
+        return currentUser!.getFirstName()
+    }
+    
+    
+    func getLastName() -> String {
+        return currentUser!.getLastName()
+    }
+    
     func getEmail() -> String {
         return currentUser!.getEmail()
     }
@@ -75,6 +84,16 @@ class CurrentUser {
     
     func setProfilePicRef(ref: String) {
         currentUser?.setProfilePicRef(ref: ref)
+    }
+    
+    func changePassword(old: String, new: String) -> String {
+        if old == currentUser!.getPassword() {
+            currentUser?.setPassword(password: new)
+//            updateCurrentUserToDataBase()
+            return "Password Updated"
+        } else {
+            return "Old password did not match"
+        }
     }
     
     
