@@ -22,12 +22,12 @@ class User: Hashable, Codable {
     private var groupSet: Set<Group> = Set()
     
     
-    init(email: String, firstName: String, lastName: String, password: String) {
+    init(email: String, firstName: String, lastName: String, password: String, profilePicRef: String?) {
         self.email = email
         self.firstName = firstName
         self.lastName = lastName
         self.password = password
-        self.profilePicRef = nil
+        self.profilePicRef = profilePicRef
     }
     
     
