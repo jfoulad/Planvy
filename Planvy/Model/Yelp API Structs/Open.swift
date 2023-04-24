@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseFirestoreSwift
 
+//Yelp API struct
 struct Open: Codable {
     
     

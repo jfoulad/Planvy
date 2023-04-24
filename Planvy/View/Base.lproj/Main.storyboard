@@ -433,10 +433,10 @@
                                 <color key="backgroundColor" white="0.59999999999999998" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfJ-To-cNg">
-                                <rect key="frame" x="141" y="717" width="75" height="35"/>
+                                <rect key="frame" x="119" y="717" width="120" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="nav right btn"/>
                                 <connections>
                                     <segue destination="uyC-u4-0Gc" kind="presentation" identifier="createPlan" id="cDE-53-izJ"/>
                                 </connections>
@@ -1533,10 +1533,10 @@
                                 <color key="backgroundColor" white="0.59999999999999998" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5Y-Gh-BOf">
-                                <rect key="frame" x="96" y="266" width="75" height="35"/>
+                                <rect key="frame" x="74" y="266" width="120" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="nav right btn"/>
                                 <connections>
                                     <action selector="buttonDidTap:" destination="Nfl-41-yVC" eventType="touchUpInside" id="XN3-cJ-BgR"/>
                                 </connections>

@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+//Yelp API struct
 struct Autocomplete: Decodable {
     
     //YELP GOES TERMS BUSINESSES CATEGORIES

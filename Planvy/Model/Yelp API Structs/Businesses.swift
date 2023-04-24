@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-
+//Yelp API struct
 struct Businesses: Codable {
     let businesses: Array<Business>
 }

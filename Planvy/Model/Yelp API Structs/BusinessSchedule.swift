@@ -8,33 +8,15 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-
+//Yelp API struct
 struct BusinessSchedule: Codable {
 
-//    let start: String
-//    let end: String
-//    //DAY  0 IS MONDAY
-//    let day: Int
     
     let open: Array<Open>
     let is_open_now: Bool
     
     
-//    var formattedHoursArray:  Array<String> {
-//        var formatted = [String()]
-//
-//        for day in self.open {
-//            let formattedStart = convertMilitaryToRegularTime(day.start)
-//            let formattedEnd = convertMilitaryToRegularTime(day.end)
-//            let formattedDash = "\(String(describing: formattedStart)) - \(String(describing: formattedEnd))"
-//            formatted.append(formattedDash)
-//        }
-//        
-//
-//        return formatted
-//
-//    }
-    
+    //get formatted business schedule, key is day, value is formatted string
     func getFormattedSchedule() -> Dictionary<String, String> {
         var schedule = Dictionary<String, String>()
         
@@ -68,6 +50,7 @@ struct BusinessSchedule: Codable {
         return schedule
     }
     
+    //get todays day
     static func getTodaysDay() -> String {
         let date = Date()
         let dateFormatter = DateFormatter()
@@ -76,7 +59,7 @@ struct BusinessSchedule: Codable {
         return dayInWeek
     }
     
-    
+    //convert military to regular time
     func convertMilitaryToRegularTime(_ militaryTime: String) -> String? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HHmm"
@@ -87,6 +70,7 @@ struct BusinessSchedule: Codable {
         return nil
     }
     
+    //get close time string for today
     func getTodaysCloseTime() -> String {
         let todaysHours = getFormattedSchedule()[BusinessSchedule.getTodaysDay()]!
         
@@ -95,6 +79,7 @@ struct BusinessSchedule: Codable {
         return end
     }
     
+    //get open time string for today
     func getTodaysOpenTime() -> String {
         let todaysHours = getFormattedSchedule()[BusinessSchedule.getTodaysDay()]!
         
@@ -103,6 +88,7 @@ struct BusinessSchedule: Codable {
         return open
     }
 
+    //get if the business is open today
     func getIsOpenToday() -> Bool {
         var isOpenToday = false
         if getFormattedSchedule().keys.contains(BusinessSchedule.getTodaysDay()) {
@@ -111,11 +97,13 @@ struct BusinessSchedule: Codable {
         return isOpenToday
     }
     
+    //get todays hours string
     func getTodaysHours() -> String {
         return getFormattedSchedule()[BusinessSchedule.getTodaysDay()]!
 
     }
 
+    //get if business is already closed
     func getIsAlreadyClosed() -> Bool {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
@@ -135,10 +123,11 @@ struct BusinessSchedule: Codable {
         return value
     }
     
+    //get tomorrows days
     func getTomorrowDay() -> String {
-        let today = Date()
-        let tomorrow = Date(timeIntervalSinceNow: 86400) // add 86400 seconds (1 day) to get tomorrow
-        let weekday = Calendar.current.component(.weekday, from: tomorrow)
+        let tomorrow = Date(timeIntervalSinceNow: 86400)
+        
+//        let weekday = Calendar.current.component(.weekday, from: tomorrow)
 
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE"

@@ -58,8 +58,6 @@
 		39C74D5F29D6A62D00271CAD /* FontWeightEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C74D5E29D6A62D00271CAD /* FontWeightEnum.swift */; };
 		39D607AF29E23A4500422E90 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D607AE29E23A4500422E90 /* Group.swift */; };
 		39D607B329E2531B00422E90 /* AutoComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D607B229E2531B00422E90 /* AutoComplete.swift */; };
-		39D607B529E255AB00422E90 /* BusinessesAutoComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D607B429E255AB00422E90 /* BusinessesAutoComplete.swift */; };
-		39D607B729E2560700422E90 /* CategoriesAutoComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D607B629E2560700422E90 /* CategoriesAutoComplete.swift */; };
 		39E71C3929DF4B6C0072C3EF /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 39E71C3829DF4B6C0072C3EF /* SkeletonView */; };
 		39E71C3B29DF6A3E0072C3EF /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E71C3A29DF6A3E0072C3EF /* GroupCell.swift */; };
 		39E71C3D29DF77BB0072C3EF /* FriendContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E71C3C29DF77BB0072C3EF /* FriendContactCell.swift */; };
@@ -131,8 +129,6 @@
 		39C74D5E29D6A62D00271CAD /* FontWeightEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWeightEnum.swift; sourceTree = "<group>"; };
 		39D607AE29E23A4500422E90 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		39D607B229E2531B00422E90 /* AutoComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoComplete.swift; sourceTree = "<group>"; };
-		39D607B429E255AB00422E90 /* BusinessesAutoComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessesAutoComplete.swift; sourceTree = "<group>"; };
-		39D607B629E2560700422E90 /* CategoriesAutoComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesAutoComplete.swift; sourceTree = "<group>"; };
 		39E71C3A29DF6A3E0072C3EF /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		39E71C3C29DF77BB0072C3EF /* FriendContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendContactCell.swift; sourceTree = "<group>"; };
 		39E7882429DA5937003BEF06 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -186,8 +182,6 @@
 				39F7813629DB9A0C00C94B3B /* Term.swift */,
 				39BD514029DC8AD900E0D181 /* Open.swift */,
 				39D607B229E2531B00422E90 /* AutoComplete.swift */,
-				39D607B429E255AB00422E90 /* BusinessesAutoComplete.swift */,
-				39D607B629E2560700422E90 /* CategoriesAutoComplete.swift */,
 				39E7882429DA5937003BEF06 /* Category.swift */,
 			);
 			path = "Yelp API Structs";
@@ -489,7 +483,6 @@
 				39ABDD0929D6B408009881ED /* HomeViewController.swift in Sources */,
 				3952512629D7A690008F665F /* CustomTabBar.swift in Sources */,
 				39D607B329E2531B00422E90 /* AutoComplete.swift in Sources */,
-				39D607B529E255AB00422E90 /* BusinessesAutoComplete.swift in Sources */,
 				3907DDF929E13686008353B5 /* GuestCell.swift in Sources */,
 				396723E229DA546600AB10A0 /* BusinessCell.swift in Sources */,
 				39C74D0029D677B700271CAD /* SceneDelegate.swift in Sources */,
@@ -498,7 +491,6 @@
 				39C74D3929D683CE00271CAD /* LogInViewController.swift in Sources */,
 				39C74D3229D6792A00271CAD /* animationViewScreen.swift in Sources */,
 				39C74D5F29D6A62D00271CAD /* FontWeightEnum.swift in Sources */,
-				39D607B729E2560700422E90 /* CategoriesAutoComplete.swift in Sources */,
 				393E7EEA29EC93A8001E4C81 /* NotificationCell.swift in Sources */,
 				3906D3DE29D96DAD00198F90 /* YelpApiModel.swift in Sources */,
 				39BD514129DC8AD900E0D181 /* Open.swift in Sources */,

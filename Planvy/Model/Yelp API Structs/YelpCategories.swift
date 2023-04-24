@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Yelp categories for home page
 enum YelpCategories: CaseIterable {
     case Bars
     case Arts
@@ -15,6 +16,7 @@ enum YelpCategories: CaseIterable {
     case Restaurants
 //    case Nature_And_Outdoors
     
+    //string value of enum
     var stringValue: String {
         let string = "\(self)"
         let noSpaces = string.replacingOccurrences(of: "_", with: " ")
@@ -23,6 +25,7 @@ enum YelpCategories: CaseIterable {
         return noAnd
         }
     
+    //randomly select a category
     public static func randomize() -> YelpCategories {
         let allCategories = YelpCategories.allCases
         let choice = allCategories.randomElement()!

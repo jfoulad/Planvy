@@ -9,7 +9,7 @@ import Foundation
 import Kingfisher
 import FirebaseFirestoreSwift
 
-
+//Yelp API struct
 struct Business: Codable {
     let id: String
     let name: String?
@@ -19,7 +19,7 @@ struct Business: Codable {
     let location: Location
     let categories: Array<Category>
 
-    
+    //get formatted string categories
     func getFormattedCategories() -> String {
         var categoriesText = ""
         for category in self.categories {

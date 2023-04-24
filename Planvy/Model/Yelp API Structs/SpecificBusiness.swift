@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-
+//Yelp API struct
 struct SpecificBusiness: Codable, Equatable, Hashable {
     
     let id: String
@@ -24,7 +24,7 @@ struct SpecificBusiness: Codable, Equatable, Hashable {
     let transactions: Array<String?>
 
     
-    
+    // get formatted categories string
     func getFormattedCategories() -> String {
         var categoriesText = ""
         for category in self.categories {
@@ -37,7 +37,7 @@ struct SpecificBusiness: Codable, Equatable, Hashable {
     }
     
     
-    
+    //get formatted price and categories string
     func getPriceAndCategoryFormatted() -> String {
         if let p = price {
             return "\(p) • \(getFormattedCategories())"
@@ -46,11 +46,13 @@ struct SpecificBusiness: Codable, Equatable, Hashable {
         }
     }
     
+    //code for hasher
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
         
     }
     
+    //code for equatable
     static func == (lhs: SpecificBusiness, rhs: SpecificBusiness) -> Bool {
         return lhs.id == rhs.id
     }

@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseFirestoreSwift
 
+//Yelp API struct
 struct Location: Codable {
     let address1: String?
     let address2: String?
@@ -18,7 +19,7 @@ struct Location: Codable {
     let display_address: Array<String>
     
     
-    
+    //get whole address string from array
     func getFormattedAddress() -> String {
         var formattedAddress = ""
         for address in self.display_address {
