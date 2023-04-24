@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-
+//plan class
 class Plan: Hashable, Codable {
     
 
@@ -30,25 +30,26 @@ class Plan: Hashable, Codable {
     }
 
     
-    
+    //equatable??
     static func == (lhs: Plan, rhs: Plan) -> Bool {
         return lhs.specificBusiness == rhs.specificBusiness &&
                 lhs.date == rhs.date &&
                 lhs.guests.insert(lhs.creator) == rhs.guests.insert(rhs.creator)
     }
-    
+    //hashable
     func hash(into hasher: inout Hasher) {
         hasher.combine(specificBusiness)
         hasher.combine(date)
         
     }
-    
+    //get formatted day string
     func getFormattedDate() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM d'\(daySuffix(for: self.date))', yyyy 'at' ha"
         return formatter.string(from: date)
     }
 
+    //get day suffix string
     func daySuffix(for date: Date) -> String {
         let calendar = Calendar.current
         let dayOfMonth = calendar.component(.day, from: date)
@@ -64,6 +65,7 @@ class Plan: Hashable, Codable {
         }
     }
     
+    //getters
     func getDate() -> Date {
         return date
     }

@@ -7,6 +7,7 @@
 
 import UIKit
 
+//cell for plan collection view on home page
 class PlanCell: UICollectionViewCell {
     
     

@@ -7,6 +7,7 @@
 
 import UIKit
 
+//notification cell for profile page collection view
 class NotificationCell: UICollectionViewCell {
     
     

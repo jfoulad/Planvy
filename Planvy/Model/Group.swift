@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-
+//group class
 class Group: Hashable, Codable {
 
     
@@ -18,7 +18,7 @@ class Group: Hashable, Codable {
         self.members = members
     }
     
-    
+    //hashable/equatable code
     static func == (lhs: Group, rhs: Group) -> Bool {
         return lhs.members == rhs.members
     }

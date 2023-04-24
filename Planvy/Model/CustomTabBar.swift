@@ -7,8 +7,9 @@
 
 import UIKit
 
-//@IBDesignable
+//custom tab bar
 class CustomTabBar: UITabBar {
+    
     
     private var shapeLayer: CALayer?
     /*
@@ -42,24 +43,24 @@ class CustomTabBar: UITabBar {
         let heightCurveStarts: CGFloat = 50
         let path = UIBezierPath()
         
-        // Start from left side
+        // go left side
         path.move(to: CGPoint(x: 0, y: heightCurveStarts))
         
-        // Draw left curve
+        // do left curve
         path.addQuadCurve(to: CGPoint(x: heightCurveStarts, y: 0),
                           controlPoint: CGPoint(x: 0, y: 0))
         
-        // Draw top line
+        // do top line
         path.addLine(to: CGPoint(x: frame.width - heightCurveStarts, y: 0))
         
-        // Draw right curve
+        // do right curve
         path.addQuadCurve(to: CGPoint(x: frame.width, y: heightCurveStarts),
                           controlPoint: CGPoint(x: frame.width, y: 0))
         
-        // Draw bottom line
+        // do bottom line
         path.addLine(to: CGPoint(x: frame.width, y: frame.height))
         
-        // Draw left line
+        // do left line
         path.addLine(to: CGPoint(x: 0, y: frame.height))
         
         return path.cgPath

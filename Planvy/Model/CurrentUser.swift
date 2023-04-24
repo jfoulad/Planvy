@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 import FirebaseStorage
 
-
+//current user singleton model
 class CurrentUser {
     
     private var currentUser: User?
@@ -19,20 +19,9 @@ class CurrentUser {
     let storageRef = Storage.storage().reference()
     
     
-    private var sortedPlansArray: Array<Plan> {
-        let plansSet = currentUser!.getPlans()
-        
-        let planArray = Array(plansSet)
-        
-        let sortedArray = planArray.sorted(by: { $0.getDate() < $1.getDate() })
-
-        
-        return sortedArray
-    }
-    
     static let shared = CurrentUser()
     
-
+    //check if current user is nil
     func isCurrentUserNil() -> Bool {
         if currentUser == nil {
             return true
@@ -41,6 +30,7 @@ class CurrentUser {
         }
     }
     
+    //getters and setters
     func setCurrentUser(user: User) {
         currentUser = user
     }
@@ -70,8 +60,16 @@ class CurrentUser {
         return (currentUser?.getPlans())!
     }
     
+    //get plans sorted by date for user
     func getSortedPlansArray() -> Array<Plan> {
-        return sortedPlansArray
+        let plansSet = currentUser!.getPlans()
+        
+        let planArray = Array(plansSet)
+        
+        let sortedArray = planArray.sorted(by: { $0.getDate() < $1.getDate() })
+
+        
+        return sortedArray
     }
     
     func getID() -> String {
@@ -86,6 +84,11 @@ class CurrentUser {
         currentUser?.setProfilePicRef(ref: ref)
     }
     
+    func getFriends() -> Set<User> {
+        return currentUser!.getFriends()
+    }
+    
+    //change passowrd
     func changePassword(old: String, new: String) -> String {
         if old == currentUser!.getPassword() {
             currentUser?.setPassword(password: new)
@@ -96,7 +99,7 @@ class CurrentUser {
         }
     }
     
-    
+    //add a friend to current user and add current user as friend to friend
     func addFriend(friend: User) {
         currentUser?.addFriend(user: friend)
         
@@ -111,10 +114,7 @@ class CurrentUser {
 
     }
     
-    func getFriends() -> Set<User> {
-        return currentUser!.getFriends()
-    }
-    
+    //get friends sorted by last name
     func getSortedFriends() ->Array<User> {
         let friendSet = currentUser!.getFriends()
         
@@ -126,7 +126,7 @@ class CurrentUser {
         return sortedArray
     }
     
-    
+    //add a plan to current user and to all guests
     func addPlan(plan: Plan, guests: Set<User>) {
         currentUser!.addPlans(plan: plan)
 
@@ -138,6 +138,7 @@ class CurrentUser {
         }
     }
     
+    //add a user to database
     func addUserToDatabase(user:User) {
         do {
             let documentID = userCollectionRef.document().documentID
@@ -150,6 +151,7 @@ class CurrentUser {
         }
     }
     
+    //log in function
     func logIn(email: String, password: String, onSuccess: @escaping (User) -> Void) {
         userCollectionRef.getDocuments(completion: { snapshot, error in
             
@@ -176,6 +178,7 @@ class CurrentUser {
         })
     }
     
+    //update current user to database
     func updateCurrentUserToDataBase() {
         if let id = currentUser!.id {
             let docRef = userCollectionRef.document(id)
@@ -188,6 +191,7 @@ class CurrentUser {
           }
     }
     
+    //update given user to database
     func updateUserToDataBase(user: User) {
         if let id = user.id {
             let docRef = userCollectionRef.document(id)
@@ -200,6 +204,7 @@ class CurrentUser {
           }
     }
     
+    //make dummy users
     func makeDummyUsers() {
 //        let user1 = User(email: "jf@gmail.com", firstName: "Jeremy", lastName: "Fouladian", password: "test123", profilePicURL: nil)
 //
@@ -219,6 +224,7 @@ class CurrentUser {
     }
     
     
+    //search for users in database given email
     func searchForUsers(email: String, onFound: @escaping (User) -> Void, onNotFound: @escaping (Bool) -> Void) {
         userCollectionRef.getDocuments(completion: { snapshot, error in
             
@@ -247,6 +253,8 @@ class CurrentUser {
         })
     }
     
+    
+    //upload an image to profile picture storage
     func uploadImage(image: UIImage) {
         
         let imageData = image.jpegData(compressionQuality: 0.8)
@@ -270,6 +278,7 @@ class CurrentUser {
         }
     }
     
+    //get an image from profile picture storage
     func getImage(onSuccess: @escaping (UIImage) -> Void) {
         
         let imageRef = storageRef.child((currentUser?.getProfilePicRef())!)

@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-
+//user class
 class User: Hashable, Codable {
     
     @DocumentID var id: String?
@@ -31,17 +31,18 @@ class User: Hashable, Codable {
     }
     
     
-    
+    //equatable/ hashable
     static func == (lhs: User, rhs: User) -> Bool {
         return (lhs.email == rhs.email)
     }
     
+    //hashable
     func hash(into hasher: inout Hasher) {
         hasher.combine(email)
     }
     
     
-    
+    //getters and setters
     func getFriends() -> Set<User> {
         return self.friendsSet
     }

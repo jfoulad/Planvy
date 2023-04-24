@@ -7,6 +7,7 @@
 
 import UIKit
 
+//friend cell for collection view on friends page
 class FriendContactCell: UICollectionViewCell {
 
     

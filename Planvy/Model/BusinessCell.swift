@@ -7,6 +7,7 @@
 
 import UIKit
 
+//business cell for collection view for home page
 class BusinessCell: UICollectionViewCell {
     
     var business: Business?

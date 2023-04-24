@@ -7,6 +7,7 @@
 
 import Foundation
 
+//different font weights enum
 enum FontWeight {
     case Bold
     case Medium

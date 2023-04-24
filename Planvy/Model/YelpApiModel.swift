@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+//yelp api singleton
 class YelpApiModel {
     let COUNT = 10
     let API_KEY = "Bearer I4d9M5UiS8Czv-TqUO3ny_1KfSW7tIXQSJlmRBH3uG6qn--LxWFOg469fHhFX7LrMTRil66nS_XZiFdzBJE9ut6dsPdVWVhb557TDwHUCqIPvr6AU7vjcl9MZDcpZHYx"
@@ -81,6 +81,7 @@ class YelpApiModel {
         }).resume()
     }
     
+    //get autocomplete given search criteria
     func autocomplete(term: String, location: String, onSuccess: @escaping (Autocomplete) -> Void) {
         let locationNoSpaces = location.replacingOccurrences(of: " ", with: "")
         

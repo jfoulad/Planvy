@@ -7,6 +7,7 @@
 
 import UIKit
 
+//group collection view cell for groups on friend page
 class GroupCell: UICollectionViewCell {
     
     @IBOutlet weak var groupNameLabel: UILabel!
