@@ -46,7 +46,7 @@ class LogInViewController: UIViewController {
         
     }
     
-    
+    //when log in tapped, try to log in given tf info
     @IBAction func logInDidTapped(_ sender: UIButton) {
         let email = emailTF.text
         let password = passwordTF.text
@@ -73,7 +73,7 @@ class LogInViewController: UIViewController {
     }
     
     
-    
+    //start the animation
     func startAnimation() {
         
         animationView.translatesAutoresizingMaskIntoConstraints = false
@@ -93,7 +93,7 @@ class LogInViewController: UIViewController {
     }
     
 
-    
+    //set up UI
     func setUpUI() {
         let designManager = ColorAndFontManager.shared
         

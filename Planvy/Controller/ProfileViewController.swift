@@ -34,6 +34,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
     }
     
+    //set up UI
     func setUpUI() {
         
         profilePicture.showAnimatedGradientSkeleton()
@@ -110,11 +111,12 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         emailLabel.text = currentUser.getEmail()
     }
     
-    
+    //number of items in section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
     
+    //load notification cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "notifCell", for: indexPath) as! NotificationCell
         
@@ -129,7 +131,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         return cell
     }
     
-    
+    //settings button did tap and trigger whatever is needed
     @IBAction func buttonDidTap(_ sender: UIButton) {
         
         let actionSheet = UIAlertController(title: "Choose an option", message: nil, preferredStyle: .actionSheet)
@@ -177,14 +179,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             self.present(alert, animated: true)
             
         }
-//        let button2 = UIAlertAction(title: "Button 2", style: .default) { (_) in
-//            print("Button 2 tapped")
-//            // Perform action for Button 2
-//        }
-//        let button3 = UIAlertAction(title: "Button 3", style: .default) { (_) in
-//            print("Button 3 tapped")
-//            // Perform action for Button 3
-//        }
         
         let cancelButton = UIAlertAction(title: "Cancel", style: .cancel)
         

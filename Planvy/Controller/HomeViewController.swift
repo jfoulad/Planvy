@@ -202,8 +202,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     
     // prepare for segue
-    // either call load business to pass into next VC
-    //or other
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "getBusiness" {
@@ -215,12 +213,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 businessInfoVC.businessID = currentHotspotBusinesses[indexpath].id
                 
     
-            
-    
             }
         }
     }
     
+    //set up UI
     func setUpUI() {
         //--------Change font of tab bar-----------------------------------------
         

@@ -53,7 +53,7 @@ class HoursViewController: UIViewController {
     }
     
     
-    
+    //set up UI
     func setUpUI() {
         hoursLabel.font = designManager.font(weight: .Bold, size: 25)
         hoursLabel.textColor = designManager.black

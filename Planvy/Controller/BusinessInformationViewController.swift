@@ -76,6 +76,7 @@ class BusinessInformationViewController: UIViewController {
         loadBusiness(businessID: businessID)
     }
     
+    //when hours did tapped, pass info to next VC and trigger segue
     @IBAction func seeAllHoursDidTapped(_ sender: UIButton) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -112,7 +113,7 @@ class BusinessInformationViewController: UIViewController {
         }
     
     
-
+    //set text for ui when it is loaded
     func setUIText() {
         
         //---title image
@@ -180,7 +181,7 @@ class BusinessInformationViewController: UIViewController {
                 
     }
     
-    
+    //turn skeleton off/on
     func toggleSkeloton (onOrOff : Bool) {
         
         
@@ -200,6 +201,7 @@ class BusinessInformationViewController: UIViewController {
         
     }
     
+    //set up ui
     func setUpUI() {
         //----set skeltonable equal to font
         businessNameLabel.skeletonTextLineHeight = .relativeToFont
@@ -244,7 +246,7 @@ class BusinessInformationViewController: UIViewController {
     }
     
     
-    
+    //when invite button tapped either go back to create a plan or create a new one
     @IBAction func businessSelectedDidtapped(_ sender: UIButton) {
         
         if let tabBar = self.presentingViewController as? UITabBarController {

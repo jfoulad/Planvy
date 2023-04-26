@@ -75,11 +75,11 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
     }
     
     
-    
+    //number of itens
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return guestsArray.count
     }
-    
+    //guest cells loading
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "friendCell", for: indexPath) as! GuestCell
@@ -101,7 +101,7 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
         
     }
     
-    
+    //when trash button is clicked delete guest from plan
     @IBAction func trashGuest(_ sender: UIButton) {
         
         let cell = sender.superview?.superview as! GuestCell
@@ -122,7 +122,7 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
     
     
     
-    
+    //add guests by first name from friend list
     @IBAction func didAddGuest(_ sender: UIButton) {
         let firstName = addGuestTF.text?.lowercased()
         let friendsSet = currentUser.getFriends()
@@ -143,7 +143,7 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
         
     }
     
-    
+    //when location tf did change, load autocomplete and put it into array
     @IBAction func textFieldDidChange(_ sender: UITextField) {
         
         if sender.text?.isEmpty == true {
@@ -178,6 +178,7 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
         
     }
     
+    //put table view below location tf
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         if textField.tag == 1 {
@@ -187,7 +188,7 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
             view.bringSubviewToFront(tableView)
         }
     }
-    
+    //hide text field
     func textFieldDidEndEditing(_ textField: UITextField) {
         tableView.isHidden = true
         tableView.frame = CGRect(x: locationTF.frame.minX, y: locationTF.frame.maxY, width: locationTF.frame.width, height: 0)
@@ -196,11 +197,12 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
     }
     
     
-    
+    //number of items in autocomplete tableview
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sortedAutoCompleteArray.count
     }
     
+    //load tableview cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
@@ -226,6 +228,7 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
         return cell
     }
     
+    //when cell is selected, load business VC
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let cell = tableView.cellForRow(at: indexPath)
@@ -261,6 +264,7 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
     }
     
     
+    //set up UI
     func setUpUI() {
         //set up tableView
         
@@ -329,6 +333,7 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
     //        print(1)
     //    }
     
+    //bg tap because of bug
     @IBAction func bgTapButton(_ sender: UIButton) {
         planNameTF.resignFirstResponder()
         locationTF.resignFirstResponder()
@@ -337,7 +342,7 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
         print(selectedBusiness)
     }
     
-    
+    //when plan is submitted, check to make sure all info is there
     @IBAction func submitButtonDidTapped(_ sender: UIButton) {
         
         if planNameTF.text?.isEmpty == true ||
@@ -370,6 +375,7 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
         }
     }
     
+    //reload home table view controller so plan is there
     override func viewWillDisappear(_ animated: Bool) {
         
         if let tabBar = self.presentingViewController as? UITabBarController {

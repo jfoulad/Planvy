@@ -25,17 +25,17 @@ class animationViewScreen: UIViewController {
         animationView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(animationView)
 
-        // Add constraints to center the subview horizontally and vertically
+        // constrain center and size
         animationView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         animationView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
 
-        // Add constraints to set the width and height of the subview
         animationView.widthAnchor.constraint(equalToConstant: 200).isActive = true
         animationView.heightAnchor.constraint(equalToConstant: 200).isActive = true
 
         animationView.loopMode = .playOnce
         animationView.play()
         
+        //segue to next screen when finished
         animationView.play(completion: { finished in
 
             let logInVC = self.storyboard?.instantiateViewController(withIdentifier: "logInVC") as! LogInViewController

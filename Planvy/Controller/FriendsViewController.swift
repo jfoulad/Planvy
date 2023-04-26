@@ -47,7 +47,7 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
         
     }
     
-    
+    //add blur (thought it would be more useful than it is
     func addBlur(object: UIView) {
         
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
@@ -120,6 +120,7 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     
     
+    //set up ui
     func setUpUI() {
         //--------Change font of tab bar-----------------------------------------
         
@@ -177,6 +178,7 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
                 
     }
     
+    //when search button is clicked, try to add user
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         let lowercaseEmail = searchBar.text!.lowercased()
@@ -210,6 +212,7 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
         
     }
     
+    //loading animation
     func startAnimation() {
         
         animationView.translatesAutoresizingMaskIntoConstraints = false
@@ -228,6 +231,7 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
         
     }
     
+    //prepare for segue, pass relevant
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "createPlan" {
             if let createPlanVC = segue.destination as? CreateAPlanViewController{
