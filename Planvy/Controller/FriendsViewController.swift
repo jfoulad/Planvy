@@ -118,6 +118,9 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     }
     
+    @objc func addFriendDidTapped() {
+        searchBar.becomeFirstResponder()
+    }
     
     
     //set up ui
@@ -140,8 +143,15 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
         addButton.frame = CGRect(x: 0, y: 0, width: 55, height: 55)
         addButton.layer.backgroundColor = designManager.orange.cgColor
         addButton.layer.cornerRadius =  addButton.frame.height/2
+        addButton.addTarget(self, action: #selector(addFriendDidTapped), for: .touchUpInside)
 
+        let buttonView = UIView(frame: CGRect(x: 0, y: 0, width: addButton.frame.width, height: addButton.frame.height))
+        addButton.frame = buttonView.bounds
 
+        buttonView.addSubview(addButton)
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: buttonView)
+        
         // Set image as title on left side
         let title = UIImage(named: "FriendsTitleView")
         let imageView = UIImageView(image: title)
@@ -153,14 +163,6 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleView)
     
 
-        // Add button on right side
-        let buttonView = UIView(frame: CGRect(x: 0, y: 0, width: addButton.frame.width, height: addButton.frame.height))
-        addButton.frame = buttonView.bounds
-
-        buttonView.addSubview(addButton)
-
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: buttonView)
-        
         
         
         //---Color/ Design UI

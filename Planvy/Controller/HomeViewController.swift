@@ -70,8 +70,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     //supposed to trigger on addbutton
-    @objc func addButtonDidTapped(_ sender: UITapGestureRecognizer? = nil) {
-        print("test")
+    @objc func addButtonDidTapped() {
+        
+        let createPlanVC = self.storyboard?.instantiateViewController(withIdentifier: "createPlanVC") as! CreateAPlanViewController
+        createPlanVC.modalTransitionStyle = .coverVertical
+
+        self.present(createPlanVC, animated: true)
+        
     }
     
     
@@ -233,8 +238,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         addButton.frame = CGRect(x: 0, y: 0, width: 55, height: 55)
         addButton.layer.backgroundColor = designManager.orange.cgColor
         addButton.layer.cornerRadius =  addButton.frame.height/2
-        
-        
+        addButton.addTarget(self, action: #selector(addButtonDidTapped), for: .touchUpInside)
+
+        let buttonView = UIView(frame: CGRect(x: 0, y: 0, width: addButton.frame.width, height: addButton.frame.height))
+        addButton.frame = buttonView.bounds
+
+        buttonView.addSubview(addButton)
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: buttonView)
         
         // Set navigation bar height
         let navBarHeight: CGFloat = 60
@@ -251,23 +262,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleView)
         
 
-        // Add button on right side
         
-//        let rightBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "add white"), style: .plain, target: self, action: #selector(addButtonDidTapped))
-//        rightBarButtonItem.customView?.frame = CGRect(x: 0, y: 0, width: 55, height: 55)
-//        rightBarButtonItem.customView?.layer.cornerRadius = (rightBarButtonItem.customView?.frame.height)!/2
-//        rightBarButtonItem.customView?.backgroundColor = designManager.orange
-//
-//
-//        self.navigationItem.rightBarButtonItem = rightBarButtonItem
-        
-        
-        let buttonView = UIView(frame: CGRect(x: 0, y: 0, width: addButton.frame.width, height: addButton.frame.height))
-        addButton.frame = buttonView.bounds
-
-        buttonView.addSubview(addButton)
-
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: buttonView)
         
         
         //----------FUNCTION NOT LINKING
@@ -277,11 +272,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 //        print(navigationItem.rightBarButtonItem?.target)
         
         
-//        let gestureTap = UIGestureRecognizer(target: self, action: #selector(self.addButtonDidTapped(_:)))
-//
-//
-//        navigationItem.rightBarButtonItem?.customView?.addGestureRecognizer(gestureTap)
-
         
 
         // CENTER ALIGN

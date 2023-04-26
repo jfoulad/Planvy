@@ -66,8 +66,16 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         addButton.frame = CGRect(x: 0, y: 0, width: 55, height: 55)
         addButton.layer.backgroundColor = designManager.orange.cgColor
         addButton.layer.cornerRadius =  addButton.frame.height/2
+        addButton.addTarget(self, action: #selector(settingsButtonDidTapped), for: .touchUpInside)
 
+        let buttonView = UIView(frame: CGRect(x: 0, y: 0, width: addButton.frame.width, height: addButton.frame.height))
+        addButton.frame = buttonView.bounds
 
+        buttonView.addSubview(addButton)
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: buttonView)
+        
+        
         // Set image as title on left side
         let title = UIImage(named: "ProfileTitleView")
         let imageView = UIImageView(image: title)
@@ -79,15 +87,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleView)
     
 
-        // Add button on right side
-        let buttonView = UIView(frame: CGRect(x: 0, y: 0, width: addButton.frame.width, height: addButton.frame.height))
-        addButton.frame = buttonView.bounds
 
-        buttonView.addSubview(addButton)
-
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: buttonView)
-        
-        
         
         
         //---Color/ Design UI/Skeleton
@@ -131,9 +131,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         return cell
     }
     
-    //settings button did tap and trigger whatever is needed
-    @IBAction func buttonDidTap(_ sender: UIButton) {
-        
+    //trigger profile settings alerts
+    @objc func settingsButtonDidTapped() {
         let actionSheet = UIAlertController(title: "Choose an option", message: nil, preferredStyle: .actionSheet)
 
         let changePassword = UIAlertAction(title: "Change Password", style: .default) { (_) in
@@ -187,7 +186,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         actionSheet.addAction(cancelButton)
 
         present(actionSheet, animated: true, completion: nil)
-    
     }
+    
         
 }
