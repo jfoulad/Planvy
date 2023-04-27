@@ -339,7 +339,6 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
         locationTF.resignFirstResponder()
         addGuestTF.resignFirstResponder()
         
-        print(selectedBusiness)
     }
     
     //when plan is submitted, check to make sure all info is there

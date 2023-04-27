@@ -180,8 +180,7 @@ class CurrentUser {
     func addFriendsToDatabase(source: User, target: User) {
         if let id = source.id {
             let docRef = userCollectionRef.document(id)
-            
-            docRef.updateData([
+                 docRef.updateData([
                     "friendsSet" :  FieldValue.arrayUnion([target.id!])]
                 )
           }
