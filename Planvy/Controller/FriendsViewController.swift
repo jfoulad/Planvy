@@ -69,7 +69,7 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
     // number of items
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 1 {
-            return 10
+            return 4
         } else {
             return currentUser.getFriends().count
         }
@@ -84,8 +84,11 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
             
             cell.groupNameLabel.textColor = designManager.white
             cell.groupNameLabel.font = designManager.font(weight: .Bold, size: 15)
-            cell.groupNameLabel.text = "The Homie Homeslices"
+            cell.groupNameLabel.text = "Groups not yet implemented"
             
+            cell.friend1Image.image = UIImage(named: "friend1")
+            cell.friend2Image.image = UIImage(named: "friend2")
+            cell.friend3Image.image = UIImage(named: "friend3")
             
             cell.layer.cornerRadius = 10
             cell.addButton.layer.cornerRadius = 5
