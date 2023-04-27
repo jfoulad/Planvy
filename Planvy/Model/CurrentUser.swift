@@ -103,14 +103,11 @@ class CurrentUser {
     func addFriend(friend: User) {
         currentUser?.addFriend(user: friend)
         
-        friend.addFriend(user: currentUser!)
-        
-//        print(type(of: currentUser))
-//        print(type(of: friend))
-//        crashing for some reason
-//        updateUserToDataBase(user: friend)
-//
-//        updateCurrentUserToDataBase()
+        if let currentUser {
+            friend.addFriend(user: currentUser)
+            addFriendsToDatabase(source: friend, target: currentUser)
+            addFriendsToDatabase(source: currentUser , target: friend)
+        }
 
     }
     
@@ -178,29 +175,15 @@ class CurrentUser {
         })
     }
     
-    //update current user to database
-    func updateCurrentUserToDataBase() {
-        if let id = currentUser!.id {
-            let docRef = userCollectionRef.document(id)
-            do {
-              try docRef.setData(from: currentUser)
-            }
-            catch {
-              print(error)
-            }
-          }
-    }
     
     //update given user to database
-    func updateUserToDataBase(user: User) {
-        if let id = user.id {
+    func addFriendsToDatabase(source: User, target: User) {
+        if let id = source.id {
             let docRef = userCollectionRef.document(id)
-            do {
-              try docRef.setData(from: currentUser)
-            }
-            catch {
-              print(error)
-            }
+            
+            docRef.updateData([
+                    "friendsSet" :  FieldValue.arrayUnion([target.id!])]
+                )
           }
     }
     
