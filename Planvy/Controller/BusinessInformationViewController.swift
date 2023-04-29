@@ -214,7 +214,7 @@ class BusinessInformationViewController: UIViewController {
         inviteFriendButton.titleLabel?.skeletonTextLineHeight = .relativeToFont
         
         //----Font Coloring/ UI Positioning set up
-        let firstViewFont = designManager.font(weight: .Bold, size: 16)
+        let firstViewFont = designManager.font(weight: .Bold, size: 23)
         
         seeHoursButton.contentVerticalAlignment = .bottom
         seeHoursButton.contentHorizontalAlignment = .left
@@ -233,7 +233,7 @@ class BusinessInformationViewController: UIViewController {
         pickupLabel.textColor = designManager.black
         reservationsLabel.font = firstViewFont
         reservationsLabel.textColor = designManager.black
-        ratingLabel.font = firstViewFont
+        ratingLabel.font = designManager.font(weight: .Bold, size: 19)
         ratingLabel.textColor = designManager.white
         
         

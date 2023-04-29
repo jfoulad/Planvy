@@ -59,8 +59,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         
         //-----------Start Hotspot Loading--------------------------------------
-        currentHotspotCategory = YelpCategories.randomize()
-//        currentHotspotCategory = YelpCategories.Arts
+//        currentHotspotCategory = YelpCategories.randomize()
+        currentHotspotCategory = YelpCategories.Arts
         loadHotspots()
         hotspotsButton.setTitle(currentHotspotCategory?.stringValue, for: .normal)
         
