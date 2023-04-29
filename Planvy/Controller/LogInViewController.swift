@@ -11,7 +11,7 @@ import Lottie
 class LogInViewController: UIViewController {
 
     
-    @IBOutlet weak var continueUsingLabel: UILabel!
+//    @IBOutlet weak var continueUsingLabel: UILabel!
     
     @IBOutlet weak var orLogInLabel: UILabel!
     
@@ -45,6 +45,12 @@ class LogInViewController: UIViewController {
         
         
     }
+    
+    @objc func bgDidTapped(_ sender: UITapGestureRecognizer) {
+        emailTF.resignFirstResponder()
+        passwordTF.resignFirstResponder()
+    }
+    
     
     //when log in tapped, try to log in given tf info
     @IBAction func logInDidTapped(_ sender: UIButton) {
@@ -100,7 +106,7 @@ class LogInViewController: UIViewController {
         let labelFont = designManager.font(weight: .Medium, size: 15)
         let textFieldFont = designManager.font(weight: .Medium, size: 18)
         
-        continueUsingLabel.font = designManager.font(weight: .Medium, size: 15)
+//        continueUsingLabel.font = designManager.font(weight: .Medium, size: 15)
         orLogInLabel.font = labelFont
         emailTF.font = textFieldFont
         passwordTF.font = textFieldFont
@@ -133,5 +139,10 @@ class LogInViewController: UIViewController {
         logInButton.layer.cornerRadius = 10
         
         forgotPasswordButton.titleLabel?.font = designManager.font(weight: .Bold, size: 13)
+        
+        //bg resign first responder
+        
+        let bgGesture = UITapGestureRecognizer(target: self, action: #selector(bgDidTapped))
+        view.addGestureRecognizer(bgGesture)
     }
 }

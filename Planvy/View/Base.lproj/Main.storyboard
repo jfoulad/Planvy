@@ -25,10 +25,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dad-jk-iNf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="OMV-Cg-0Q0"/>
-                            <constraint firstAttribute="bottom" secondItem="dad-jk-iNf" secondAttribute="bottom" id="QtT-HS-qMo"/>
-                            <constraint firstItem="dad-jk-iNf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ij3-Sm-UGP"/>
-                            <constraint firstItem="dad-jk-iNf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uuN-GH-FTi"/>
+                            <constraint firstAttribute="bottom" secondItem="dad-jk-iNf" secondAttribute="bottom" id="KAw-1g-Bfy"/>
+                            <constraint firstItem="dad-jk-iNf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Msd-re-e6W"/>
+                            <constraint firstItem="dad-jk-iNf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jeP-xn-YKE"/>
+                            <constraint firstItem="dad-jk-iNf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vPm-NM-BjD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="l5i-ZY-68p"/>
@@ -47,9 +47,10 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="umN-M2-cFd">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <gestureRecognizers/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="jeremy123" borderStyle="line" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Di-2R-OvB">
-                                <rect key="frame" x="31" y="555" width="330" height="44"/>
+                                <rect key="frame" x="31" y="403" width="330" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -62,66 +63,28 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WhT-a5-a72">
-                                <rect key="frame" x="31" y="482" width="75" height="1"/>
+                                <rect key="frame" x="31" y="330" width="75" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.25305590989999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ufy-hh-pf5">
-                                <rect key="frame" x="286" y="482" width="75" height="1"/>
+                                <rect key="frame" x="286" y="330" width="75" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.25305590989999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Or Login Using Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGZ-Oq-jgi">
-                                <rect key="frame" x="106" y="469" width="180" height="27"/>
+                                <rect key="frame" x="106" y="317" width="180" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bV0-Bq-5xQ">
-                                <rect key="frame" x="76" y="377" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonConfiguration key="configuration" style="tinted" image="instagram">
-                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ul0-pb-eKY">
-                                <rect key="frame" x="247" y="377" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonConfiguration key="configuration" style="tinted" image="twitter">
-                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo big" translatesAutoresizingMaskIntoConstraints="NO" id="j7j-5H-2ti">
                                 <rect key="frame" x="106" y="100" width="180" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Continue Using" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrO-Yj-xvr">
-                                <rect key="frame" x="127" y="335" width="138" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E3z-Eu-Qct">
-                                <rect key="frame" x="273" y="348" width="88" height="1"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="0.25305590986394561" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XRf-kd-DY0">
-                                <rect key="frame" x="31" y="348" width="88" height="1"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="0.25305590989999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVv-bI-rCM">
-                                <rect key="frame" x="161" y="377" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonConfiguration key="configuration" style="tinted" image="snapchat">
-                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="jf@gmail.com" borderStyle="line" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f2D-je-mR3">
-                                <rect key="frame" x="31" y="504" width="330" height="42"/>
+                                <rect key="frame" x="31" y="352" width="330" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -134,7 +97,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4l-ey-uUE">
-                                <rect key="frame" x="31" y="668" width="330" height="54"/>
+                                <rect key="frame" x="31" y="516" width="330" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.54027937920000002" blue="0.86078917980000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -145,7 +108,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWU-6h-S8P">
-                                <rect key="frame" x="224" y="607" width="137" height="53"/>
+                                <rect key="frame" x="224" y="455" width="137" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -158,15 +121,14 @@
                         <viewLayoutGuide key="safeArea" id="oNR-wV-Dag"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="umN-M2-cFd" secondAttribute="bottom" id="FUo-ON-4PO"/>
+                            <constraint firstItem="umN-M2-cFd" firstAttribute="top" secondItem="SWh-0j-atf" secondAttribute="top" id="OoO-aJ-Bxu"/>
                             <constraint firstItem="umN-M2-cFd" firstAttribute="trailing" secondItem="oNR-wV-Dag" secondAttribute="trailing" id="Seb-Tr-kX6"/>
-                            <constraint firstAttribute="bottom" secondItem="umN-M2-cFd" secondAttribute="bottom" id="XLh-6A-8Mc"/>
-                            <constraint firstItem="umN-M2-cFd" firstAttribute="top" secondItem="SWh-0j-atf" secondAttribute="top" id="Yv5-HZ-yTi"/>
                             <constraint firstItem="umN-M2-cFd" firstAttribute="leading" secondItem="oNR-wV-Dag" secondAttribute="leading" id="wVe-iZ-KHG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bsQ-gg-M3K"/>
                     <connections>
-                        <outlet property="continueUsingLabel" destination="rrO-Yj-xvr" id="MJH-AQ-PeG"/>
                         <outlet property="emailTF" destination="f2D-je-mR3" id="Eu0-B3-7xE"/>
                         <outlet property="forgotPasswordButton" destination="YWU-6h-S8P" id="jZ7-ku-ccE"/>
                         <outlet property="logInButton" destination="P4l-ey-uUE" id="TjM-HH-YYv"/>
@@ -1613,15 +1575,12 @@
         <image name="category" width="40" height="40"/>
         <image name="check default" width="20" height="20"/>
         <image name="date" width="20" height="20"/>
-        <image name="instagram" width="20" height="20"/>
         <image name="list.bullet.rectangle.portrait" catalog="system" width="115" height="128"/>
         <image name="location" width="20" height="20"/>
         <image name="logo big" width="155" height="184"/>
         <image name="people" width="20" height="20"/>
-        <image name="snapchat" width="20" height="20"/>
         <image name="starfilledmine" width="40" height="40"/>
         <image name="trash" width="20" height="20"/>
-        <image name="twitter" width="20" height="20"/>
         <image name="user" width="20" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
