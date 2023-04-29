@@ -174,9 +174,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="RBW-9a-hjf">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="227-TX-pB2">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="227-TX-pB2">
                                 <rect key="frame" x="16" y="127" width="361" height="230"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upcoming Plans" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgR-Jy-6bT">
                                         <rect key="frame" x="20" y="21" width="342" height="21"/>
@@ -287,10 +286,12 @@
                                     </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.59999999999999998" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="Fqz-cu-hX5"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2LG-Ca-Exr">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2LG-Ca-Exr">
                                 <rect key="frame" x="16" y="381" width="361" height="230"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Local Hotspots For" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEd-sm-sVn">
                                         <rect key="frame" x="20" y="21" width="140" height="21"/>
@@ -416,15 +417,24 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.59999999999999998" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="ra4-EJ-9pc"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bhz-qG-cF2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="RBW-9a-hjf" firstAttribute="trailing" secondItem="Bhz-qG-cF2" secondAttribute="trailing" id="5vQ-bk-brJ"/>
+                            <constraint firstItem="2LG-Ca-Exr" firstAttribute="leading" secondItem="Bhz-qG-cF2" secondAttribute="leading" constant="16" id="GcL-wk-2D0"/>
+                            <constraint firstItem="Bhz-qG-cF2" firstAttribute="trailing" secondItem="2LG-Ca-Exr" secondAttribute="trailing" constant="16" id="JzY-Xu-Pjh"/>
                             <constraint firstItem="RBW-9a-hjf" firstAttribute="top" secondItem="KgR-8a-rWj" secondAttribute="top" id="K8v-4w-bZk"/>
                             <constraint firstAttribute="bottom" secondItem="RBW-9a-hjf" secondAttribute="bottom" id="Kez-7n-xb1"/>
                             <constraint firstItem="RBW-9a-hjf" firstAttribute="leading" secondItem="Bhz-qG-cF2" secondAttribute="leading" id="V6D-3w-d1h"/>
+                            <constraint firstItem="Bhz-qG-cF2" firstAttribute="trailing" secondItem="227-TX-pB2" secondAttribute="trailing" constant="16" id="Wec-hf-agA"/>
+                            <constraint firstItem="2LG-Ca-Exr" firstAttribute="top" secondItem="227-TX-pB2" secondAttribute="bottom" constant="24" id="ZYJ-ki-EuH"/>
+                            <constraint firstItem="227-TX-pB2" firstAttribute="leading" secondItem="Bhz-qG-cF2" secondAttribute="leading" constant="16" id="iwr-sW-YxM"/>
+                            <constraint firstItem="227-TX-pB2" firstAttribute="top" secondItem="Bhz-qG-cF2" secondAttribute="top" constant="24" id="uj9-4e-PqZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" style="editor" id="dfx-2I-N7n"/>
