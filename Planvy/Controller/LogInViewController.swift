@@ -21,7 +21,6 @@ class LogInViewController: UIViewController {
     
     @IBOutlet weak var logInButton: UIButton!
 
-    @IBOutlet weak var forgotPasswordButton: UIButton!
     
     let currentUserModel = CurrentUser.shared
     let animationView = LottieAnimationView(name: "fourdots")
@@ -138,7 +137,7 @@ class LogInViewController: UIViewController {
         logInButton.titleLabel?.font = designManager.font(weight: .Bold, size: 20)
         logInButton.layer.cornerRadius = 10
         
-        forgotPasswordButton.titleLabel?.font = designManager.font(weight: .Bold, size: 13)
+//        forgotPasswordButton.titleLabel?.font = designManager.font(weight: .Bold, size: 13)
         
         //bg resign first responder
         
