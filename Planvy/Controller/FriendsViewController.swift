@@ -30,6 +30,7 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var addFriendsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +72,8 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
         if collectionView.tag == 1 {
             return 10
         } else {
-            return currentUser.getFriends().count
+//            return currentUser.getFriends().count
+            return 20
         }
     }
     
@@ -95,17 +97,17 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "friendCell", for: indexPath) as! FriendContactCell
             
-            cell.emailLabel.textColor = designManager.white
-            cell.nameLabel.textColor = designManager.white
-            
-            cell.nameLabel.font = designManager.font(weight: .Bold, size: 17)
-            cell.emailLabel.font = designManager.font(weight: .Bold, size: 14)
-            
-            let friend = currentUser.getSortedFriends()[indexPath.row]
-            
-            cell.friend = friend
-            cell.nameLabel.text = friend.getFullName()
-            cell.emailLabel.text = friend.getEmail()
+//            cell.emailLabel.textColor = designManager.white
+//            cell.nameLabel.textColor = designManager.white
+//            
+//            cell.nameLabel.font = designManager.font(weight: .Bold, size: 17)
+//            cell.emailLabel.font = designManager.font(weight: .Bold, size: 14)
+//            
+//            let friend = currentUser.getSortedFriends()[indexPath.row]
+//            
+//            cell.friend = friend
+//            cell.nameLabel.text = friend.getFullName()
+//            cell.emailLabel.text = friend.getEmail()
             
             cell.layer.cornerRadius = 10
             cell.addPlanButton.layer.cornerRadius = 5
@@ -177,6 +179,11 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
         friendListLabel.font = designManager.font(weight: .Bold, size: 21)
         
         searchHolderView.layer.cornerRadius = 10
+        
+        addFriendsLabel.textColor = designManager.white
+        addFriendsLabel.font = designManager.font(weight: .Bold, size: 18)
+        
+        
                 
     }
     
