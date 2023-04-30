@@ -72,8 +72,8 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
         if collectionView.tag == 1 {
             return 10
         } else {
-//            return currentUser.getFriends().count
-            return 20
+            return currentUser.getFriends().count
+            
         }
     }
     
@@ -97,17 +97,17 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "friendCell", for: indexPath) as! FriendContactCell
             
-//            cell.emailLabel.textColor = designManager.white
-//            cell.nameLabel.textColor = designManager.white
-//            
-//            cell.nameLabel.font = designManager.font(weight: .Bold, size: 17)
-//            cell.emailLabel.font = designManager.font(weight: .Bold, size: 14)
-//            
-//            let friend = currentUser.getSortedFriends()[indexPath.row]
-//            
-//            cell.friend = friend
-//            cell.nameLabel.text = friend.getFullName()
-//            cell.emailLabel.text = friend.getEmail()
+            cell.emailLabel.textColor = designManager.white
+            cell.nameLabel.textColor = designManager.white
+            
+            cell.nameLabel.font = designManager.font(weight: .Bold, size: 17)
+            cell.emailLabel.font = designManager.font(weight: .Bold, size: 14)
+            
+            let friend = currentUser.getSortedFriends()[indexPath.row]
+            
+            cell.friend = friend
+            cell.nameLabel.text = friend.getFullName()
+            cell.emailLabel.text = friend.getEmail()
             
             cell.layer.cornerRadius = 10
             cell.addPlanButton.layer.cornerRadius = 5

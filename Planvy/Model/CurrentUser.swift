@@ -167,7 +167,7 @@ class CurrentUser {
                         }
                         
                     } else {
-
+                        
                     }
                 }
             }
@@ -196,8 +196,10 @@ class CurrentUser {
             onSuccess(users)
             
         })
-            
-        
+    }
+    
+    func setFriends(friends: Set<User>) {
+        currentUser!.setFriends(friends: friends)
     }
     
     

@@ -56,6 +56,10 @@ class User: Hashable, Codable {
         return self.friendsSet
     }
     
+    func setFriends(friends: Set<User>) {
+        self.friendsSet = friends
+    }
+    
     func getEmail() -> String {
         return self.email
     }
