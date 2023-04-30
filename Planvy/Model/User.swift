@@ -16,6 +16,7 @@ class User: Hashable, Codable {
     private var firstName: String
     private var lastName: String
     private var password: String
+    private var friendsIDSet: Set<String> = Set()
     private var friendsSet: Set<User> = Set()
     private var profilePicRef: String?
     private var plansSet: Set<Plan> = Set()
@@ -43,6 +44,14 @@ class User: Hashable, Codable {
     
     
     //getters and setters
+    func getFriendsID() -> Set<String> {
+        return friendsIDSet
+    }
+    
+    func setFriendsID(ids: Set<String>) {
+        self.friendsIDSet = ids
+    }
+    
     func getFriends() -> Set<User> {
         return self.friendsSet
     }

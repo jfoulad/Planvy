@@ -167,12 +167,37 @@ class CurrentUser {
                         }
                         
                     } else {
-                        print("wrong info per doc")
+
                     }
                 }
             }
 
         })
+    }
+    
+    func loadFriendUserObjects(onSuccess: @escaping (Set<User>) -> Void) {
+        
+        userCollectionRef.whereField(FieldPath.documentID(), in: Array(currentUser!.getFriendsID())).getDocuments(completion: {snapshot, error in
+            var users = Set<User>()
+            
+            if let error {
+                print("Errpr: \(error.localizedDescription)")
+            } else {
+                for doc in snapshot!.documents {
+                    do {
+                        let user = try doc.data(as: User.self)
+                        users.insert(user)
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+            
+            onSuccess(users)
+            
+        })
+            
+        
     }
     
     
@@ -181,28 +206,28 @@ class CurrentUser {
         if let id = source.id {
             let docRef = userCollectionRef.document(id)
                  docRef.updateData([
-                    "friendsSet" :  FieldValue.arrayUnion([target.id!])]
+                    "friendsIDSet" :  FieldValue.arrayUnion([target.id!])]
                 )
           }
     }
     
     //make dummy users
     func makeDummyUsers() {
-//        let user1 = User(email: "jf@gmail.com", firstName: "Jeremy", lastName: "Fouladian", password: "test123", profilePicURL: nil)
-//
-//        addUserToDatabase(user: user1)
+        let user1 = User(email: "jf@gmail.com", firstName: "Jeremy", lastName: "Fouladian", password: "test123", profilePicRef: "profilePictures/J8YSu87QcoeIpBmRThjK")
+
+        addUserToDatabase(user: user1)
         
-//        let user1 = User(email: "mtuli@gmail.com", firstName: "Maani", lastName: "Tuli", password: "maani123")
-//
-//        addUserToDatabase(user: user1)
-//
-//        let user2 = User(email: "bnoor@gmail.com", firstName: "Brandon", lastName: "Noorvash", password: "brandon123")
-//
-//        addUserToDatabase(user: user2)
-//
-//        let user3 = User(email: "mikeshmule@gmail.com", firstName: "Mike", lastName: "Shmule", password: "mike123")
-//
-//        addUserToDatabase(user: user3)
+        let user4 = User(email: "mtuli@gmail.com", firstName: "Maani", lastName: "Tuli", password: "maani123", profilePicRef: nil)
+
+        addUserToDatabase(user: user4)
+
+        let user2 = User(email: "bnoor@gmail.com", firstName: "Brandon", lastName: "Noorvash", password: "brandon123", profilePicRef: nil)
+
+        addUserToDatabase(user: user2)
+
+        let user3 = User(email: "mikeshmule@gmail.com", firstName: "Mike", lastName: "Shmule", password: "mike123", profilePicRef: nil)
+
+        addUserToDatabase(user: user3)
     }
     
     
