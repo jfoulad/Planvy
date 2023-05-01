@@ -88,6 +88,9 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
             cell.groupNameLabel.font = designManager.font(weight: .Bold, size: 19)
             cell.groupNameLabel.text = "Not yet implemented"
             
+            cell.friend1Image.image = UIImage(named: "friend1")
+            cell.friend2Image.image = UIImage(named: "friend2")
+            cell.friend3Image.image = UIImage(named: "friend3")
             
             cell.layer.cornerRadius = 10
             cell.addButton.layer.cornerRadius = 5

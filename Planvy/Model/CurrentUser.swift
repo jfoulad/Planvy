@@ -183,6 +183,7 @@ class CurrentUser {
         })
     }
     
+    //load friend user objects to store locally
     func loadFriendUserObjects(onSuccess: @escaping (Set<User>) -> Void) {
         
         userCollectionRef.whereField(FieldPath.documentID(), in: Array(currentUser!.getFriendsID())).getDocuments(completion: {snapshot, error in
@@ -206,6 +207,7 @@ class CurrentUser {
         })
     }
     
+    //load plan objects to store locally
     func loadPlanObjects(onSuccess: @escaping (Set<Plan>) -> Void) {
         planCollectionRef.whereField(FieldPath.documentID(), in: Array(currentUser!.getPlansID())).getDocuments(completion: {snapshot, error in
             var plans = Set<Plan>()
@@ -228,6 +230,7 @@ class CurrentUser {
         })
     }
     
+    //load both plan and user objects to show locally
     func loadPlanAndUserObjects(onSuccess: @escaping (Set<Plan>, Set<User>) -> Void) {
         var plans = Set<Plan>()
         var friends = Set<User>()
@@ -257,6 +260,7 @@ class CurrentUser {
           }
     }
     
+    //add a new plan to firestore
     func addPlanToDatabase(users: Set<User>, plan: Plan) {
         do {
             let documentID = planCollectionRef.document().documentID

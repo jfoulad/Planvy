@@ -1599,9 +1599,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="T7w-cx-FFB">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="T7w-cx-FFB">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U0o-sd-hzS">
                                 <rect key="frame" x="16" y="298" width="361" height="510"/>
@@ -1702,6 +1701,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yD7-kn-Z1g"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="T7w-cx-FFB" firstAttribute="leading" secondItem="yD7-kn-Z1g" secondAttribute="leading" id="3uV-ao-ySm"/>
+                            <constraint firstItem="T7w-cx-FFB" firstAttribute="top" secondItem="NP0-Qq-8rQ" secondAttribute="top" id="538-za-yDl"/>
+                            <constraint firstItem="T7w-cx-FFB" firstAttribute="trailing" secondItem="yD7-kn-Z1g" secondAttribute="trailing" id="OKG-dN-gbY"/>
+                            <constraint firstAttribute="bottom" secondItem="T7w-cx-FFB" secondAttribute="bottom" id="Vrr-pI-BCz"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="c5L-Ws-s8f"/>
                     <connections>
