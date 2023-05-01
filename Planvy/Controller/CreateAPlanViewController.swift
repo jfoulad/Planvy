@@ -372,7 +372,6 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
                 
                 let plan = Plan(planName: planName, specificBusiness: business, dateAndTime: dateTimePicker.date, creatorID: currentUser.getID(), guests: guestsSetID)
                 
-//                let plan = Plan(planName: planName, specificBusiness: business, dateAndTime: dateTimePicker.date, creator: currentUser.getID(), invitees: Set(guestsArray))
                 
                 currentUser.addPlan(plan: plan, guests: Set(guestsArray))
                 

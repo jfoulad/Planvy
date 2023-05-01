@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift
 //plan class
 class Plan: Hashable, Codable {
     
-
+    @DocumentID var id: String?
     private var planName: String
     private var specificBusiness: SpecificBusiness
     private var date: Date

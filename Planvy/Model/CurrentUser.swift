@@ -15,6 +15,7 @@ class CurrentUser {
     private var currentUser: User?
     
     let userCollectionRef = Firestore.firestore().collection("users")
+    let planCollectionRef = Firestore.firestore().collection("plans")
     
     let storageRef = Storage.storage().reference()
     
@@ -92,6 +93,10 @@ class CurrentUser {
         currentUser!.setFriends(friends: friends)
     }
     
+    func setPlans(plans: Set<Plan>) {
+        currentUser!.setPlans(plans: plans)
+    }
+    
     //change passowrd
     func changePassword(old: String, new: String) -> String {
         if old == currentUser!.getPassword() {
@@ -131,11 +136,11 @@ class CurrentUser {
     func addPlan(plan: Plan, guests: Set<User>) {
         currentUser!.addPlans(plan: plan)
 
-        addPlanToUserDatabase(user: currentUser!, plan: plan)
+        var everyone = Set(guests)
+        everyone.insert(currentUser!)
         
-        for guest in guests {
-            addPlanToUserDatabase(user: guest, plan: plan)
-        }
+        
+        addPlanToDatabase(users: everyone , plan: plan)
     }
     
     //add a user to database
@@ -201,6 +206,44 @@ class CurrentUser {
         })
     }
     
+    func loadPlanObjects(onSuccess: @escaping (Set<Plan>) -> Void) {
+        planCollectionRef.whereField(FieldPath.documentID(), in: Array(currentUser!.getPlansID())).getDocuments(completion: {snapshot, error in
+            var plans = Set<Plan>()
+            
+            if let error {
+                print("Error: \(error.localizedDescription)")
+            } else {
+                for doc in snapshot!.documents {
+                    do {
+                        let plan = try doc.data(as: Plan.self)
+                        plans.insert(plan)
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+            
+            onSuccess(plans)
+            
+        })
+    }
+    
+    func loadPlanAndUserObjects(onSuccess: @escaping (Set<Plan>, Set<User>) -> Void) {
+        var plans = Set<Plan>()
+        var friends = Set<User>()
+        
+        loadPlanObjects(onSuccess: {loadedPlans in
+            plans = loadedPlans
+            
+            self.loadFriendUserObjects(onSuccess: {loadedfriends in
+                friends = loadedfriends
+                onSuccess(plans, friends)
+                
+            })
+        })
+        
+    }
+    
 
     
     
@@ -214,12 +257,23 @@ class CurrentUser {
           }
     }
     
-    func addPlanToUserDatabase(user: User, plan: Plan) {
-        if let id = user.id {
-            userCollectionRef.document(id).updateData([
-                "plansSet" :  FieldValue.arrayUnion([plan])
+    func addPlanToDatabase(users: Set<User>, plan: Plan) {
+        do {
+            let documentID = planCollectionRef.document().documentID
+            try planCollectionRef.document(documentID).setData(from: plan)
+            planCollectionRef.document(documentID).updateData([
+                "id": "\(documentID)"
             ])
+            
+            for user in users {
+                userCollectionRef.document(user.id!).updateData([
+                    "plansIDSet" : FieldValue.arrayUnion([documentID])
+                ])
+            }
+        } catch {
+            print(error)
         }
+
     }
     
     //make dummy users

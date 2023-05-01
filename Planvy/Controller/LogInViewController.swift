@@ -61,9 +61,24 @@ class LogInViewController: UIViewController {
             currentUserModel.logIn(email: email, password: password, onSuccess: {user in
                 self.currentUserModel.setCurrentUser(user: user)
                
-                self.currentUserModel.loadFriendUserObjects(onSuccess: { friends in
-                    
+//                self.currentUserModel.loadFriendUserObjects(onSuccess: { friends in
+//
+//                    self.currentUserModel.setFriends(friends: friends)
+//
+//                    self.animationView.stop()
+//                    self.animationView.isHidden = true
+//
+//
+//                    let tabVC = self.storyboard?.instantiateViewController(withIdentifier: "tabVC") as! UITabBarController
+//                    tabVC.modalPresentationStyle = .fullScreen
+//                    tabVC.modalTransitionStyle = .crossDissolve
+//
+//                    self.present(tabVC, animated: true)
+//                })
+                
+                self.currentUserModel.loadPlanAndUserObjects(onSuccess: {plans, friends in
                     self.currentUserModel.setFriends(friends: friends)
+                    self.currentUserModel.setPlans(plans: plans)
                     
                     self.animationView.stop()
                     self.animationView.isHidden = true
@@ -72,8 +87,9 @@ class LogInViewController: UIViewController {
                     let tabVC = self.storyboard?.instantiateViewController(withIdentifier: "tabVC") as! UITabBarController
                     tabVC.modalPresentationStyle = .fullScreen
                     tabVC.modalTransitionStyle = .crossDissolve
-
+                    
                     self.present(tabVC, animated: true)
+                    
                 })
 //                self.animationView.stop()
 //                self.animationView.isHidden = true

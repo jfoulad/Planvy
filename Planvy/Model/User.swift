@@ -19,6 +19,7 @@ class User: Hashable, Codable {
     private var friendsIDSet: Set<String> = Set()
     private var friendsSet: Set<User> = Set()
     private var profilePicRef: String?
+    private var plansIDSet: Set<String> = Set()
     private var plansSet: Set<Plan> = Set()
     private var groupSet: Set<Group> = Set()
     
@@ -46,6 +47,14 @@ class User: Hashable, Codable {
     //getters and setters
     func getFriendsID() -> Set<String> {
         return friendsIDSet
+    }
+    
+    func getPlansID() -> Set<String> {
+        return plansIDSet
+    }
+    
+    func addPlanId(id: String) {
+        plansIDSet.insert(id)
     }
     
     func setFriendsID(ids: Set<String>) {
@@ -80,6 +89,10 @@ class User: Hashable, Codable {
         plansSet.insert(plan)
     }
     
+    func setPlans(plans: Set<Plan>){
+        plansSet = plans
+    }
+    
     func addFriend(user: User) {
         friendsSet.insert(user)
     }
@@ -112,5 +125,6 @@ class User: Hashable, Codable {
     func setProfilePicRef(ref: String) {
        profilePicRef = ref
     }
+    
     
 }
