@@ -85,8 +85,8 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "groupCell", for: indexPath) as! GroupCell
             
             cell.groupNameLabel.textColor = designManager.white
-            cell.groupNameLabel.font = designManager.font(weight: .Bold, size: 15)
-            cell.groupNameLabel.text = "The Homie Homeslices"
+            cell.groupNameLabel.font = designManager.font(weight: .Bold, size: 19)
+            cell.groupNameLabel.text = "Not yet implemented"
             
             
             cell.layer.cornerRadius = 10
@@ -100,8 +100,8 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
             cell.emailLabel.textColor = designManager.white
             cell.nameLabel.textColor = designManager.white
             
-            cell.nameLabel.font = designManager.font(weight: .Bold, size: 17)
-            cell.emailLabel.font = designManager.font(weight: .Bold, size: 14)
+            cell.nameLabel.font = designManager.font(weight: .Bold, size: 19)
+            cell.emailLabel.font = designManager.font(weight: .Bold, size: 16)
             
             let friend = currentUser.getSortedFriends()[indexPath.row]
             

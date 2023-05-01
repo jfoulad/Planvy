@@ -36,7 +36,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+//        let flowLayout = UICollectionViewFlowLayout()
+//        hotspotsCollectionView.collectionViewLayout = flowLayout
+//
         //----- Set Up UI
         setUpUI()
         
@@ -161,6 +163,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             return cell
         }
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        
+//        let height = collectionView.frame.height
+//        
+//        return CGSize(width: 260, height: height)
+//    }
     
     
     //random select from enum and reload hotspots
