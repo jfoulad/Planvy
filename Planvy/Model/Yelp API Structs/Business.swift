@@ -16,13 +16,13 @@ struct Business: Codable {
     let image_url: String?
     let rating: Double?
     let price: String?
-    let location: Location
-    let categories: Array<Category>
+    let location: Location?
+    let categories: Array<Category>?
 
     //get formatted string categories
     func getFormattedCategories() -> String {
         var categoriesText = ""
-        for category in self.categories {
+        for category in self.categories! {
             categoriesText.append("\(category.title), ")
         }
         categoriesText.remove(at: categoriesText.index(before: categoriesText.endIndex))

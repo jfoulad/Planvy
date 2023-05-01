@@ -129,7 +129,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             let business = currentHotspotBusinesses[indexPath.row]
 //            let business = yelpManager.businessesArray[indexPath.row]
             cell.nameLabel.text = business.name
-            cell.locationLabel.text = business.location.getFormattedAddress()
+            cell.locationLabel.text = business.location?.getFormattedAddress()
             cell.ratingLabel.text = "\(String(describing: business.rating!))"
             cell.categoryLabel.text = business.getFormattedCategories()
 

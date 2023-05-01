@@ -215,7 +215,7 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
         if sortedAutoCompleteArray[indexPath.row] is Business {
             let business = sortedAutoCompleteArray[indexPath.row] as! Business
             cell.textLabel?.text = business.name
-            cell.detailTextLabel?.text = business.location.getFormattedAddress()
+            cell.detailTextLabel?.text = business.location?.getFormattedAddress()
         } else if sortedAutoCompleteArray[indexPath.row] is Term {
             let term = sortedAutoCompleteArray[indexPath.row] as! Term
             cell.textLabel?.text = term.text

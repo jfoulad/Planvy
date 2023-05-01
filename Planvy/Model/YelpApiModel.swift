@@ -94,10 +94,26 @@ class YelpApiModel {
     
     //get autocomplete given search criteria
     func autocomplete(term: String, location: String, onSuccess: @escaping (Autocomplete) -> Void) {
-        let locationNoSpaces = location.replacingOccurrences(of: " ", with: "")
+//        let locationNoSpaces = location.replacingOccurrences(of: " ", with: "")
+//
+//        let termNoSpaces = term.replacingOccurrences(of: " ", with: "")
+//        let url = URL(string: "\(BASE_URL_AUTOCOMPLETE)location=\(locationNoSpaces)&text=\(termNoSpaces)")!
+//        print("\(BASE_URL_AUTOCOMPLETE)location=\(locationNoSpaces)&text=\(termNoSpaces)")
         
-        let termNoSpaces = term.replacingOccurrences(of: " ", with: "")
-        let url = URL(string: "\(BASE_URL_AUTOCOMPLETE)location=\(locationNoSpaces)&text=\(termNoSpaces)")!
+        var urlString = ""
+        let termNoSpaces = term.replacingOccurrences(of: " ", with: "_")
+
+        if city != nil {
+            let cityNoSpaces = city?.replacingOccurrences(of: " ", with: "")
+            urlString = "\(BASE_URL_AUTOCOMPLETE)location=\(cityNoSpaces)&text=\(termNoSpaces)"
+        } else {
+            if let latitude, let longitude {
+                urlString = "\(BASE_URL_AUTOCOMPLETE)latitude=\(latitude)&longitude=\(longitude)&text=\(termNoSpaces)"
+                print(urlString)
+            }
+        }
+        
+        let url = URL(string: urlString)!
         
         var request = URLRequest(url: url)
         
