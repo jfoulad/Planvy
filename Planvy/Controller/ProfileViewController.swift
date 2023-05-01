@@ -28,6 +28,9 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBOutlet weak var changePhotoButton: UIButton!
     
+    @IBOutlet weak var notificationsLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -163,7 +166,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         
         
-        let labels = [nameLabel, emailLabel]
+        let labels = [nameLabel, emailLabel, notificationsLabel]
         
         for label in labels {
             label?.textColor = designManager.white
@@ -171,6 +174,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         nameLabel.font = designManager.font(weight: .Bold, size: 22)
         emailLabel.font = designManager.font(weight: .Medium, size: 17)
+        
+        notificationsLabel.font = designManager.font(weight: .Bold, size: 24)
         
         firstHolderView.layer.cornerRadius = 10
         
@@ -181,7 +186,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     //number of items in section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 3
     }
     
     //load notification cell
@@ -194,7 +199,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         cell.notifLabel.font = designManager.font(weight: .Medium, size: 20)
 //        cell.notifLabel.verticalAlignment = .top
         
-        cell.notifLabel.text = "Plan Info"
+        cell.notifLabel.text = "Not Yet Implemented"
         
         return cell
     }

@@ -1697,9 +1697,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="T7w-cx-FFB">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U0o-sd-hzS">
-                                <rect key="frame" x="16" y="298" width="361" height="510"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U0o-sd-hzS">
+                                <rect key="frame" x="16" y="298" width="361" height="524"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VQK-dr-gaG">
                                     <size key="itemSize" width="361" height="100"/>
@@ -1747,13 +1746,11 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="evv-aC-cTR">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evv-aC-cTR">
                                 <rect key="frame" x="16" y="130" width="361" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ibn-Kc-9r1">
+                                    <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibn-Kc-9r1">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aMK-Fz-cMa">
                                             <rect key="frame" x="0.0" y="0.0" width="361" height="128"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1801,15 +1798,41 @@
                                     </visualEffectView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.59999999999999998" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ibn-Kc-9r1" secondAttribute="trailing" id="1vK-v4-hUV"/>
+                                    <constraint firstItem="ibn-Kc-9r1" firstAttribute="leading" secondItem="evv-aC-cTR" secondAttribute="leading" id="98N-A0-N9l"/>
+                                    <constraint firstAttribute="height" constant="128" id="O57-3L-bil"/>
+                                    <constraint firstItem="ibn-Kc-9r1" firstAttribute="top" secondItem="evv-aC-cTR" secondAttribute="top" id="fVr-ob-I2h"/>
+                                    <constraint firstAttribute="bottom" secondItem="ibn-Kc-9r1" secondAttribute="bottom" id="snV-8x-aDu"/>
+                                </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications/ Reminders" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hP4-pb-pdl">
+                                <rect key="frame" x="16" y="266" width="361" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="bWR-JS-NEb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yD7-kn-Z1g"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="yD7-kn-Z1g" firstAttribute="trailing" secondItem="U0o-sd-hzS" secondAttribute="trailing" constant="16" id="3UK-KV-war"/>
                             <constraint firstItem="T7w-cx-FFB" firstAttribute="leading" secondItem="yD7-kn-Z1g" secondAttribute="leading" id="3uV-ao-ySm"/>
                             <constraint firstItem="T7w-cx-FFB" firstAttribute="top" secondItem="NP0-Qq-8rQ" secondAttribute="top" id="538-za-yDl"/>
+                            <constraint firstItem="evv-aC-cTR" firstAttribute="leading" secondItem="yD7-kn-Z1g" secondAttribute="leading" constant="16" id="5hu-Kp-mJk"/>
+                            <constraint firstItem="evv-aC-cTR" firstAttribute="top" secondItem="yD7-kn-Z1g" secondAttribute="top" constant="27" id="7lM-Q4-NIl"/>
+                            <constraint firstItem="U0o-sd-hzS" firstAttribute="leading" secondItem="yD7-kn-Z1g" secondAttribute="leading" constant="16" id="DS1-uK-g4e"/>
                             <constraint firstItem="T7w-cx-FFB" firstAttribute="trailing" secondItem="yD7-kn-Z1g" secondAttribute="trailing" id="OKG-dN-gbY"/>
+                            <constraint firstItem="hP4-pb-pdl" firstAttribute="leading" secondItem="yD7-kn-Z1g" secondAttribute="leading" constant="16" id="OTP-oq-p6W"/>
+                            <constraint firstItem="hP4-pb-pdl" firstAttribute="top" secondItem="evv-aC-cTR" secondAttribute="bottom" constant="8" symbolic="YES" id="QVa-Nb-IFJ"/>
                             <constraint firstAttribute="bottom" secondItem="T7w-cx-FFB" secondAttribute="bottom" id="Vrr-pI-BCz"/>
+                            <constraint firstItem="yD7-kn-Z1g" firstAttribute="trailing" secondItem="evv-aC-cTR" secondAttribute="trailing" constant="16" id="cA8-FB-Gub"/>
+                            <constraint firstItem="yD7-kn-Z1g" firstAttribute="trailing" secondItem="hP4-pb-pdl" secondAttribute="trailing" constant="16" id="erN-vo-sBr"/>
+                            <constraint firstItem="U0o-sd-hzS" firstAttribute="top" secondItem="hP4-pb-pdl" secondAttribute="bottom" constant="8" symbolic="YES" id="ojb-sl-BpO"/>
+                            <constraint firstAttribute="bottom" secondItem="U0o-sd-hzS" secondAttribute="bottom" constant="30" id="pSC-Cz-WXq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="c5L-Ws-s8f"/>
@@ -1819,6 +1842,7 @@
                         <outlet property="firstHolderView" destination="evv-aC-cTR" id="GbO-RV-Hvi"/>
                         <outlet property="nameLabel" destination="oYe-Vr-UCv" id="ZMd-Sv-C5b"/>
                         <outlet property="notifCollectionView" destination="U0o-sd-hzS" id="bj2-2M-Ipw"/>
+                        <outlet property="notificationsLabel" destination="hP4-pb-pdl" id="kdF-28-alZ"/>
                         <outlet property="profilePicture" destination="gcK-20-GXi" id="ISx-i0-tEE"/>
                     </connections>
                 </viewController>
