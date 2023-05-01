@@ -16,6 +16,9 @@ class YelpApiModel {
     let BASE_URL_ID = "https://api.yelp.com/v3/businesses/"
     let BASE_URL_AUTOCOMPLETE = "https://api.yelp.com/v3/autocomplete?"
     var businessesArray: Array<Business> = Array()
+    var city: String?
+    var latitude: String?
+    var longitude: String?
     
     
     
@@ -25,10 +28,20 @@ class YelpApiModel {
     
     //call Yelp API to load business in category near location
     func getBusinessesForTerm(term: String, location: String, onSuccess: @escaping (Array<Business>) -> Void) {
-        let locationNoSpaces = location.replacingOccurrences(of: " ", with: "")
+        
+        var urlString = ""
         let termNoSpaces = term.replacingOccurrences(of: " ", with: "_")
-        print(termNoSpaces)
-        let url = URL(string: "\(BASE_URL_SEARCH)location=\(locationNoSpaces)&term=\(termNoSpaces)&limit=\(COUNT)")!
+        
+        if city != nil {
+            let cityNoSpaces = city?.replacingOccurrences(of: " ", with: "")
+            urlString = "\(BASE_URL_SEARCH)location=\(cityNoSpaces)&term=\(termNoSpaces)&limit=\(COUNT)"
+        } else {
+            if let latitude, let longitude {
+                urlString = "\(BASE_URL_SEARCH)latitude=\(latitude)&longitude=\(longitude)&term=\(termNoSpaces)&limit=\(COUNT)&radius=5000"
+            }
+        }
+        
+        let url = URL(string: urlString)!
         
         var request = URLRequest(url: url)
         
@@ -41,8 +54,6 @@ class YelpApiModel {
                 do {
                     
                     let businesses = try JSONDecoder().decode(Businesses.self, from: data)
-//                    self.businessesArray = businesses.businesses
-//                    onSuccess(self.businessesArray)
                     let businessArray = businesses.businesses
                     onSuccess(businessArray)
                     

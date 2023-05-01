@@ -7,8 +7,9 @@
 
 import UIKit
 import Lottie
+import CoreLocation
 
-class LogInViewController: UIViewController {
+class LogInViewController: UIViewController, CLLocationManagerDelegate {
 
     
 //    @IBOutlet weak var continueUsingLabel: UILabel!
@@ -24,25 +25,65 @@ class LogInViewController: UIViewController {
     
     let currentUserModel = CurrentUser.shared
     let animationView = LottieAnimationView(name: "fourdots")
-    
+    let locationManager = CLLocationManager()
+    let yelpAPI = YelpApiModel.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         
         // Do any additional setup after loading the view.
         
 //        Set up UI
         setUpUI()
         
-//        Added these users to firestore
-//        currentUserModel.makeDummyUsers()
 
         
         
-        //check if log in credientials match
+        //------CLlocation------------
+        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+        locationManager.distanceFilter = 100
+        locationManager.delegate = self
+        
+        if locationManager.authorizationStatus == .notDetermined {
+            locationManager.requestWhenInUseAuthorization()
+        }
+        if locationManager.authorizationStatus == .denied {
+            
+            let alertController = UIAlertController(title: "Location services turned off", message: "Please enter your city so we can accurately recommend local places", preferredStyle: .alert)
+                
+            alertController.addTextField { textField in
+                textField.placeholder = "Enter city"
+            }
+                
+            let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                let city = alertController.textFields?.first?.text
+                self.yelpAPI.city = city
+            }
+            
+            alertController.addAction(okAction)
+                
+            present(alertController, animated: true, completion: nil)
+        
+        }
         
         
         
+        locationManager.startUpdatingLocation()
+        
+        
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            
+            yelpAPI.latitude = "\(location.coordinate.latitude)"
+            yelpAPI.longitude = "\(location.coordinate.longitude)"
+            print("Lat : \(location.coordinate.latitude) Lng: \(location.coordinate.longitude)")
+        }
     }
     
     @objc func bgDidTapped(_ sender: UITapGestureRecognizer) {

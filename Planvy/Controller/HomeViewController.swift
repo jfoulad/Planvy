@@ -47,22 +47,12 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         // Do any additional setup after loading the view.
         // setting up nav bar took me 2 hours and didnt even center align button or connect addbutton function correctly
         
-        //------CLlocation------------
-        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
-        locationManager.distanceFilter = 100
-        locationManager.delegate = self
-        
-        if locationManager.authorizationStatus == .notDetermined {
-            locationManager.requestWhenInUseAuthorization()
-        }
-        
-        locationManager.startUpdatingLocation()
         
         
         
         //-----------Start Hotspot Loading--------------------------------------
-//        currentHotspotCategory = YelpCategories.randomize()
-        currentHotspotCategory = YelpCategories.Arts
+        currentHotspotCategory = YelpCategories.randomize()
+//        currentHotspotCategory = YelpCategories.Arts
         loadHotspots()
         hotspotsButton.setTitle(currentHotspotCategory?.stringValue, for: .normal)
         
