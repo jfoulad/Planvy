@@ -23,6 +23,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBOutlet weak var firstHolderView: UIView!
     
+    @IBOutlet weak var changePhotoButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,6 +33,12 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         notifCollectionView.dataSource = self
         notifCollectionView.delegate = self
+        
+    }
+    
+    
+    @IBAction func changePhotoDidTapped(_ sender: UIButton) {
+        print("test")
         
     }
     
@@ -91,6 +99,11 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         
         //---Color/ Design UI/Skeleton
+        
+        changePhotoButton.contentHorizontalAlignment = .left
+        changePhotoButton.titleLabel?.font = designManager.font(weight: .Bold, size: 18)
+        changePhotoButton.titleLabel?.textColor = designManager.black
+        
         profilePicture.layer.cornerRadius = profilePicture.bounds.height/2
         
         
