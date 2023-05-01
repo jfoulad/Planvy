@@ -88,6 +88,10 @@ class CurrentUser {
         return currentUser!.getFriends()
     }
     
+    func setFriends(friends: Set<User>) {
+        currentUser!.setFriends(friends: friends)
+    }
+    
     //change passowrd
     func changePassword(old: String, new: String) -> String {
         if old == currentUser!.getPassword() {
@@ -127,11 +131,10 @@ class CurrentUser {
     func addPlan(plan: Plan, guests: Set<User>) {
         currentUser!.addPlans(plan: plan)
 
-//        updateCurrentUserToDataBase()
+        addPlanToUserDatabase(user: currentUser!, plan: plan)
         
         for guest in guests {
-            guest.addPlans(plan: plan)
-//            updateUserToDataBase(user: guest)
+            addPlanToUserDatabase(user: guest, plan: plan)
         }
     }
     
@@ -198,9 +201,7 @@ class CurrentUser {
         })
     }
     
-    func setFriends(friends: Set<User>) {
-        currentUser!.setFriends(friends: friends)
-    }
+
     
     
     //update given user to database
@@ -211,6 +212,14 @@ class CurrentUser {
                     "friendsIDSet" :  FieldValue.arrayUnion([target.id!])]
                 )
           }
+    }
+    
+    func addPlanToUserDatabase(user: User, plan: Plan) {
+        if let id = user.id {
+            userCollectionRef.document(id).updateData([
+                "plansSet" :  FieldValue.arrayUnion([plan])
+            ])
+        }
     }
     
     //make dummy users

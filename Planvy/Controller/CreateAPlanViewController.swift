@@ -364,7 +364,15 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
             
             if let planName = planNameTF.text, let business = selectedBusiness {
                 
-                let plan = Plan(planName: planName, specificBusiness: business, dateAndTime: dateTimePicker.date, creator: currentUser.getCurrentUser(), invitees: Set(guestsArray), acceptedInvite: Set())
+                var guestsSetID = Set<String>()
+                
+                for guest in guestsArray {
+                    guestsSetID.insert(guest.getID())
+                }
+                
+                let plan = Plan(planName: planName, specificBusiness: business, dateAndTime: dateTimePicker.date, creatorID: currentUser.getID(), guests: guestsSetID)
+                
+//                let plan = Plan(planName: planName, specificBusiness: business, dateAndTime: dateTimePicker.date, creator: currentUser.getID(), invitees: Set(guestsArray))
                 
                 currentUser.addPlan(plan: plan, guests: Set(guestsArray))
                 

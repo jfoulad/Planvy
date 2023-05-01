@@ -124,7 +124,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 
                 cell.nameHolderView.isHidden = false
                 cell.planNameLabel.text = plan.getPlanName()
-                cell.numberOfAttendeesLabel.text = "\(plan.getAcceptedGuestsSet().count + 1)"
+                cell.numberOfAttendeesLabel.text = "\(plan.getGuestsID().count + 1)"
                 cell.locationLabel.text = plan.getSpecificBusinessLocation()
                 cell.dateTimeLabel.text = plan.getFormattedDate()
             }

@@ -15,18 +15,17 @@ class Plan: Hashable, Codable {
     private var planName: String
     private var specificBusiness: SpecificBusiness
     private var date: Date
-    private let creator: User
-    private var guests: Set<User>
-    private var acceptedInvite: Set<User> = Set()
+    private let creatorID: String
+    private var guestsID: Set<String>
+
     
     
-    init(planName: String, specificBusiness: SpecificBusiness, dateAndTime: Date, creator: User, invitees: Set<User>, acceptedInvite: Set<User>) {
+    init(planName: String, specificBusiness: SpecificBusiness, dateAndTime: Date, creatorID: String, guests: Set<String>) {
         self.planName = planName
         self.specificBusiness = specificBusiness
         self.date = dateAndTime
-        self.creator = creator
-        self.guests = invitees
-        self.acceptedInvite = acceptedInvite
+        self.creatorID = creatorID
+        self.guestsID = guests
     }
 
     
@@ -34,7 +33,7 @@ class Plan: Hashable, Codable {
     static func == (lhs: Plan, rhs: Plan) -> Bool {
         return lhs.specificBusiness == rhs.specificBusiness &&
                 lhs.date == rhs.date &&
-                lhs.guests.insert(lhs.creator) == rhs.guests.insert(rhs.creator)
+                lhs.guestsID.insert(lhs.creatorID) == rhs.guestsID.insert(rhs.creatorID)
     }
     //hashable
     func hash(into hasher: inout Hasher) {
@@ -74,8 +73,8 @@ class Plan: Hashable, Codable {
         return planName
     }
     
-    func getAcceptedGuestsSet() -> Set<User> {
-        return acceptedInvite
+    func getGuestsID() -> Set<String> {
+        return guestsID
     }
     
     func getSpecificBusinessName() -> String {
