@@ -265,16 +265,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         
         
-        //----------FUNCTION NOT LINKING
-//        navigationItem.rightBarButtonItem?.target = self
-//        navigationItem.rightBarButtonItem?.action = #selector(addButtonDidTapped)
-//        print(navigationItem.rightBarButtonItem?.action)
-//        print(navigationItem.rightBarButtonItem?.target)
-        
-        
-        
 
-        // CENTER ALIGN
         
         //--------Collection View Holder UI------------------------------
         
@@ -299,11 +290,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         //bring labels to front
         collectionViewHolderView1.bringSubviewToFront(upcomingEventsLabel)
-        upcomingEventsLabel.font = designManager.font(weight: .Bold, size: 15)
+        upcomingEventsLabel.font = designManager.font(weight: .Bold, size: 19)
         upcomingEventsLabel.textColor = designManager.white
         
         collectionViewHolderView2.bringSubviewToFront(localHotspotsLabel)
-        localHotspotsLabel.font = designManager.font(weight: .Bold, size: 15)
+        localHotspotsLabel.font = designManager.font(weight: .Bold, size: 19)
         localHotspotsLabel.textColor = designManager.white
         
         
@@ -316,7 +307,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         collectionViewHolderView2.bringSubviewToFront(hotspotsButton)
         
         hotspotsButton.contentHorizontalAlignment = .left
-        hotspotsButton.titleLabel?.font = designManager.font(weight: .Bold, size: 15)
+        hotspotsButton.titleLabel?.font = designManager.font(weight: .Bold, size: 19)
         hotspotsButton.tintColor = designManager.orange
     }
     
