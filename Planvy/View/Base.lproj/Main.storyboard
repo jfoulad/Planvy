@@ -540,10 +540,10 @@
                                 <rect key="frame" x="16" y="236" width="361" height="526"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="until 10:00 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7er-OZ-hD6">
-                                        <rect key="frame" x="78" y="77" width="154" height="27.666666666666671"/>
+                                        <rect key="frame" x="78" y="77" width="215" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27.670000000000002" id="WSj-3M-Sng"/>
-                                            <constraint firstAttribute="width" constant="154" id="aFH-BQ-Ta5"/>
+                                            <constraint firstAttribute="width" constant="215" id="aFH-BQ-Ta5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <nil key="textColor"/>
