@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import Lottie
 
-class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
 
     let designManager = ColorAndFontManager.shared
     let currentUser = CurrentUser.shared
+    let animationView = LottieAnimationView(name: "fourdots")
+
     
     @IBOutlet weak var notifCollectionView: UICollectionView!
     
@@ -38,7 +41,59 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     
     @IBAction func changePhotoDidTapped(_ sender: UIButton) {
-        print("test")
+        
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        present(imagePicker, animated: true)
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        
+        
+        let image = info[.originalImage] as! UIImage
+        
+        currentUser.uploadImage(image: image, onSuccess: {_ in
+            
+            self.animationView.stop()
+            self.animationView.isHidden = true
+            
+            picker.dismiss(animated: true, completion: {
+                self.profilePicture.showAnimatedGradientSkeleton()
+                
+                //Load Image
+                self.currentUser.getImage(onSuccess: {image in
+                    self.profilePicture.hideSkeleton()
+                    self.profilePicture.image = image
+                    self.profilePicture.contentMode = .scaleAspectFill
+                    self.profilePicture.layer.cornerRadius = self.profilePicture.bounds.height/2
+                    
+                })
+            })
+            
+        })
+        startAnimation()
+        
+    }
+    
+    //loading animation start
+    func startAnimation() {
+        
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(animationView)
+
+        // Add constraints to center the subview horizontally and vertically
+        animationView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        animationView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+
+        // Add constraints to set the width and height of the subview
+        animationView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        animationView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+
+        animationView.loopMode = .loop
+        animationView.play()
         
     }
     

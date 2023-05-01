@@ -331,7 +331,7 @@ class CurrentUser {
     
     
     //upload an image to profile picture storage
-    func uploadImage(image: UIImage) {
+    func uploadImage(image: UIImage, onSuccess: @escaping (Bool) -> Void) {
         
         let imageData = image.jpegData(compressionQuality: 0.8)
         
@@ -339,12 +339,12 @@ class CurrentUser {
         let imageRef = storageRef.child("profilePictures/\(imageName)")
         
         if let imageData {
-            let uploadTask = imageRef.putData(imageData, metadata: nil) { (metadata, error) in
+            imageRef.putData(imageData, metadata: nil) { (metadata, error) in
                 if let error = error {
                     print("Error uploading image: \(error.localizedDescription)")
                 } else {
-                    print("Image uploaded successfully!")
-                    
+                    print("Image uploaded")
+                    onSuccess(true)
                 }
             }
         }
@@ -359,7 +359,7 @@ class CurrentUser {
         
         let imageRef = storageRef.child((currentUser?.getProfilePicRef())!)
         
-        imageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) in
+        imageRef.getData(maxSize: 2 * 1024 * 1024) { (data, error) in
             if let error = error {
                 print("Error downloading image: \(error.localizedDescription)")
             } else {
