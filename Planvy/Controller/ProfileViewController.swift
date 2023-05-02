@@ -42,7 +42,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
     }
     
-    
+    //change photo py presenting image picker controller
     @IBAction func changePhotoDidTapped(_ sender: UIButton) {
         
         let imagePicker = UIImagePickerController()
@@ -52,6 +52,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
     }
     
+    //upload new photo to storage and then pull it when dismissed
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         
@@ -210,43 +211,43 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
 
         let changePassword = UIAlertAction(title: "Change Password", style: .default) { (_) in
             
-            let alert = UIAlertController(title: "Change your password", message: nil, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Not Yet Implemented", message: nil, preferredStyle: .alert)
             
-            var textFields = Array<UITextField>()
-            
-            alert.addTextField( configurationHandler: { tf in
-                tf.placeholder = "Old Password"
-                textFields.append(tf)
-                
-            })
-            
-            alert.addTextField( configurationHandler: { tf in
-                tf.placeholder = "New Password"
-                textFields.append(tf)
-            })
-            
-            
-            let updateAction = UIAlertAction(title: "Update", style: .default, handler: { alert in
-                if let old = textFields.first?.text, let new = textFields.last?.text {
-                    
-                    let resultString = self.currentUser.changePassword(old: old, new: new)
-                    
-                    let result = UIAlertController(title: resultString, message: nil, preferredStyle: .alert)
-                    
-                    let okAction = UIAlertAction(title: "OK", style: .cancel)
-                    
-                    result.addAction(okAction)
-                    self.present(result, animated: true)
-                }
-
-                
-            })
+//            var textFields = Array<UITextField>()
+//
+//            alert.addTextField( configurationHandler: { tf in
+//                tf.placeholder = "Old Password"
+//                textFields.append(tf)
+//
+//            })
+//
+//            alert.addTextField( configurationHandler: { tf in
+//                tf.placeholder = "New Password"
+//                textFields.append(tf)
+//            })
+//
+//
+//            let updateAction = UIAlertAction(title: "Update", style: .default, handler: { alert in
+//                if let old = textFields.first?.text, let new = textFields.last?.text {
+//
+//                    let resultString = self.currentUser.changePassword(old: old, new: new)
+//
+//                    let result = UIAlertController(title: resultString, message: nil, preferredStyle: .alert)
+//
+//                    let okAction = UIAlertAction(title: "OK", style: .cancel)
+//
+//                    result.addAction(okAction)
+//                    self.present(result, animated: true)
+//                }
+//
+//
+//            })
             
             
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
             
             
-            alert.addAction(updateAction)
+//            alert.addAction(updateAction)
             alert.addAction(cancelAction)
             self.present(alert, animated: true)
             
