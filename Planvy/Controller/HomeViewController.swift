@@ -61,6 +61,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        plansCollectionView.reloadData()
+    }
+    
     //supposed to trigger on addbutton
     @objc func addButtonDidTapped() {
         

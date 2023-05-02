@@ -72,6 +72,11 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        if let selectedBusiness {
+            locationTF.text = selectedBusiness.name
+            locationTF.resignFirstResponder()
+        }
+        
     }
     
     

@@ -252,11 +252,16 @@ class BusinessInformationViewController: UIViewController {
         if let tabBar = self.presentingViewController as? UITabBarController {
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            var createVC = storyboard.instantiateViewController(withIdentifier: "createPlanVC")
+            var vc = storyboard.instantiateViewController(withIdentifier: "createPlanVC")
             
             //cant pass, also doesnt work
             
-//            self.present(createVC, animated: true)
+            if let createVC = vc as? CreateAPlanViewController {
+                createVC.selectedBusiness = self.business
+                self.present(createVC, animated: true)
+            }
+            
+            
             
         }
         
@@ -271,12 +276,20 @@ class BusinessInformationViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         
-                if let createVC = self.presentingViewController as? CreateAPlanViewController {
-                    if createVC.selectedBusiness == self.business {
-                        createVC.locationTF.resignFirstResponder()
-                    }
-                }
-                
+        if let createVC = self.presentingViewController as? CreateAPlanViewController {
+            if createVC.selectedBusiness == self.business {
+                createVC.locationTF.resignFirstResponder()
+            }
+        }
+        
+        if let tabBar = self.presentingViewController as? UITabBarController {
+            let homeNav = tabBar.viewControllers![0] as? UINavigationController
+            let homeVC = homeNav?.topViewController as! HomeViewController
+            
+            homeVC.plansCollectionView.reloadData()
+        }
+        
+        
 
     }
 
