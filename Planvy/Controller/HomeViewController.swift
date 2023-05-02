@@ -191,7 +191,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     //calls singleton to load businesses for collection view
     func loadHotspots () {
-        yelpManager.getBusinessesForTerm(term: currentHotspotCategory!.stringValue, location: "Los Angeles", onSuccess: {businesses in
+        yelpManager.getBusinessesForTerm(term: currentHotspotCategory!.stringValue, onSuccess: {businesses in
             
             self.currentHotspotBusinesses = businesses
             

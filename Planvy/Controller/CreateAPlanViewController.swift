@@ -149,7 +149,7 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
         if sender.text?.isEmpty == true {
             
         } else {
-            yelpAPIModel.autocomplete(term: sender.text!, location: "Los Angeles", onSuccess: { [self] autocomplete in
+            yelpAPIModel.autocomplete(term: sender.text!, onSuccess: { [self] autocomplete in
                 
                 sortedAutoCompleteArray.removeAll()
                 
@@ -247,7 +247,7 @@ class CreateAPlanViewController: UIViewController, UITableViewDataSource, UIColl
             present(businessInfoVC, animated: true)
             
         } else {
-            yelpAPIModel.getBusinessesForTerm(term: term, location: "Los Angeles", onSuccess: { businesses in
+            yelpAPIModel.getBusinessesForTerm(term: term, onSuccess: { businesses in
                 
                 self.sortedAutoCompleteArray.removeAll()
                 

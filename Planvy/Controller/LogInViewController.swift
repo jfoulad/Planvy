@@ -50,31 +50,16 @@ class LogInViewController: UIViewController, CLLocationManagerDelegate {
         if locationManager.authorizationStatus == .notDetermined {
             locationManager.requestWhenInUseAuthorization()
         }
-        if locationManager.authorizationStatus == .denied {
-            
-            let alertController = UIAlertController(title: "Location services turned off", message: "Please enter your city so we can accurately recommend local places", preferredStyle: .alert)
-                
-            alertController.addTextField { textField in
-                textField.placeholder = "Enter city"
-            }
-                
-            let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-                let city = alertController.textFields?.first?.text
-                self.yelpAPI.city = city
-            }
-            
-            alertController.addAction(okAction)
-                
-            present(alertController, animated: true, completion: nil)
-        
-        }
-        
-        
         
         locationManager.startUpdatingLocation()
         
-        
-        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if locationManager.authorizationStatus == . denied {
+            //assume they are in los angeles
+            yelpAPI.city = "Los Angeles"
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
