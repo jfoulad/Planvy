@@ -55,17 +55,13 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     //upload new photo to storage and then pull it when dismissed
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        
-        
         let image = info[.originalImage] as! UIImage
         
-        currentUser.uploadImage(image: image, onSuccess: {_ in
+        picker.dismiss(animated: true, completion: {
+            self.startAnimation()
+            self.profilePicture.showAnimatedGradientSkeleton()
             
-            self.animationView.stop()
-            self.animationView.isHidden = true
-            
-            picker.dismiss(animated: true, completion: {
-                self.profilePicture.showAnimatedGradientSkeleton()
+            self.currentUser.uploadImage(image: image, onSuccess: {_ in
                 
                 //Load Image
                 self.currentUser.getImage(onSuccess: {image in
@@ -74,11 +70,33 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
                     self.profilePicture.contentMode = .scaleAspectFill
                     self.profilePicture.layer.cornerRadius = self.profilePicture.bounds.height/2
                     
+                    
+                    self.animationView.stop()
+                    self.animationView.isHidden = true
                 })
             })
-            
         })
-        startAnimation()
+        
+//        currentUser.uploadImage(image: image, onSuccess: {_ in
+//
+//            self.animationView.stop()
+//            self.animationView.isHidden = true
+//
+//            picker.dismiss(animated: true, completion: {
+//                self.profilePicture.showAnimatedGradientSkeleton()
+//
+//                //Load Image
+//                self.currentUser.getImage(onSuccess: {image in
+//                    self.profilePicture.hideSkeleton()
+//                    self.profilePicture.image = image
+//                    self.profilePicture.contentMode = .scaleAspectFill
+//                    self.profilePicture.layer.cornerRadius = self.profilePicture.bounds.height/2
+//
+//                })
+//            })
+//
+//        })
+//        startAnimation()
         
     }
     
