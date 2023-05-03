@@ -46,12 +46,6 @@ class animationViewScreen: UIViewController {
             
         })
         
-        // this one looked better, fixed the lottie and redownloadit
-//        let secondsToDelay = 0.6
-//        DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
-//           // Put any code you want to be delayed here
-//            self.performSegue(withIdentifier: "fade", sender: self)
-//        }
         
     }
     

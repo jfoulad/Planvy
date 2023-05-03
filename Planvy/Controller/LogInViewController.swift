@@ -55,6 +55,7 @@ class LogInViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    //when transitioning, if we dont have location authorization assume we are in LA and pass Los Angeles to yelp API
     override func viewWillDisappear(_ animated: Bool) {
         if locationManager.authorizationStatus == . denied {
             //assume they are in los angeles
@@ -62,15 +63,17 @@ class LogInViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    //get location and pass long/lat to yelp api
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             
             yelpAPI.latitude = "\(location.coordinate.latitude)"
             yelpAPI.longitude = "\(location.coordinate.longitude)"
-            print("Lat : \(location.coordinate.latitude) Lng: \(location.coordinate.longitude)")
+            
         }
     }
     
+    //background tap
     @objc func bgDidTapped(_ sender: UITapGestureRecognizer) {
         emailTF.resignFirstResponder()
         passwordTF.resignFirstResponder()

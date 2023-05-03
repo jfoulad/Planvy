@@ -36,17 +36,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let flowLayout = UICollectionViewFlowLayout()
-//        hotspotsCollectionView.collectionViewLayout = flowLayout
-//
+
         //----- Set Up UI
         setUpUI()
         
     
-                
-        // Do any additional setup after loading the view.
-        // setting up nav bar took me 2 hours and didnt even center align button or connect addbutton function correctly
-        
         
         
         
@@ -65,7 +59,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         plansCollectionView.reloadData()
     }
     
-    //supposed to trigger on addbutton
+    //present create a plan vc
     @objc func addButtonDidTapped() {
         
         let createPlanVC = self.storyboard?.instantiateViewController(withIdentifier: "createPlanVC") as! CreateAPlanViewController
@@ -86,11 +80,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         if collectionView.tag == 1 {
             let currentPlanCount = currentUserModel.getPlans().count
             
-            if currentPlanCount == 0 {
-                return 1
-            } else {
-                return currentPlanCount
-            }
+            return currentPlanCount
             
         } else {
             return currentHotspotBusinesses.count
@@ -158,15 +148,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        
-//        let height = collectionView.frame.height
-//        
-//        return CGSize(width: 260, height: height)
-//    }
     
     
-    //random select from enum and reload hotspots
+    //random select from enum and reload hotspots, small animation
     @IBAction func hotspotsDidTapped(_ sender: UIButton) {
         
         currentHotspotCategory = YelpCategories.randomize()

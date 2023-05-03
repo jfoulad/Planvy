@@ -73,6 +73,7 @@ class HoursViewController: UIViewController {
         
         let days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
         
+        //load the hours for given days
         for num in 0 ..< timeLabels.count {
             timeLabels[num]?.text = formattedSchedule[days[num]]
             if formattedSchedule[days[num]] == nil {

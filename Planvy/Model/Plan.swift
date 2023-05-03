@@ -29,7 +29,7 @@ class Plan: Hashable, Codable {
     }
 
     
-    //equatable??
+    //equatable
     static func == (lhs: Plan, rhs: Plan) -> Bool {
         return lhs.specificBusiness == rhs.specificBusiness &&
                 lhs.date == rhs.date &&

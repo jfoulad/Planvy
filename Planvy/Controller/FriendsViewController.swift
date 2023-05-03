@@ -48,7 +48,7 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
         
     }
     
-    //add blur (thought it would be more useful than it is
+    //add blur (thought it would be more useful than it is)
     func addBlur(object: UIView) {
         
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
@@ -190,7 +190,7 @@ class FriendsViewController: UIViewController, UICollectionViewDelegate, UIColle
                 
     }
     
-    //when search button is clicked, try to add user
+    //when search button is searched, try to add user
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         let lowercaseEmail = searchBar.text!.lowercased()

@@ -20,8 +20,6 @@
 		393E7EE729EC8CDA001E4C81 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393E7EE529EC8CDA001E4C81 /* ProfileViewController.swift */; };
 		393E7EE829EC8CDA001E4C81 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393E7EE529EC8CDA001E4C81 /* ProfileViewController.swift */; };
 		393E7EEA29EC93A8001E4C81 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393E7EE929EC93A8001E4C81 /* NotificationCell.swift */; };
-		393E7EEB29EC93A8001E4C81 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393E7EE929EC93A8001E4C81 /* NotificationCell.swift */; };
-		393E7EEC29EC93A8001E4C81 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393E7EE929EC93A8001E4C81 /* NotificationCell.swift */; };
 		394ED25D29DD00750070BF81 /* HoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394ED25C29DD00750070BF81 /* HoursViewController.swift */; };
 		394ED25F29DD1FE00070BF81 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394ED25E29DD1FE00070BF81 /* FriendsViewController.swift */; };
 		3950950929E2059B00CF4A04 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950950829E2059B00CF4A04 /* CurrentUser.swift */; };
@@ -267,6 +265,12 @@
 		39C74D2F29D677CD00271CAD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				39F771E229D7E79D00515FD9 /* PlanCell.swift */,
+				396723E129DA546600AB10A0 /* BusinessCell.swift */,
+				39E71C3C29DF77BB0072C3EF /* FriendContactCell.swift */,
+				393E7EE929EC93A8001E4C81 /* NotificationCell.swift */,
+				39E71C3A29DF6A3E0072C3EF /* GroupCell.swift */,
+				3907DDF829E13686008353B5 /* GuestCell.swift */,
 				39C74D0829D677B700271CAD /* LaunchScreen.storyboard */,
 				39C74D0329D677B700271CAD /* Main.storyboard */,
 			);
@@ -280,17 +284,11 @@
 				39C74D5C29D69DD300271CAD /* ColorAndFontManager.swift */,
 				39C74D5E29D6A62D00271CAD /* FontWeightEnum.swift */,
 				3952512529D7A690008F665F /* CustomTabBar.swift */,
-				39F771E229D7E79D00515FD9 /* PlanCell.swift */,
 				39F771E429D801C500515FD9 /* Plan.swift */,
 				39F771E629D8020800515FD9 /* User.swift */,
 				3906D3DD29D96DAD00198F90 /* YelpApiModel.swift */,
-				396723E129DA546600AB10A0 /* BusinessCell.swift */,
-				39E71C3A29DF6A3E0072C3EF /* GroupCell.swift */,
-				39E71C3C29DF77BB0072C3EF /* FriendContactCell.swift */,
-				3907DDF829E13686008353B5 /* GuestCell.swift */,
 				3950950829E2059B00CF4A04 /* CurrentUser.swift */,
 				39D607AE29E23A4500422E90 /* Group.swift */,
-				393E7EE929EC93A8001E4C81 /* NotificationCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -502,7 +500,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				393E7EE729EC8CDA001E4C81 /* ProfileViewController.swift in Sources */,
-				393E7EEB29EC93A8001E4C81 /* NotificationCell.swift in Sources */,
 				39C74D1529D677B800271CAD /* PlanvyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,7 +508,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				393E7EEC29EC93A8001E4C81 /* NotificationCell.swift in Sources */,
 				393E7EE829EC8CDA001E4C81 /* ProfileViewController.swift in Sources */,
 				39C74D2129D677B800271CAD /* PlanvyUITestsLaunchTests.swift in Sources */,
 				39C74D1F29D677B800271CAD /* PlanvyUITests.swift in Sources */,

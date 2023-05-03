@@ -77,26 +77,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             })
         })
         
-//        currentUser.uploadImage(image: image, onSuccess: {_ in
-//
-//            self.animationView.stop()
-//            self.animationView.isHidden = true
-//
-//            picker.dismiss(animated: true, completion: {
-//                self.profilePicture.showAnimatedGradientSkeleton()
-//
-//                //Load Image
-//                self.currentUser.getImage(onSuccess: {image in
-//                    self.profilePicture.hideSkeleton()
-//                    self.profilePicture.image = image
-//                    self.profilePicture.contentMode = .scaleAspectFill
-//                    self.profilePicture.layer.cornerRadius = self.profilePicture.bounds.height/2
-//
-//                })
-//            })
-//
-//        })
-//        startAnimation()
         
     }
     
@@ -231,41 +211,11 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             
             let alert = UIAlertController(title: "Not Yet Implemented", message: nil, preferredStyle: .alert)
             
-//            var textFields = Array<UITextField>()
-//
-//            alert.addTextField( configurationHandler: { tf in
-//                tf.placeholder = "Old Password"
-//                textFields.append(tf)
-//
-//            })
-//
-//            alert.addTextField( configurationHandler: { tf in
-//                tf.placeholder = "New Password"
-//                textFields.append(tf)
-//            })
-//
-//
-//            let updateAction = UIAlertAction(title: "Update", style: .default, handler: { alert in
-//                if let old = textFields.first?.text, let new = textFields.last?.text {
-//
-//                    let resultString = self.currentUser.changePassword(old: old, new: new)
-//
-//                    let result = UIAlertController(title: resultString, message: nil, preferredStyle: .alert)
-//
-//                    let okAction = UIAlertAction(title: "OK", style: .cancel)
-//
-//                    result.addAction(okAction)
-//                    self.present(result, animated: true)
-//                }
-//
-//
-//            })
             
             
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
             
             
-//            alert.addAction(updateAction)
             alert.addAction(cancelAction)
             self.present(alert, animated: true)
             

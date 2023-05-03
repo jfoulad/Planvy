@@ -62,6 +62,7 @@ class BusinessInformationViewController: UIViewController {
 
     }
     
+    //toggle skeleton when view will apear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -70,7 +71,7 @@ class BusinessInformationViewController: UIViewController {
         
     }
     
-    
+    //after view appears load business- when i loaded early the skeleton appeared for too short of a time looked weird
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         loadBusiness(businessID: businessID)
@@ -94,7 +95,7 @@ class BusinessInformationViewController: UIViewController {
     }
     
     
-    //    load specific business to pass into next VC
+    //    load specific business
         func loadBusiness(businessID: String) -> Void {
             yelpManager.getBusiness(businessID: businessID, onSuccess: {selectedBusiness in
                 self.business = selectedBusiness
@@ -113,7 +114,7 @@ class BusinessInformationViewController: UIViewController {
         }
     
     
-    //set text for ui when it is loaded
+    //set text for after the business is loaded
     func setUIText() {
         
         //---title image
@@ -246,7 +247,7 @@ class BusinessInformationViewController: UIViewController {
     }
     
     
-    //when invite button tapped either go back to create a plan or create a new one
+    //when invite button tapped either go back to create a plan or create a new one while passinging in the current business
     @IBAction func businessSelectedDidtapped(_ sender: UIButton) {
         
         if let tabBar = self.presentingViewController as? UITabBarController {
@@ -274,6 +275,7 @@ class BusinessInformationViewController: UIViewController {
         
     }
     
+    //when view disappears also might need to pass in business/ reload home collection view depending when it originated
     override func viewWillDisappear(_ animated: Bool) {
         
         if let createVC = self.presentingViewController as? CreateAPlanViewController {
